@@ -1,0 +1,33 @@
+{
+  "name": "portfolio-site",
+  "version": "1.0.0",
+  "description": "Personal portfolio site built with Astro, React, and Three.js",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "5.1.6",
+    "@astrojs/react": "4.4.2",
+    "@astrojs/tailwind": "5.1.5",
+    "@astrojs/sitemap": "3.7.2",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "three": "0.184.0",
+    "@react-three/fiber": "8.17.6",
+    "@react-three/drei": "9.115.0",
+    "gsap": "3.12.5",
+    "@types/three": "0.184.0",
+    "tailwindcss": "3.4.17",
+    "autoprefixer": "10.4.20",
+    "postcss": "8.4.41"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.5",
+    "@types/react-dom": "18.3.0",
+    "typescript": "5.6.3"
+  }
+}
