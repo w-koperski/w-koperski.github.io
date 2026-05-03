@@ -1,0 +1,97 @@
+---
+import Base from '../layouts/Base.astro';
+import { getLangFromUrl } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const path = Astro.url.pathname;
+---
+
+<Base title="404 — Not Found" lang={lang}>
+  <section class="error-page">
+    <div class="error-page__terminal terminal-border terminal-glow-element">
+      <div class="error-page__header">
+        <span class="terminal-text error-page__prompt">wk@portfolio:~$</span>
+        <span class="error-page__cmd"> cd {path}</span>
+      </div>
+      <div class="error-page__output">
+        <p class="error-page__code terminal-text terminal-glow">404</p>
+        <p class="error-page__msg">command not found: <code>{path}</code></p>
+        <p class="error-page__hint">The page you are looking for does not exist or has been moved.</p>
+      </div>
+      <a href="/" class="error-page__home terminal-border">
+        wk@portfolio:~$ cd ~
+      </a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .error-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    padding: var(--space-8) var(--space-6);
+  }
+
+  .error-page__terminal {
+    padding: var(--space-8);
+    max-width: 36rem;
+    width: 100%;
+  }
+
+  .error-page__header {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-6);
+  }
+
+  .error-page__prompt {
+    font-size: var(--text-sm);
+  }
+
+  .error-page__cmd {
+    color: var(--color-text);
+  }
+
+  .error-page__output {
+    margin-bottom: var(--space-8);
+  }
+
+  .error-page__code {
+    font-size: var(--text-4xl);
+    font-weight: 600;
+    margin-bottom: var(--space-3);
+  }
+
+  .error-page__msg {
+    font-family: var(--font-mono);
+    font-size: var(--text-lg);
+    color: var(--color-text);
+    margin-bottom: var(--space-3);
+  }
+
+  .error-page__msg code {
+    color: var(--color-error);
+  }
+
+  .error-page__hint {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+
+  .error-page__home {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-terminal-green);
+    padding: var(--space-2) var(--space-4);
+    transition: background 0.2s ease;
+  }
+
+  .error-page__home:hover {
+    background: rgba(74, 246, 38, 0.08);
+  }
+</style>

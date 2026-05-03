@@ -1,0 +1,280 @@
+---
+import { t, useTranslatedPath, getLangFromUrl } from '../i18n/utils';
+
+interface Props {
+  lang: 'pl' | 'en';
+  currentPath: string;
+}
+
+const { lang, currentPath } = Astro.props;
+const translatePath = useTranslatedPath(lang);
+
+const navLinks = [
+  { key: 'nav.home' as const, href: '/' },
+  { key: 'nav.about' as const, href: '/about' },
+  { key: 'nav.projects' as const, href: '/projects' },
+  { key: 'nav.skills' as const, href: '/skills' },
+  { key: 'nav.contact' as const, href: '/contact' },
+];
+
+function isActive(linkHref: string): boolean {
+  const resolved = translatePath(linkHref);
+  return currentPath === resolved || (resolved !== '/' && currentPath.startsWith(resolved));
+}
+
+const langSwitchLabel = t('lang.switch', lang);
+const langSwitchHref = lang === 'pl' ? `/en${currentPath}` : currentPath.replace(/^\/en/, '') || '/';
+---
+
+<nav class="navbar" aria-label="Main navigation">
+  <div class="navbar__inner">
+    <a href={translatePath('/')} class="navbar__brand terminal-text terminal-glow">
+      wk@portfolio:~$
+    </a>
+
+    <ul class="navbar__links" role="list">
+      {navLinks.map(({ key, href }) => (
+        <li>
+          <a
+            href={translatePath(href)}
+            class:list={['navbar__link', { 'navbar__link--active': isActive(href) }]}
+          >
+            {t(key, lang)}
+          </a>
+        </li>
+      ))}
+      <li>
+        <a href={langSwitchHref} class="navbar__lang-switch">
+          {langSwitchLabel}
+        </a>
+      </li>
+    </ul>
+
+    <button
+      class="navbar__hamburger"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+      id="nav-hamburger"
+    >
+      <span class="navbar__hamburger-line"></span>
+      <span class="navbar__hamburger-line"></span>
+      <span class="navbar__hamburger-line"></span>
+    </button>
+  </div>
+
+  <div class="navbar__mobile-menu" id="nav-mobile-menu" aria-hidden="true">
+    <ul class="navbar__mobile-links" role="list">
+      {navLinks.map(({ key, href }) => (
+        <li>
+          <a
+            href={translatePath(href)}
+            class:list={['navbar__mobile-link', { 'navbar__mobile-link--active': isActive(href) }]}
+          >
+            {t(key, lang)}
+          </a>
+        </li>
+      ))}
+      <li>
+        <a href={langSwitchHref} class="navbar__mobile-link navbar__mobile-lang">
+          {langSwitchLabel}
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  const hamburger = document.getElementById('nav-hamburger');
+  const mobileMenu = document.getElementById('nav-mobile-menu');
+
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!isOpen));
+      mobileMenu.setAttribute('aria-hidden', String(isOpen));
+    });
+  }
+</script>
+
+<style>
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--z-navbar);
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .navbar__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: var(--space-3) var(--space-6);
+  }
+
+  .navbar__brand {
+    font-family: var(--font-mono);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .navbar__links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    list-style: none;
+  }
+
+  .navbar__link {
+    position: relative;
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    padding: var(--space-1) 0;
+    transition: color 0.2s ease;
+  }
+
+  .navbar__link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-terminal-green);
+    transition: width 0.25s ease;
+  }
+
+  .navbar__link:hover {
+    color: var(--color-terminal-green);
+  }
+
+  .navbar__link:hover::after {
+    width: 100%;
+  }
+
+  .navbar__link--active {
+    color: var(--color-terminal-green);
+  }
+
+  .navbar__link--active::after {
+    width: 100%;
+  }
+
+  .navbar__lang-switch {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    padding: var(--space-1) var(--space-2);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-sm);
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+
+  .navbar__lang-switch:hover {
+    color: var(--color-terminal-green);
+    border-color: var(--color-terminal-green);
+  }
+
+  .navbar__hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 28px;
+    height: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .navbar__hamburger-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--color-terminal-green);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+  }
+
+  .navbar__hamburger[aria-expanded='true'] .navbar__hamburger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .navbar__hamburger[aria-expanded='true'] .navbar__hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar__hamburger[aria-expanded='true'] .navbar__hamburger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .navbar__mobile-menu {
+    display: none;
+    border-top: 1px solid var(--color-border);
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .navbar__mobile-menu[aria-hidden='false'] {
+    display: block;
+  }
+
+  .navbar__mobile-links {
+    list-style: none;
+    padding: var(--space-4) var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .navbar__mobile-link {
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    padding: var(--space-2) var(--space-3);
+    border-left: 2px solid var(--color-border);
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+
+  .navbar__mobile-link:hover {
+    color: var(--color-terminal-green);
+    border-left-color: var(--color-terminal-green);
+  }
+
+  .navbar__mobile-link--active {
+    color: var(--color-terminal-green);
+    border-left-color: var(--color-terminal-green);
+  }
+
+  .navbar__mobile-lang {
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-sm);
+    border-left: none;
+  }
+
+  .navbar__mobile-lang:hover {
+    border-color: var(--color-terminal-green);
+  }
+
+  @media (max-width: 768px) {
+    .navbar__links {
+      display: none;
+    }
+
+    .navbar__hamburger {
+      display: flex;
+    }
+  }
+</style>
