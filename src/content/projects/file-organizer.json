@@ -1,0 +1,13 @@
+{
+  "title": "File Organizer",
+  "category": "python-cli",
+  "categoryEmoji": "🐍",
+  "description": {
+    "pl": "Automatyczne porządkowanie plików w katalogu według rozszerzenia. Przenosi pliki do podkatalogów (Images, Documents, Videos, Music, Archives, Code).",
+    "en": "Automatically organizes files in a directory by extension. Moves files into subdirectories (Images, Documents, Videos, Music, Archives, Code)."
+  },
+  "techStack": ["Rust", "clap", "walkdir"],
+  "githubUrl": "https://github.com/w-koperski/file-organizer",
+  "year": 2024,
+  "featured": false
+}

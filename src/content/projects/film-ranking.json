@@ -1,0 +1,13 @@
+{
+  "title": "Film Ranking",
+  "category": "laravel-api",
+  "categoryEmoji": "🔷",
+  "description": {
+    "pl": "API rankingu filmów z systemem ocen napisane w Laravel 11. Użytkownicy mogą dodawać filmy i oceniać je, automatyczne obliczanie średniej.",
+    "en": "Film ranking API with rating system written in Laravel 11. Users can add films and rate them, automatic average calculation."
+  },
+  "techStack": ["Laravel 11", "PHP", "Tailwind CSS"],
+  "githubUrl": "https://github.com/w-koperski/film-ranking",
+  "year": 2024,
+  "featured": false
+}

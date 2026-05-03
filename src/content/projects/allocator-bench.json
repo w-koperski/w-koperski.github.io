@@ -1,0 +1,13 @@
+{
+  "title": "Memory Allocator Benchmark",
+  "category": "cpp",
+  "categoryEmoji": "⚙️",
+  "description": {
+    "pl": "Porównuje wydajność różnych metod alokacji pamięci w C++. malloc/free vs new/delete, stałe vs losowe rozmiary alokacji.",
+    "en": "Benchmarks different memory allocation methods in C++. malloc/free vs new/delete, fixed vs random allocation sizes."
+  },
+  "techStack": ["C++17", "CMake"],
+  "githubUrl": "https://github.com/w-koperski/allocator-bench",
+  "year": 2024,
+  "featured": false
+}

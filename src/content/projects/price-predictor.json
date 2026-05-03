@@ -1,0 +1,13 @@
+{
+  "title": "Price Predictor",
+  "category": "python-ml",
+  "categoryEmoji": "🧠",
+  "description": {
+    "pl": "Predyktor cen mieszkań oparty na RandomForestRegressor. Trenowany na danych z cechami: metraż, pokoje, piętro, dzielnica, rok budowy.",
+    "en": "A housing price predictor using RandomForestRegressor. Trained on data with features: area, rooms, floor, district, year built."
+  },
+  "techStack": ["Python", "scikit-learn", "NumPy", "pandas", "matplotlib"],
+  "githubUrl": "https://github.com/w-koperski/price-predictor",
+  "year": 2024,
+  "featured": false
+}

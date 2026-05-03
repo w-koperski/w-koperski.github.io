@@ -1,0 +1,34 @@
+/* Terminal Utility Classes */
+
+.terminal-text {
+  font-family: var(--font-mono);
+  color: var(--color-terminal-green);
+}
+
+.terminal-border {
+  border: 1px dashed var(--color-terminal-green);
+  border-radius: var(--radius-sm);
+}
+
+.terminal-glow {
+  text-shadow: 0 0 10px rgba(74, 246, 38, 0.5);
+}
+
+.terminal-glow-element {
+  box-shadow: var(--shadow-glow);
+}
+
+.terminal-glow-strong {
+  box-shadow: var(--shadow-glow-strong);
+}
+
+.cursor-blink {
+  animation: cursor-blink 1s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-blink {
+    animation: none;
+    opacity: 1;
+  }
+}

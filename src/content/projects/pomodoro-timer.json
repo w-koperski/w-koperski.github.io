@@ -1,0 +1,13 @@
+{
+  "title": "Pomodoro Timer",
+  "category": "python-cli",
+  "categoryEmoji": "🐍",
+  "description": {
+    "pl": "Prosty i minimalistyczny timer Pomodoro. Cykle 25 min pracy i 5 min przerwy, wizualny wskaźnik postępu i powiadomienia dźwiękowe.",
+    "en": "A clean and minimal Pomodoro timer. 25-minute work and 5-minute break cycles, visual progress indicator, and audio notifications."
+  },
+  "techStack": ["Vue 3", "Vite", "CSS3"],
+  "githubUrl": "https://github.com/w-koperski/pomodoro-timer",
+  "year": 2024,
+  "featured": false
+}

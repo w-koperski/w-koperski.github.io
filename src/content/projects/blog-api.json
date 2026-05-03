@@ -1,0 +1,13 @@
+{
+  "title": "Blog API",
+  "category": "laravel-api",
+  "categoryEmoji": "🔷",
+  "description": {
+    "pl": "REST API bloga napisane w Laravel 10. Pełna obsługa postów i komentarzy z walidacją danych.",
+    "en": "REST API for a blog written in Laravel 10. Full support for posts and comments with data validation."
+  },
+  "techStack": ["Laravel 10", "PHP"],
+  "githubUrl": "https://github.com/w-koperski/blog-api",
+  "year": 2024,
+  "featured": false
+}

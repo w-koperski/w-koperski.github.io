@@ -1,0 +1,13 @@
+{
+  "title": "Markdown Notes",
+  "category": "vue-spa",
+  "categoryEmoji": "💚",
+  "description": {
+    "pl": "Notatnik w formacie Markdown z podglądem na żywo. Edytor ze wsparciem Markdown, automatyczne zapisywanie w localStorage, zarządzanie notatkami.",
+    "en": "A live-preview Markdown notebook. Editor with Markdown support, auto-save to localStorage, note management."
+  },
+  "techStack": ["React", "Vite", "marked"],
+  "githubUrl": "https://github.com/w-koperski/markdown-notes",
+  "year": 2024,
+  "featured": false
+}

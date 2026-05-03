@@ -1,0 +1,13 @@
+{
+  "title": "Kanban Board",
+  "category": "vue-spa",
+  "categoryEmoji": "💚",
+  "description": {
+    "pl": "Interaktywna tablica Kanban. Trzy kolumny (Do zrobienia, W trakcie, Gotowe), drag & drop, trwałość danych w LocalStorage.",
+    "en": "An interactive Kanban board. Three columns (To Do, In Progress, Done), drag and drop, LocalStorage persistence."
+  },
+  "techStack": ["React", "Vite"],
+  "githubUrl": "https://github.com/w-koperski/kanban-board",
+  "year": 2024,
+  "featured": false
+}

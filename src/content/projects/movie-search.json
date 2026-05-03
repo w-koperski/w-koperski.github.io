@@ -1,0 +1,13 @@
+{
+  "title": "Movie Search",
+  "category": "vue-spa",
+  "categoryEmoji": "💚",
+  "description": {
+    "pl": "Wyszukiwarka filmów oparta na TMDB API. Wyszukiwanie po tytule, popularne filmy na stronie głównej, debounce na wejściu.",
+    "en": "A movie search app based on TMDB API. Search by title, popular movies on homepage, debounced search input."
+  },
+  "techStack": ["Vue 3", "Vite", "TMDB API"],
+  "githubUrl": "https://github.com/w-koperski/movie-search",
+  "year": 2024,
+  "featured": false
+}

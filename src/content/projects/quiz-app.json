@@ -1,0 +1,13 @@
+{
+  "title": "Quiz App",
+  "category": "rust-cli",
+  "categoryEmoji": "🦀",
+  "description": {
+    "pl": "Aplikacja quizowa o programowaniu. 10 pytań, natychmiastowe podświetlanie odpowiedzi, pasek postępu i ekran końcowy z wynikiem.",
+    "en": "A programming quiz app. 10 questions, instant answer highlighting, progress bar, and final score screen."
+  },
+  "techStack": ["Vue 3", "Vite", "CSS3"],
+  "githubUrl": "https://github.com/w-koperski/quiz-app",
+  "year": 2024,
+  "featured": false
+}

@@ -1,0 +1,13 @@
+{
+  "title": "URL Shortener",
+  "category": "react-spa",
+  "categoryEmoji": "⚛️",
+  "description": {
+    "pl": "API do skracania linków. Skracanie URL, lista skróconych linków, przekierowanie po kodzie.",
+    "en": "A URL shortening API. Shorten URLs, list shortened links, redirect by code."
+  },
+  "techStack": ["Laravel", "PHP"],
+  "githubUrl": "https://github.com/w-koperski/url-shortener",
+  "year": 2024,
+  "featured": false
+}

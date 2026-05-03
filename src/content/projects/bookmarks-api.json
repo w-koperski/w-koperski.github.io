@@ -1,0 +1,13 @@
+{
+  "title": "Bookmarks API",
+  "category": "csharp-api",
+  "categoryEmoji": "🟣",
+  "description": {
+    "pl": "API menedżera zakładek w .NET 8 Minimal API. CRUD dla zakładek, wyszukiwanie po tytule lub URL, Swagger UI.",
+    "en": "A bookmarks manager API in .NET 8 Minimal API. CRUD for bookmarks, search by title or URL, Swagger UI."
+  },
+  "techStack": ["C#", ".NET 8", "Swashbuckle"],
+  "githubUrl": "https://github.com/w-koperski/bookmarks-api",
+  "year": 2024,
+  "featured": false
+}
