@@ -1,15 +1,15 @@
 ---
-import Base from '../layouts/Base.astro';
-import Preloader from '../components/Preloader.astro';
-import { t, useTranslatedPath } from '../i18n/utils';
+import Base from '../../layouts/Base.astro';
+import Preloader from '../../components/Preloader.astro';
+import { t, useTranslatedPath } from '../../i18n/utils';
 
-const lang = 'pl';
+const lang = 'en';
 const translatePath = useTranslatedPath(lang);
 ---
 
 <Base
   title="Wojtek Koperski — Portfolio"
-  description="Uczeń technikum pasjonujący się tworzeniem oprogramowania"
+  description="A technicum student passionate about building software — from CLI tools, through web apps, to ML models."
   lang={lang}
 >
   <Preloader lang={lang} />
