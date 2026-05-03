@@ -1,0 +1,112 @@
+---
+interface Props {
+  emoji: string;
+  name: string;
+  count: number;
+}
+
+const { emoji, name, count } = Astro.props;
+
+const countLabel = count === 1 ? '1 project' : `${count} projects`;
+---
+
+<details class="category-header" open>
+  <summary class="category-header__summary">
+    <span class="category-header__title">
+      <span class="category-header__emoji">{emoji}</span>
+      <span class="category-header__name terminal-text">{name}</span>
+      <span class="category-header__count">({countLabel})</span>
+    </span>
+    <span class="category-header__chevron" aria-hidden="true">▸</span>
+  </summary>
+  <div class="category-header__separator" aria-hidden="true">
+    ════════════════════════════
+  </div>
+  <div class="category-header__content">
+    <slot />
+  </div>
+</details>
+
+<style>
+  .category-header {
+    margin-bottom: var(--space-8);
+  }
+
+  .category-header__summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-2) 0;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+  }
+
+  .category-header__summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .category-header__summary::marker {
+    display: none;
+    content: '';
+  }
+
+  .category-header__title {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-2);
+    font-family: var(--font-mono);
+  }
+
+  .category-header__emoji {
+    font-size: var(--text-xl);
+    line-height: 1;
+  }
+
+  .category-header__name {
+    font-size: var(--text-2xl);
+    font-weight: 600;
+  }
+
+  .category-header__count {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+
+  .category-header__chevron {
+    font-family: var(--font-mono);
+    color: var(--color-accent-dim);
+    font-size: var(--text-lg);
+    transition: transform 0.2s ease;
+  }
+
+  .category-header[open] .category-header__chevron {
+    transform: rotate(90deg);
+  }
+
+  .category-header__separator {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-accent-dim);
+    letter-spacing: 0.05em;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: var(--space-1) 0 var(--space-4) 0;
+    line-height: 1;
+  }
+
+  .category-header__content {
+    margin-top: var(--space-2);
+  }
+
+  @media (max-width: 768px) {
+    .category-header[open] .category-header__chevron {
+      transform: rotate(90deg);
+    }
+
+    .category-header__name {
+      font-size: var(--text-xl);
+    }
+  }
+</style>

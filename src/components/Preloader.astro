@@ -1,0 +1,112 @@
+---
+import { t } from '../i18n/utils';
+
+interface Props {
+  lang: 'pl' | 'en';
+}
+
+const { lang } = Astro.props;
+const skipLabel = t('preloader.skip', lang);
+---
+
+<div id="preloader" class="preloader" role="status" aria-live="polite" aria-label="Loading">
+  <div class="preloader__content">
+    <div id="preloader-lines" class="preloader__lines"></div>
+    <div class="preloader__cursor terminal-text cursor-blink">_</div>
+  </div>
+  <button id="preloader-skip" class="preloader__skip terminal-text" aria-label="Skip loading animation">
+    {skipLabel}
+  </button>
+</div>
+
+<script>
+  import { initPreloader } from '../scripts/preloader';
+  
+  initPreloader();
+</script>
+
+<style>
+  .preloader {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-preloader);
+    background: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-8);
+  }
+
+  .preloader__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    max-width: 32rem;
+    width: 100%;
+  }
+
+  .preloader__lines {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .preloader__line {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-terminal-green);
+    opacity: 0;
+    animation: line-appear 0.2s ease-out forwards;
+  }
+
+  .preloader__cursor {
+    font-size: var(--text-lg);
+    margin-top: var(--space-4);
+  }
+
+  .preloader__skip {
+    position: absolute;
+    bottom: var(--space-8);
+    right: var(--space-8);
+    background: none;
+    border: 1px dashed var(--color-border);
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+
+  .preloader__skip:hover {
+    color: var(--color-terminal-green);
+    border-color: var(--color-terminal-green);
+  }
+
+  .preloader__skip:focus-visible {
+    outline: 2px solid var(--color-terminal-green);
+    outline-offset: 2px;
+  }
+
+  @keyframes line-appear {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .preloader__line {
+      animation: none;
+      opacity: 1;
+    }
+
+    .preloader__cursor {
+      animation: none;
+    }
+  }
+</style>
