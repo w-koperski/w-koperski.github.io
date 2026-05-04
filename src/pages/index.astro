@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Preloader from '../components/Preloader.astro';
+import HeroScene from '../components/3d/HeroScene.jsx';
 import { t, useTranslatedPath } from '../i18n/utils';
 
 const lang = 'pl';
@@ -16,7 +17,9 @@ const translatePath = useTranslatedPath(lang);
 
   <!-- Hero Section -->
   <section class="hero">
-    <div id="hero-3d" class="hero__canvas"></div>
+    <div id="hero-3d" class="hero__canvas">
+    <HeroScene client:idle />
+  </div>
     <div class="hero__overlay">
       <p class="hero__prompt terminal-text">{t('home.hero.greeting', lang)}</p>
       <h1 class="hero__name terminal-text terminal-glow">{t('home.hero.name', lang)}</h1>
@@ -44,11 +47,17 @@ const translatePath = useTranslatedPath(lang);
     overflow: hidden;
   }
 
+.hero__canvas {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-3d-canvas);
+}
+
+@media (max-width: 768px) {
   .hero__canvas {
-    position: absolute;
-    inset: 0;
-    z-index: var(--z-3d-canvas);
+    display: none;
   }
+}
 
   .hero__overlay {
     position: relative;
