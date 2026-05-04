@@ -6,8 +6,15 @@
     "pl": "Skrypt monitorujący ceny produktów ze stron internetowych. Zapisuje historię cen do CSV i wysyła alert gdy cena spadnie poniżej progu.",
     "en": "A product price monitoring script. Saves price history to CSV and sends alerts when price drops below a threshold."
   },
-  "techStack": ["Python", "Requests", "BeautifulSoup4", "lxml", "termcolor"],
+  "techStack": [
+    "Python",
+    "Requests",
+    "BeautifulSoup4",
+    "lxml",
+    "termcolor"
+  ],
   "githubUrl": "https://github.com/w-koperski/price-watcher",
   "year": 2024,
-  "featured": false
+  "featured": false,
+  "screenshot": "/mockups/price-watcher.svg"
 }

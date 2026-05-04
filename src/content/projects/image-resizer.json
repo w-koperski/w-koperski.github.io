@@ -6,8 +6,14 @@
     "pl": "Narzędzie do masowej zmiany rozmiaru zdjęć. Obsługuje zmianę wymiarów, formatu i zachowuje proporcje.",
     "en": "A batch image resizing tool. Supports dimension changes, format conversion, and aspect ratio preservation."
   },
-  "techStack": ["Rust", "clap", "image", "indicatif"],
+  "techStack": [
+    "Rust",
+    "clap",
+    "image",
+    "indicatif"
+  ],
   "githubUrl": "https://github.com/w-koperski/image-resizer",
   "year": 2024,
-  "featured": false
+  "featured": false,
+  "screenshot": "/mockups/batch-image-resizer.svg"
 }

@@ -1,0 +1,87 @@
+---
+interface Props {
+  prompt?: string;
+  name?: string;
+}
+
+const { prompt = 'wk@portfolio:~$ whoami', name = 'Wojtek Koperski' } = Astro.props;
+---
+
+<div class="static-terminal terminal-border terminal-glow-element">
+  <div class="static-terminal__titlebar">
+    <span class="static-terminal__dot static-terminal__dot--red"></span>
+    <span class="static-terminal__dot static-terminal__dot--yellow"></span>
+    <span class="static-terminal__dot static-terminal__dot--green"></span>
+    <span class="static-terminal__title">portfolio — bash</span>
+  </div>
+  <div class="static-terminal__body">
+    <p class="static-terminal__prompt terminal-text">{prompt}</p>
+    <p class="static-terminal__output terminal-glow">{name}</p>
+    <span class="cursor-blink terminal-text">_</span>
+  </div>
+</div>
+
+<style>
+  .static-terminal {
+    max-width: 20rem;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  .static-terminal__titlebar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(74, 246, 38, 0.2);
+  }
+
+  .static-terminal__dot {
+    display: inline-block;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+  }
+
+  .static-terminal__dot--red {
+    background-color: #ff5f56;
+  }
+
+  .static-terminal__dot--yellow {
+    background-color: #ffbd2e;
+  }
+
+  .static-terminal__dot--green {
+    background-color: #27c93f;
+  }
+
+  .static-terminal__title {
+    margin-left: 0.5rem;
+    font-size: 0.875rem;
+    color: rgba(74, 246, 38, 0.7);
+    font-family: var(--font-mono);
+  }
+
+  .static-terminal__body {
+    padding: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .static-terminal__prompt {
+    margin: 0;
+    color: rgba(74, 246, 38, 0.7);
+    font-size: 0.875rem;
+  }
+
+  .static-terminal__output {
+    margin: 0.5rem 0 0 0;
+    color: var(--color-terminal-green);
+    font-size: 1rem;
+    font-weight: 500;
+  }
+</style>

@@ -6,8 +6,14 @@
     "pl": "Klasyfikator obrazów CNN w TensorFlow. Prosta sieć konwolucyjna trenowana na zbiorze CIFAR-10, klasyfikuje obrazy do 10 kategorii.",
     "en": "A CNN image classifier in TensorFlow. Simple convolutional network trained on CIFAR-10, classifies images into 10 categories."
   },
-  "techStack": ["Python", "TensorFlow", "NumPy", "matplotlib"],
+  "techStack": [
+    "Python",
+    "TensorFlow",
+    "NumPy",
+    "matplotlib"
+  ],
   "githubUrl": "https://github.com/w-koperski/image-classifier",
   "year": 2024,
-  "featured": false
+  "featured": false,
+  "screenshot": "/mockups/image-classifier-cnn.svg"
 }

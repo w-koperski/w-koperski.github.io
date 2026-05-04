@@ -6,8 +6,13 @@
     "pl": "API planera zadań w ASP.NET Core 8. Pełny CRUD dla zadań, Swagger UI.",
     "en": "A task scheduler API in ASP.NET Core 8. Full CRUD for tasks, Swagger UI."
   },
-  "techStack": ["C#", "ASP.NET Core 8", "Swashbuckle"],
+  "techStack": [
+    "C#",
+    "ASP.NET Core 8",
+    "Swashbuckle"
+  ],
   "githubUrl": "https://github.com/w-koperski/task-scheduler-api",
   "year": 2024,
-  "featured": false
+  "featured": false,
+  "screenshot": "/mockups/task-scheduler-api.svg"
 }

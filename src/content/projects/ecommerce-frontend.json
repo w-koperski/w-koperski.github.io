@@ -6,8 +6,12 @@
     "pl": "Makieta frontendu sklepu internetowego. Wyświetlanie produktów, filtrowanie po kategoriach, wyszukiwanie, koszyk z zapisem w localStorage.",
     "en": "An e-commerce frontend mockup. Product display, category filtering, search, shopping cart with localStorage persistence."
   },
-  "techStack": ["Vue 3", "Vite"],
+  "techStack": [
+    "Vue 3",
+    "Vite"
+  ],
   "githubUrl": "https://github.com/w-koperski/ecommerce-frontend",
   "year": 2024,
-  "featured": false
+  "featured": false,
+  "screenshot": "/mockups/e-commerce-frontend.svg"
 }

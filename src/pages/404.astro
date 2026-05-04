@@ -1,12 +1,13 @@
 ---
 import Base from '../layouts/Base.astro';
-import { getLangFromUrl } from '../i18n/utils';
+import { t, getLangFromUrl, useTranslatedPath } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
 const path = Astro.url.pathname;
 ---
 
-<Base title="404 — Not Found" lang={lang}>
+<Base title={t('404.title', lang)} lang={lang}>
   <section class="error-page">
     <div class="error-page__terminal terminal-border terminal-glow-element">
       <div class="error-page__header">
@@ -15,10 +16,10 @@ const path = Astro.url.pathname;
       </div>
       <div class="error-page__output">
         <p class="error-page__code terminal-text terminal-glow">404</p>
-        <p class="error-page__msg">command not found: <code>{path}</code></p>
-        <p class="error-page__hint">The page you are looking for does not exist or has been moved.</p>
+        <p class="error-page__msg">{t('404.message', lang)} <code>{path}</code></p>
+        <p class="error-page__hint">{t('404.hint', lang)}</p>
       </div>
-      <a href="/" class="error-page__home terminal-border">
+      <a href={translatePath('/')} class="error-page__home terminal-border">
         wk@portfolio:~$ cd ~
       </a>
     </div>

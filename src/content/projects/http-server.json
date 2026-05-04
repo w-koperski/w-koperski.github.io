@@ -6,8 +6,11 @@
     "pl": "Prosty serwer HTTP napisany od zera w Ruście bez zewnętrznych bibliotek. Serwuje pliki statyczne z katalogu.",
     "en": "A simple HTTP server written from scratch in Rust without external libraries. Serves static files from a directory."
   },
-  "techStack": ["Rust"],
+  "techStack": [
+    "Rust"
+  ],
   "githubUrl": "https://github.com/w-koperski/http-server",
   "year": 2024,
-  "featured": false
+  "featured": false,
+  "screenshot": "/mockups/http-server.svg"
 }

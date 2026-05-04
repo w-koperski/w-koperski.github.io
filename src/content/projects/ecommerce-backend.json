@@ -6,8 +6,12 @@
     "pl": "REST API sklepu internetowego napisane w Laravel 10. Zarządzanie produktami i zamówieniami ze statusem zamówień.",
     "en": "REST API for an e-commerce store written in Laravel 10. Manage products and orders with order status management."
   },
-  "techStack": ["Laravel 10", "PHP"],
+  "techStack": [
+    "Laravel 10",
+    "PHP"
+  ],
   "githubUrl": "https://github.com/w-koperski/ecommerce-backend",
   "year": 2024,
-  "featured": false
+  "featured": false,
+  "screenshot": "/mockups/e-commerce-backend.svg"
 }

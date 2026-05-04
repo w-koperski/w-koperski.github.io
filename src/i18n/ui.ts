@@ -29,6 +29,10 @@ export const ui = {
     'footer.built': 'Zbudowane z Astro',
     'preloader.skip': '[POMIŃ] →',
     'lang.switch': 'EN 🇬🇧',
+    '404.title': '404 — Nie znaleziono',
+    '404.message': 'nie znaleziono polecenia:',
+    '404.hint': 'Strona, której szukasz, nie istnieje lub została przeniesiona.',
+    '404.home': 'wróć na stronę główną',
   },
   en: {
     'nav.home': 'Home',
@@ -53,5 +57,9 @@ export const ui = {
     'footer.built': 'Built with Astro',
     'preloader.skip': '[SKIP] →',
     'lang.switch': 'PL 🇵🇱',
+    '404.title': '404 — Not Found',
+    '404.message': 'command not found:',
+    '404.hint': 'The page you are looking for does not exist or has been moved.',
+    '404.home': 'go home',
   },
 } as const;

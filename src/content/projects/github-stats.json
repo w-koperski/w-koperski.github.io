@@ -6,8 +6,13 @@
     "pl": "Wyświetla statystyki użytkownika GitHub: repozytoria, języki, obserwujących.",
     "en": "Displays GitHub user statistics: repositories, languages, followers."
   },
-  "techStack": ["React", "Vite", "Recharts"],
+  "techStack": [
+    "React",
+    "Vite",
+    "Recharts"
+  ],
   "githubUrl": "https://github.com/w-koperski/github-stats",
   "year": 2024,
-  "featured": false
+  "featured": false,
+  "screenshot": "/mockups/github-stats-dashboard.svg"
 }

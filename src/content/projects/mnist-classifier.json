@@ -6,8 +6,14 @@
     "pl": "Klasyfikator cyfr MNIST w PyTorch. Prosta sieć feedforward (784→128→64→10), osiąga ~97% dokładności po 3 epokach.",
     "en": "MNIST digit classifier in PyTorch. Simple feedforward network (784→128→64→10), achieves ~97% accuracy after 3 epochs."
   },
-  "techStack": ["Python", "PyTorch", "torchvision", "matplotlib"],
+  "techStack": [
+    "Python",
+    "PyTorch",
+    "torchvision",
+    "matplotlib"
+  ],
   "githubUrl": "https://github.com/w-koperski/mnist-classifier",
   "year": 2024,
-  "featured": false
+  "featured": false,
+  "screenshot": "/mockups/mnist-classifier.svg"
 }
