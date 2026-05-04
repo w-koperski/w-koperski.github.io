@@ -72,3 +72,40 @@ img {
   height: auto;
   display: block;
 }
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-4);
+  background: var(--color-terminal-green);
+  color: var(--color-bg);
+  padding: var(--space-2) var(--space-4);
+  z-index: 9999;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+
+.skip-link:focus {
+  top: var(--space-4);
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--color-terminal-green);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Global reduced motion override */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

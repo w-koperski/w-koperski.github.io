@@ -29,9 +29,24 @@ const { title, description = '', lang = 'pl' } = Astro.props;
     />
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Wojtek Koperski — Portfolio" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description || 'Uczeń technikum pasjonujący się tworzeniem oprogramowania'} />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:locale" content={lang === 'pl' ? 'pl_PL' : 'en_US'} />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description || 'Portfolio Wojtka Koperskiego'} />
+    <!-- Canonical + Favicon -->
+    <link rel="canonical" href={Astro.url.href} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <ViewTransitions />
   </head>
   <body class="bg-[var(--color-bg)] text-[var(--color-text)] font-sans antialiased">
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <Nav lang={lang} currentPath={Astro.url.pathname} />
     <main id="main-content">
       <slot />

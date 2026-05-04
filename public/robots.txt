@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://w-koperski.github.io/sitemap-index.xml
