@@ -1,0 +1,250 @@
+---
+import Base from '../../layouts/Base.astro';
+import { t } from '../../i18n/utils';
+
+const lang = 'en';
+const pageTitle = t('skills.title', lang);
+
+const skills = {
+  languages: {
+    label: 'Languages',
+    items: [
+      { name: 'TypeScript', pct: 85 },
+      { name: 'Python', pct: 75 },
+      { name: 'Rust', pct: 65 },
+      { name: 'C++', pct: 55 },
+      { name: 'C#', pct: 60 },
+    ],
+  },
+  frameworks: {
+    label: 'Frameworks',
+    items: [
+      { name: 'Vue 3', pct: 80 },
+      { name: 'React', pct: 75 },
+      { name: 'Laravel', pct: 60 },
+    ],
+  },
+  tools: {
+    label: 'Tools',
+    items: [
+      { name: 'Docker', pct: 70 },
+      { name: 'Git', pct: 85 },
+      { name: 'Linux', pct: 75 },
+    ],
+  },
+  domains: {
+    label: 'Domains',
+    items: [
+      { name: 'CLI tools', pct: 85 },
+      { name: 'REST APIs', pct: 70 },
+      { name: 'ML', pct: 55 },
+    ],
+  },
+};
+
+const categories = Object.entries(skills);
+const lastCategoryIdx = categories.length - 1;
+---
+
+<Base title={pageTitle} lang={lang} description="Skills — Wojtek Koperski, overview of technical competencies.">
+  <section class="skills-tree" aria-label="Skills">
+    <div class="skills-tree__card terminal-border terminal-glow-element">
+      <p class="skills-tree__prompt terminal-text terminal-glow">{pageTitle}</p>
+
+      <pre class="skills-tree__output" aria-hidden="true"><code>{categories.map(([key, cat], ci) => {
+        const prefix = ci === lastCategoryIdx ? '└──' : '├──';
+        const pipe = ci === lastCategoryIdx ? '    ' : '│   ';
+        const lastItemIdx = cat.items.length - 1;
+
+        const headerLine = `${prefix} ${cat.label}/`;
+        const itemLines = cat.items.map((item, ii) => {
+          const itemPrefix = ii === lastItemIdx ? '└──' : '├──';
+          const filled = '█'.repeat(Math.round(item.pct / 5));
+          const empty = '░'.repeat(20 - filled.length);
+          return `${pipe}${itemPrefix} ${item.name} ${filled}${empty} ${item.pct}%`;
+        });
+
+        return [headerLine, ...itemLines].join('\n');
+      }).join('\n')}</code></pre>
+
+      <div class="skills-tree__visual" role="list" aria-label="Skills tree">
+        {categories.map(([key, cat], ci) => {
+          const isLastCat = ci === lastCategoryIdx;
+          const lastItemIdx = cat.items.length - 1;
+
+          return (
+            <div class="skills-tree__category" role="listitem">
+              <div class="skills-tree__cat-row">
+                <span class="skills-tree__pipe" aria-hidden="true">
+                  {isLastCat ? '└──' : '├──'}
+                </span>
+                <span class="skills-tree__cat-label terminal-text">{cat.label}/</span>
+              </div>
+
+              {cat.items.map((item, ii) => {
+                const isLastItem = ii === lastItemIdx;
+                return (
+                  <div class="skills-tree__item" role="listitem">
+                    <span class="skills-tree__pipe skills-tree__pipe--vertical" aria-hidden="true">
+                      {isLastCat ? '    ' : '│   '}
+                    </span>
+                    <span class="skills-tree__pipe" aria-hidden="true">
+                      {isLastItem ? '└──' : '├──'}
+                    </span>
+                    <span class="skills-tree__item-name">{item.name}</span>
+                    <div
+                      class="skills-tree__bar"
+                      role="progressbar"
+                      aria-valuenow={item.pct}
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                      aria-label={`${item.name}: ${item.pct}%`}
+                    >
+                      <div
+                        class="skills-tree__bar-fill"
+                        style={`width: ${item.pct}%`}
+                      />
+                    </div>
+                    <span class="skills-tree__pct">{item.pct}%</span>
+                  </div>
+                );
+              })}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .skills-tree {
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: var(--space-16) var(--space-6) var(--space-12);
+  }
+
+  .skills-tree__card {
+    background: var(--color-bg-card);
+    border-radius: var(--radius-md);
+    padding: var(--space-8);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skills-tree__prompt {
+    font-family: var(--font-mono);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    margin-bottom: var(--space-6);
+  }
+
+  .skills-tree__output {
+    display: none;
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+    color: var(--color-text);
+    margin: 0;
+    white-space: pre;
+    overflow-x: auto;
+  }
+
+  .skills-tree__visual {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .skills-tree__category {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .skills-tree__cat-row {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-2);
+  }
+
+  .skills-tree__pipe {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-accent-dim);
+    white-space: pre;
+    user-select: none;
+    flex-shrink: 0;
+  }
+
+  .skills-tree__pipe--vertical {
+    /* This is the vertical continuation pipe from the parent category */
+  }
+
+  .skills-tree__cat-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    font-weight: 600;
+  }
+
+  .skills-tree__item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-1) 0;
+  }
+
+  .skills-tree__item-name {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-text);
+    min-width: 7rem;
+    white-space: nowrap;
+  }
+
+  .skills-tree__bar {
+    flex: 1;
+    height: var(--space-3);
+    background: var(--color-border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    min-width: 8rem;
+    max-width: 14rem;
+  }
+
+  .skills-tree__bar-fill {
+    height: 100%;
+    background: var(--color-terminal-green);
+    border-radius: var(--radius-sm);
+    transition: width 0.6s ease-out;
+  }
+
+  .skills-tree__pct {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-accent-dim);
+    min-width: 2.5rem;
+    text-align: right;
+  }
+
+  @media (max-width: 768px) {
+    .skills-tree {
+      padding: var(--space-10) var(--space-4) var(--space-8);
+    }
+
+    .skills-tree__card {
+      padding: var(--space-5);
+    }
+
+    .skills-tree__visual {
+      display: none;
+    }
+
+    .skills-tree__output {
+      display: block;
+    }
+
+    .skills-tree__prompt {
+      font-size: var(--text-base);
+    }
+  }
+</style>

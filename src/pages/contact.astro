@@ -1,0 +1,156 @@
+---
+import Base from '../layouts/Base.astro';
+import { t } from '../i18n/utils';
+
+const lang = 'pl';
+const pageTitle = t('contact.title', lang);
+---
+
+<Base title={pageTitle} lang={lang} description="Kontakt — Wojtek Koperski. Email i GitHub.">
+  <section class="contact">
+    <div class="contact__card terminal-border terminal-glow-element">
+      <div class="contact__prompt terminal-text">
+        wk@portfolio:~$ cat contact.txt
+      </div>
+      
+      <div class="contact__separator">
+        ─────────────────────────────
+      </div>
+
+      <div class="contact__content">
+        <div class="contact__item">
+          <span class="contact__label">{t('contact.email', lang)}:</span>
+          <a href="mailto:koperski.wojciech.06@gmail.com" class="contact__link terminal-text">
+            koperski.wojciech.06@gmail.com
+          </a>
+        </div>
+        
+        <div class="contact__item">
+          <span class="contact__label">{t('contact.github', lang)}:</span>
+          <a href="https://github.com/w-koperski" target="_blank" rel="noopener noreferrer" class="contact__link terminal-text">
+            github.com/w-koperski
+          </a>
+        </div>
+      </div>
+
+      <div class="contact__separator">
+        ─────────────────────────────
+      </div>
+
+      <div class="contact__farewell terminal-text">
+        wk@portfolio:~$ echo "{t('contact.farewell', lang)}"
+      </div>
+      
+      <div class="contact__output">
+        {t('contact.farewell', lang)}
+      </div>
+
+      <div class="contact__cursor">
+        wk@portfolio:~$ <span class="cursor-blink">_</span>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .contact {
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: var(--space-16) var(--space-6) var(--space-12);
+  }
+
+  .contact__card {
+    background: var(--color-bg-card);
+    border-radius: var(--radius-md);
+    padding: var(--space-8);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact__prompt {
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    font-weight: 600;
+    margin-bottom: var(--space-4);
+  }
+
+  .contact__separator {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-accent-dim);
+    margin: var(--space-4) 0;
+    letter-spacing: -0.02em;
+  }
+
+  .contact__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin: var(--space-4) 0;
+  }
+
+  .contact__item {
+    display: flex;
+    gap: var(--space-3);
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .contact__label {
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    color: var(--color-text);
+  }
+
+  .contact__link {
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+  }
+
+  .contact__link:hover {
+    color: var(--color-accent-bright);
+    border-bottom-color: var(--color-accent);
+  }
+
+  .contact__farewell {
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    font-weight: 600;
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-2);
+  }
+
+  .contact__output {
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-4);
+    padding-left: var(--space-2);
+  }
+
+  .contact__cursor {
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+  }
+
+  @media (max-width: 768px) {
+    .contact {
+      padding: var(--space-10) var(--space-4) var(--space-8);
+    }
+
+    .contact__card {
+      padding: var(--space-5);
+    }
+
+    .contact__item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

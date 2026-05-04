@@ -1,0 +1,87 @@
+---
+import Base from '../../layouts/Base.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import CategoryHeader from '../../components/CategoryHeader.astro';
+import { getCollection } from 'astro:content';
+import { t } from '../../i18n/utils';
+import { categories } from '../../i18n/categories';
+
+const lang = 'en';
+const allProjects = await getCollection('projects');
+
+const projectsByCategory = categories
+  .map((cat) => ({
+    ...cat,
+    displayName: cat.name.en,
+    projects: allProjects
+      .filter((p) => p.data.category === cat.slug)
+      .sort((a, b) => a.data.title.localeCompare(b.data.title)),
+  }))
+  .filter((cat) => cat.projects.length > 0);
+---
+
+<Base title={t('projects.title', lang)} lang={lang} description="All projects by Wojtek Koperski — CLI tools, web apps, ML models and more.">
+  <section class="projects-page">
+    <h1 class="projects-page__title terminal-text">{t('projects.title', lang)}</h1>
+    <p class="projects-page__count">{allProjects.length} {t('projects.count', lang)}</p>
+
+    {projectsByCategory.map((cat) => (
+      <CategoryHeader emoji={cat.emoji} name={cat.displayName} count={cat.projects.length}>
+        <div class="projects-page__grid">
+          {cat.projects.map((project) => (
+            <ProjectCard
+              title={project.data.title}
+              category={project.data.category}
+              categoryEmoji={project.data.categoryEmoji}
+              description={project.data.description.en}
+              techStack={project.data.techStack}
+              githubUrl={project.data.githubUrl}
+              demoUrl={project.data.demoUrl}
+              screenshot={project.data.screenshot}
+              year={project.data.year}
+              featured={project.data.featured}
+            />
+          ))}
+        </div>
+      </CategoryHeader>
+    ))}
+  </section>
+</Base>
+
+<style>
+  .projects-page {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: var(--space-8) var(--space-6);
+  }
+
+  .projects-page__title {
+    font-family: var(--font-mono);
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+  }
+
+  .projects-page__count {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-8);
+  }
+
+  .projects-page__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    gap: var(--space-6);
+  }
+
+  @media (max-width: 768px) {
+    .projects-page {
+      padding: var(--space-6) var(--space-4);
+    }
+
+    .projects-page__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
