@@ -13,5 +13,9 @@
   "githubUrl": "https://github.com/w-koperski/task-manager",
   "year": 2024,
   "featured": false,
-  "screenshot": "/mockups/task-manager.svg"
+  "screenshot": "/mockups/task-manager.svg",
+  "previewData": {
+    "type": "browser",
+    "screenshots": ["/mockups/task-manager.svg"]
+  }
 }

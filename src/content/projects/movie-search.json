@@ -14,5 +14,9 @@
   "githubUrl": "https://github.com/w-koperski/movie-search",
   "year": 2024,
   "featured": false,
-  "screenshot": "/mockups/movie-search.svg"
+  "screenshot": "/mockups/movie-search.svg",
+  "previewData": {
+    "type": "browser",
+    "screenshots": ["/mockups/movie-search.svg"]
+  }
 }

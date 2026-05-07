@@ -9,12 +9,37 @@
   "techStack": [
     "Python",
     "Requests",
-    "BeautifulSoup4",
+    "BeautifulSoup",
     "lxml",
-    "termcolor"
+    "Termcolor"
   ],
   "githubUrl": "https://github.com/w-koperski/price-watcher",
   "year": 2024,
   "featured": false,
-  "screenshot": "/mockups/price-watcher.svg"
+  "screenshot": "/mockups/price-watcher.svg",
+  "previewData": {
+    "type": "terminal",
+    "commands": {
+      "pl": [
+        {
+          "command": "price-watcher --track \"RTX 4070\" --threshold 2200",
+          "output": "🔍 Śledzę: RTX 4070 | Próg: 2200 zł | Obecna cena: 2499 zł"
+        },
+        {
+          "command": "price-watcher --history \"RTX 4070\"",
+          "output": "📅 Historia cen RTX 4070:\n  2024-01-10: 2699 zł\n  2024-01-20: 2549 zł\n  2024-02-01: 2499 zł\n  🔔 Najniższa cena! Poniżej progu 2200 zł? Nie"
+        }
+      ],
+      "en": [
+        {
+          "command": "price-watcher --track \"RTX 4070\" --threshold 2200",
+          "output": "🔍 Tracking: RTX 4070 | Threshold: 2200 PLN | Current price: 2499 PLN"
+        },
+        {
+          "command": "price-watcher --history \"RTX 4070\"",
+          "output": "📅 Price history for RTX 4070:\n  2024-01-10: 2699 PLN\n  2024-01-20: 2549 PLN\n  2024-02-01: 2499 PLN\n  🔔 Lowest price! Below threshold 2200? No"
+        }
+      ]
+    }
+  }
 }

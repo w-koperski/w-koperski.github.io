@@ -1,0 +1,90 @@
+---
+import { t } from '../../i18n/utils';
+
+interface Props {
+  title: string;
+  category: string;
+  categoryEmoji: string;
+  year: number;
+  description: string;
+  lang: string;
+}
+
+const { title, category, categoryEmoji, year, description, lang } = Astro.props;
+---
+
+<section class="detail-hero">
+  <a href={lang === 'en' ? '/en/projects' : '/projects'} class="detail-back">
+    {t('detail.back', lang as 'pl' | 'en')}
+  </a>
+  <div class="detail-hero__meta">
+    <span class="detail-hero__badge">{categoryEmoji} {category}</span>
+    <span class="detail-hero__year">{year}</span>
+  </div>
+  <h1 class="detail-hero__title terminal-text">{title}</h1>
+  <p class="detail-hero__desc">{description}</p>
+</section>
+
+<style>
+  .detail-hero {
+    margin-bottom: var(--space-12);
+  }
+
+  .detail-back {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-terminal-green);
+    text-decoration: none;
+    margin-bottom: var(--space-6);
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+  }
+
+  .detail-back:hover {
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(74, 246, 38, 0.5);
+  }
+
+  .detail-hero__meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+  }
+
+  .detail-hero__badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+
+  .detail-hero__year {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+
+  .detail-hero__title {
+    font-family: var(--font-mono);
+    font-size: var(--text-4xl);
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+    line-height: var(--leading-tight);
+  }
+
+  .detail-hero__desc {
+    font-family: var(--font-sans);
+    font-size: var(--text-lg);
+    color: var(--color-text);
+    line-height: var(--leading-relaxed);
+    max-width: 40rem;
+  }
+
+  @media (max-width: 768px) {
+    .detail-hero__title {
+      font-size: var(--text-3xl);
+    }
+  }
+</style>

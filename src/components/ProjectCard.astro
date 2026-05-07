@@ -1,7 +1,11 @@
 ---
+import TerminalTyping from './previews/TerminalTyping.jsx';
+import BrowserScreenshot from './previews/BrowserScreenshot.jsx';
+import ApiMockPanel from './previews/ApiMockPanel.jsx';
+import MetricsDashboard from './previews/MetricsDashboard.jsx';
+
 interface Props {
   title: string;
-  category: string;
   categoryEmoji: string;
   description: string;
   techStack: string[];
@@ -10,11 +14,13 @@ interface Props {
   screenshot?: string;
   year: number;
   featured?: boolean;
+  slug: string;
+  previewData?: any;
+  lang?: string;
 }
 
 const {
   title,
-  category,
   categoryEmoji,
   description,
   techStack,
@@ -23,10 +29,18 @@ const {
   screenshot,
   year,
   featured = false,
+  slug,
+  previewData,
+  lang = 'pl',
 } = Astro.props;
+
+const href = lang === 'en' ? `/en/projects/${slug}` : `/projects/${slug}`;
 ---
 
 <article class:list={['project-card', 'terminal-border', { 'project-card--featured': featured }]}>
+  {/* Stretched link — covers the entire card */}
+  <a href={href} class="project-card__stretched-link" aria-label={title}></a>
+
   {featured && (
     <span class="project-card__badge" aria-label="Featured">★</span>
   )}
@@ -38,23 +52,34 @@ const {
 
   <p class="project-card__desc">{description}</p>
 
-  {screenshot ? (
-    <div class="project-card__media">
-      <img
-        src={screenshot}
-        alt={`${title} screenshot`}
-        class="project-card__screenshot"
-        loading="lazy"
-      />
-    </div>
-  ) : (
-    <div class="project-card__media project-card__media--placeholder" aria-hidden="true">
-      <svg class="project-card__placeholder-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="4 17 10 11 4 5"></polyline>
-        <line x1="12" y1="19" x2="20" y2="19"></line>
-      </svg>
-    </div>
-  )}
+  {/* Type-specific preview based on category */}
+  <div class="project-card__preview">
+    {previewData?.type === 'terminal' ? (
+      <TerminalTyping commands={previewData.commands} lang={lang} client:visible />
+    ) : previewData?.type === 'browser' ? (
+      <BrowserScreenshot screenshots={previewData.screenshots} liveUrl={previewData.liveUrl} title={title} client:visible />
+    ) : previewData?.type === 'api' ? (
+      <ApiMockPanel endpoints={previewData.endpoints} lang={lang} client:visible />
+    ) : previewData?.type === 'metrics' ? (
+      <MetricsDashboard epochs={previewData.epochs} accuracyData={previewData.accuracyData} lossData={previewData.lossData} finalAccuracy={previewData.finalAccuracy} samplePredictions={previewData.samplePredictions} client:visible />
+    ) : screenshot ? (
+      <div class="project-card__media">
+        <img
+          src={screenshot}
+          alt={`${title} screenshot`}
+          class="project-card__screenshot"
+          loading="lazy"
+        />
+      </div>
+    ) : (
+      <div class="project-card__media project-card__media--placeholder" aria-hidden="true">
+        <svg class="project-card__placeholder-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="4 17 10 11 4 5"></polyline>
+          <line x1="12" y1="19" x2="20" y2="19"></line>
+        </svg>
+      </div>
+    )}
+  </div>
 
   <ul class="project-card__stack" role="list">
     {techStack.map((tech) => (
@@ -108,7 +133,22 @@ const {
     flex-direction: column;
     gap: var(--space-3);
     transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-    max-width: 28rem;
+    max-width: 36rem;
+  }
+
+  /* Stretched link — makes entire card clickable */
+  .project-card__stretched-link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .project-card__stretched-link:focus-visible {
+    outline: 2px solid var(--color-terminal-green);
+    outline-offset: 2px;
+    border-radius: inherit;
   }
 
   .project-card:hover {
@@ -136,6 +176,7 @@ const {
     padding: var(--space-1) var(--space-2);
     border-radius: var(--radius-sm);
     line-height: 1;
+    z-index: 2;
   }
 
   /* Header: emoji + title */
@@ -167,7 +208,22 @@ const {
     margin-bottom: 0;
   }
 
-  /* Media / screenshot */
+/* Preview wrapper — 16:9 aspect ratio container for all preview types */
+.project-card__preview {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  max-height: 280px;
+}
+
+@media (min-width: 768px) {
+  .project-card__preview {
+    max-height: 320px;
+  }
+}
+
+  /* Media / screenshot fallback */
   .project-card__media {
     aspect-ratio: 16 / 9;
     border-radius: var(--radius-sm);
@@ -227,8 +283,10 @@ const {
     line-height: var(--leading-normal);
   }
 
-  /* Footer: links + year */
+  /* Footer: links + year — sits above stretched link */
   .project-card__footer {
+    position: relative;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: space-between;

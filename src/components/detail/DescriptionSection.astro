@@ -1,0 +1,43 @@
+---
+interface Props {
+  longDescription?: { pl: string; en: string };
+  shortDescription: string;
+  lang: string;
+}
+
+const { longDescription, shortDescription, lang } = Astro.props;
+
+const content = longDescription
+  ? longDescription[lang as 'pl' | 'en']
+  : shortDescription;
+
+const sectionTitle = lang === 'en' ? 'Description' : 'Opis';
+
+if (!content) return;
+---
+
+<section class="detail-description">
+  <h2 class="detail-section__title terminal-text">{sectionTitle}</h2>
+  <p class="detail-description__text">{content}</p>
+</section>
+
+<style>
+  .detail-description {
+    margin-bottom: var(--space-12);
+  }
+
+  .detail-section__title {
+    font-family: var(--font-mono);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    margin-bottom: var(--space-4);
+  }
+
+  .detail-description__text {
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    color: var(--color-text);
+    line-height: var(--leading-relaxed);
+    max-width: 48rem;
+  }
+</style>

@@ -7,11 +7,36 @@
     "en": "Converts PPM images into ASCII art. Written in C++17."
   },
   "techStack": [
-    "C++17",
+    "C++",
     "CMake"
   ],
   "githubUrl": "https://github.com/w-koperski/ascii-art",
   "year": 2024,
   "featured": false,
-  "screenshot": "/mockups/ascii-art-generator.svg"
+  "screenshot": "/mockups/ascii-art-generator.svg",
+  "previewData": {
+    "type": "terminal",
+    "commands": {
+      "pl": [
+        {
+          "command": "./ascii-art --input landscape.ppm --width 80",
+          "output": "🎨 Konwersja landscape.ppm (320x240 → 80x30 znaków):\n  @@@#########=====-----.....   \n  ######========-----.......    \n  =======------........        "
+        },
+        {
+          "command": "./ascii-art --input photo.ppm --charset simple",
+          "output": "📊 Zestaw znaków: simple (10 poziomów)\n  ████████████▓▓▓▓▓▓▓░░░░   ...\n  ✅ Zapisano do photo_ascii.txt"
+        }
+      ],
+      "en": [
+        {
+          "command": "./ascii-art --input landscape.ppm --width 80",
+          "output": "🎨 Converting landscape.ppm (320x240 → 80x30 chars):\n  @@@#########=====-----.....   \n  ######========-----.......    \n  =======------........        "
+        },
+        {
+          "command": "./ascii-art --input photo.ppm --charset simple",
+          "output": "📊 Charset: simple (10 levels)\n  ████████████▓▓▓▓▓▓▓░░░░   ...\n  ✅ Saved to photo_ascii.txt"
+        }
+      ]
+    }
+  }
 }

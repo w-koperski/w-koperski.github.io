@@ -7,12 +7,37 @@
     "en": "Film ranking API with rating system written in Laravel 11. Users can add films and rate them, automatic average calculation."
   },
   "techStack": [
-    "Laravel 11",
+    "Laravel",
     "PHP",
     "Tailwind CSS"
   ],
   "githubUrl": "https://github.com/w-koperski/film-ranking",
   "year": 2024,
   "featured": false,
-  "screenshot": "/mockups/film-ranking.svg"
+  "screenshot": "/mockups/film-ranking.svg",
+  "previewData": {
+    "type": "api",
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/api/films",
+        "description": {
+          "pl": "Lista filmów",
+          "en": "List films"
+        },
+        "requestExample": "{\"sort\":\"rating\",\"genre\":\"action\"}",
+        "responseExample": "{\"data\":[{\"id\":1,\"title\":\"Inception\",\"rating\":9.1,\"votes\":2341000}]}"
+      },
+      {
+        "method": "POST",
+        "path": "/api/films/{id}/rate",
+        "description": {
+          "pl": "Oceń film",
+          "en": "Rate film"
+        },
+        "requestExample": "{\"rating\":9,\"review\":\"Amazing film!\"}",
+        "responseExample": "{\"film_id\":1,\"user_rating\":9,\"new_avg\":9.08}"
+      }
+    ]
+  }
 }

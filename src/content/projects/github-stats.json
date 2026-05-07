@@ -14,5 +14,9 @@
   "githubUrl": "https://github.com/w-koperski/github-stats",
   "year": 2024,
   "featured": false,
-  "screenshot": "/mockups/github-stats-dashboard.svg"
+  "screenshot": "/mockups/github-stats-dashboard.svg",
+  "previewData": {
+    "type": "browser",
+    "screenshots": ["/mockups/github-stats-dashboard.svg"]
+  }
 }

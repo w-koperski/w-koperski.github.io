@@ -1,7 +1,7 @@
 {
   "title": "Quiz App",
-  "category": "rust-cli",
-  "categoryEmoji": "🦀",
+  "category": "vue-spa",
+  "categoryEmoji": "💚",
   "description": {
     "pl": "Aplikacja quizowa o programowaniu. 10 pytań, natychmiastowe podświetlanie odpowiedzi, pasek postępu i ekran końcowy z wynikiem.",
     "en": "A programming quiz app. 10 questions, instant answer highlighting, progress bar, and final score screen."
@@ -9,10 +9,16 @@
   "techStack": [
     "Vue 3",
     "Vite",
-    "CSS3"
+    "CSS"
   ],
   "githubUrl": "https://github.com/w-koperski/quiz-app",
   "year": 2024,
   "featured": false,
-  "screenshot": "/mockups/quiz-app.svg"
+  "screenshot": "/mockups/quiz-app.svg",
+  "previewData": {
+    "type": "browser",
+    "screenshots": [
+      "/mockups/quiz-app.svg"
+    ]
+  }
 }

@@ -7,11 +7,15 @@
     "en": "An interactive Kanban board. Three columns (To Do, In Progress, Done), drag and drop, LocalStorage persistence."
   },
   "techStack": [
-    "React",
+    "Vue 3",
     "Vite"
   ],
   "githubUrl": "https://github.com/w-koperski/kanban-board",
   "year": 2024,
   "featured": false,
-  "screenshot": "/mockups/kanban-board.svg"
+  "screenshot": "/mockups/kanban-board.svg",
+  "previewData": {
+    "type": "browser",
+    "screenshots": ["/mockups/kanban-board.svg"]
+  }
 }

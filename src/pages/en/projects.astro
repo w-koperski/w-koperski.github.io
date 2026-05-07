@@ -20,7 +20,7 @@ const projectsByCategory = categories
   .filter((cat) => cat.projects.length > 0);
 ---
 
-<Base title={t('projects.title', lang)} lang={lang} description="All projects by Wojtek Koperski — CLI tools, web apps, ML models and more.">
+<Base title={t('projects.title', lang)} lang={lang} description="All projects by Wojciech Koperski — CLI tools, web apps, ML models and more.">
   <section class="projects-page">
     <h1 class="projects-page__title terminal-text">{t('projects.title', lang)}</h1>
     <p class="projects-page__count">{allProjects.length} {t('projects.count', lang)}</p>
@@ -29,18 +29,20 @@ const projectsByCategory = categories
       <CategoryHeader emoji={cat.emoji} name={cat.displayName} count={cat.projects.length}>
         <div class="projects-page__grid">
           {cat.projects.map((project) => (
-            <ProjectCard
-              title={project.data.title}
-              category={project.data.category}
-              categoryEmoji={project.data.categoryEmoji}
-              description={project.data.description.en}
-              techStack={project.data.techStack}
-              githubUrl={project.data.githubUrl}
-              demoUrl={project.data.demoUrl}
-              screenshot={project.data.screenshot}
-              year={project.data.year}
-              featured={project.data.featured}
-            />
+        <ProjectCard
+          title={project.data.title}
+          categoryEmoji={project.data.categoryEmoji}
+          description={project.data.description.en}
+          techStack={project.data.techStack}
+          githubUrl={project.data.githubUrl}
+          demoUrl={project.data.demoUrl}
+          screenshot={project.data.screenshot}
+          year={project.data.year}
+          featured={project.data.featured}
+          slug={project.id}
+          previewData={project.data.previewData}
+          lang="en"
+        />
           ))}
         </div>
       </CategoryHeader>
@@ -71,7 +73,7 @@ const projectsByCategory = categories
 
   .projects-page__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
     gap: var(--space-6);
   }
 

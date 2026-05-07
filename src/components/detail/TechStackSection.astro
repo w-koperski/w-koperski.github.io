@@ -1,0 +1,58 @@
+---
+import { t } from '../../i18n/utils';
+
+interface Props {
+  techStack: string[];
+  lang: string;
+}
+
+const { techStack, lang } = Astro.props;
+
+if (techStack.length === 0) return;
+---
+
+<section class="detail-tech">
+  <h2 class="detail-section__title terminal-text">{t('detail.techStack', lang as 'pl' | 'en')}</h2>
+  <ul class="detail-tech__list">
+    {techStack.map((tech: string) => (
+      <li class="detail-tech__tag"><code>{tech}</code></li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .detail-tech {
+    margin-bottom: var(--space-12);
+  }
+
+  .detail-section__title {
+    font-family: var(--font-mono);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    margin-bottom: var(--space-4);
+  }
+
+  .detail-tech__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .detail-tech__tag {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    background-color: rgba(74, 246, 38, 0.08);
+    border: 1px solid rgba(74, 246, 38, 0.2);
+    border-radius: var(--radius-sm);
+    padding: var(--space-1) var(--space-3);
+  }
+
+  .detail-tech__tag code {
+    color: var(--color-terminal-green);
+    font-family: var(--font-mono);
+    font-size: inherit;
+  }
+</style>

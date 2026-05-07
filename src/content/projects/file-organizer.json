@@ -1,18 +1,43 @@
 {
   "title": "File Organizer",
-  "category": "python-cli",
-  "categoryEmoji": "🐍",
+  "category": "rust-cli",
+  "categoryEmoji": "🦀",
   "description": {
     "pl": "Automatyczne porządkowanie plików w katalogu według rozszerzenia. Przenosi pliki do podkatalogów (Images, Documents, Videos, Music, Archives, Code).",
     "en": "Automatically organizes files in a directory by extension. Moves files into subdirectories (Images, Documents, Videos, Music, Archives, Code)."
   },
   "techStack": [
     "Rust",
-    "clap",
-    "walkdir"
+    "Clap",
+    "Walkdir"
   ],
   "githubUrl": "https://github.com/w-koperski/file-organizer",
   "year": 2024,
   "featured": false,
-  "screenshot": "/mockups/file-organizer.svg"
+  "screenshot": "/mockups/file-organizer.svg",
+  "previewData": {
+    "type": "terminal",
+    "commands": {
+      "pl": [
+        {
+          "command": "file-organizer --dir ~/Pobrane --dry-run",
+          "output": "🔍 Tryb podglądu (bez zmian):\n  photo.jpg     → Images/\n  raport.pdf    → Documents/\n  wakacje.mp4   → Videos/"
+        },
+        {
+          "command": "file-organizer --dir ~/Pobrane",
+          "output": "📁 Uporządkowano 42 pliki:\n  Images:     15 plików\n  Documents:  12 plików\n  Videos:      8 plików\n  Music:       4 pliki\n  Archives:    2 pliki\n  Code:        1 plik"
+        }
+      ],
+      "en": [
+        {
+          "command": "file-organizer --dir ~/Downloads --dry-run",
+          "output": "🔍 Dry run (no changes):\n  photo.jpg     → Images/\n  report.pdf    → Documents/\n  vacation.mp4  → Videos/"
+        },
+        {
+          "command": "file-organizer --dir ~/Downloads",
+          "output": "📁 Organized 42 files:\n  Images:     15 files\n  Documents:  12 files\n  Videos:      8 files\n  Music:       4 files\n  Archives:    2 files\n  Code:        1 file"
+        }
+      ]
+    }
+  }
 }

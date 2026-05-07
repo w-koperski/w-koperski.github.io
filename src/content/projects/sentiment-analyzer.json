@@ -14,5 +14,16 @@
   "githubUrl": "https://github.com/w-koperski/sentiment-analyzer",
   "year": 2024,
   "featured": false,
-  "screenshot": "/mockups/sentiment-analyzer.svg"
+  "screenshot": "/mockups/sentiment-analyzer.svg",
+  "previewData": {
+    "type": "metrics",
+    "epochs": 5,
+    "accuracyData": [0.72, 0.82, 0.87, 0.895, 0.91],
+    "lossData": [0.75, 0.52, 0.38, 0.29, 0.23],
+    "finalAccuracy": "91.0%",
+    "samplePredictions": [
+      { "input": "Great product, happy!", "output": "POSITIVE (96.2%)" },
+      { "input": "Terrible service, never again", "output": "NEGATIVE (97.8%)" }
+    ]
+  }
 }

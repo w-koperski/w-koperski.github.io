@@ -9,11 +9,54 @@
   "techStack": [
     "Python",
     "PyTorch",
-    "torchvision",
-    "matplotlib"
+    "Torchvision",
+    "Matplotlib"
   ],
   "githubUrl": "https://github.com/w-koperski/mnist-classifier",
   "year": 2024,
   "featured": false,
-  "screenshot": "/mockups/mnist-classifier.svg"
+  "screenshot": "/mockups/mnist-classifier.svg",
+  "previewData": {
+    "type": "metrics",
+    "epochs": 10,
+    "accuracyData": [
+      0.85,
+      0.91,
+      0.94,
+      0.96,
+      0.97,
+      0.975,
+      0.979,
+      0.981,
+      0.982,
+      0.983
+    ],
+    "lossData": [
+      0.52,
+      0.32,
+      0.21,
+      0.14,
+      0.1,
+      0.082,
+      0.07,
+      0.062,
+      0.058,
+      0.055
+    ],
+    "finalAccuracy": "98.3%",
+    "samplePredictions": [
+      {
+        "input": "digit_7.png",
+        "output": "7 (99.1%)"
+      },
+      {
+        "input": "digit_3.png",
+        "output": "3 (98.4%)"
+      },
+      {
+        "input": "digit_9.png",
+        "output": "9 (97.2%)"
+      }
+    ]
+  }
 }

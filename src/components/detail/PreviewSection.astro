@@ -1,0 +1,41 @@
+---
+interface Props {
+  label?: string;
+}
+
+const { label } = Astro.props;
+---
+
+<section class="detail-preview">
+  {label && <h2 class="detail-preview__label terminal-text">{label}</h2>}
+  <div class="detail-preview__content terminal-border terminal-glow-element">
+    <slot />
+  </div>
+</section>
+
+<style>
+  .detail-preview {
+    margin-bottom: var(--space-12);
+  }
+
+  .detail-preview__label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    margin-bottom: var(--space-4);
+  }
+
+  .detail-preview__content {
+  background-color: var(--color-bg-card);
+  padding: var(--space-8);
+  min-height: 12rem;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  }
+
+  @media (max-width: 768px) {
+  .detail-preview__content {
+    padding: var(--space-4);
+  }
+  }
+</style>

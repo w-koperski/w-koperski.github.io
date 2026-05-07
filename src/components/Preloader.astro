@@ -21,8 +21,12 @@ const skipLabel = t('preloader.skip', lang);
 
 <script>
   import { initPreloader } from '../scripts/preloader';
-  
+
+  // Run on initial page load and after each Astro View Transition
   initPreloader();
+  document.addEventListener('astro:page-load', () => {
+    initPreloader();
+  });
 </script>
 
 <style>

@@ -1,8 +1,8 @@
 /**
  * Preloader - Terminal Boot Sequence Animation
- * 
+ *
  * Full-screen overlay with typewriter boot sequence.
- * Shows once per session, skips on revisit or reduced motion preference.
+ * Always shows on page load (not cached by sessionStorage).
  */
 
 export interface PreloaderConfig {
@@ -31,7 +31,6 @@ const BOOT_LINES = [
   'Welcome, visitor!',
 ];
 
-const STORAGE_KEY = 'preloader-shown';
 const CUSTOM_EVENT = 'preloader:complete';
 
 class PreloaderController {
@@ -50,12 +49,7 @@ class PreloaderController {
 
   /** Initialize and run the preloader */
   init(): void {
-    // Check if already shown this session
-    if (sessionStorage.getItem(STORAGE_KEY) === 'true') {
-      this.hideInstant();
-      return;
-    }
-
+    this.isComplete = false;
     this.preloaderEl = document.getElementById('preloader');
     this.linesContainer = document.getElementById('preloader-lines');
     this.skipButton = document.getElementById('preloader-skip');
@@ -65,6 +59,11 @@ class PreloaderController {
       this.complete();
       return;
     }
+
+    // Reset state
+    this.preloaderEl.style.display = '';
+    this.preloaderEl.style.opacity = '1';
+    this.linesContainer.innerHTML = '';
 
     // Bind skip button
     if (this.skipButton) {
@@ -92,7 +91,7 @@ class PreloaderController {
   /** Show all lines instantly (for reduced motion) */
   private showAllLinesInstant(): void {
     if (!this.linesContainer) return;
-    
+
     BOOT_LINES.forEach((line) => {
       const lineEl = document.createElement('div');
       lineEl.className = 'preloader__line terminal-text';
@@ -105,9 +104,9 @@ class PreloaderController {
   private async animateLines(): Promise<void> {
     for (let i = 0; i < BOOT_LINES.length; i++) {
       if (this.isComplete) break;
-      
+
       await this.typeLine(BOOT_LINES[i], i);
-      
+
       if (i < BOOT_LINES.length - 1) {
         await this.delay(this.config.lineDelay);
       }
@@ -133,7 +132,7 @@ class PreloaderController {
     // Type each character
     for (let i = 0; i < text.length; i++) {
       if (this.isComplete) break;
-      
+
       lineEl.textContent += text[i];
       await this.delay(this.config.charDelay);
     }
@@ -156,9 +155,6 @@ class PreloaderController {
       this.timeoutId = null;
     }
 
-    // Mark as shown
-    sessionStorage.setItem(STORAGE_KEY, 'true');
-
     // Fade out
     if (this.preloaderEl) {
       if (this.reducedMotion) {
@@ -166,7 +162,7 @@ class PreloaderController {
       } else {
         this.preloaderEl.style.transition = `opacity ${this.config.fadeOutDuration}ms ease-out`;
         this.preloaderEl.style.opacity = '0';
-        
+
         setTimeout(() => {
           this.hideInstant();
         }, this.config.fadeOutDuration);
@@ -194,13 +190,13 @@ class PreloaderController {
 // Auto-initialize when DOM is ready
 export function initPreloader(config?: PreloaderConfig): PreloaderController {
   const controller = new PreloaderController(config);
-  
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => controller.init());
   } else {
     controller.init();
   }
-  
+
   return controller;
 }
 

@@ -31,15 +31,15 @@ const { title, description = '', lang = 'pl' } = Astro.props;
     {description && <meta name="description" content={description} />}
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Wojtek Koperski — Portfolio" />
+    <meta property="og:site_name" content="Wojciech Koperski — Portfolio" />
     <meta property="og:title" content={title} />
-    <meta property="og:description" content={description || 'Uczeń technikum pasjonujący się tworzeniem oprogramowania'} />
+    <meta property="og:description" content={description || 'Developer pasjonujący się tworzeniem oprogramowania'} />
     <meta property="og:url" content={Astro.url.href} />
     <meta property="og:locale" content={lang === 'pl' ? 'pl_PL' : 'en_US'} />
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description || 'Portfolio Wojtka Koperskiego'} />
+    <meta name="twitter:description" content={description || 'Portfolio Wojciecha Koperskiego'} />
     <!-- Canonical + Favicon -->
     <link rel="canonical" href={Astro.url.href} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -53,7 +53,11 @@ const { title, description = '', lang = 'pl' } = Astro.props;
     </main>
     <Footer lang={lang} />
 <script>
-  import '../scripts/gsap-animations';
+  import { initAnimations } from '../scripts/gsap-animations';
+
+  // Run on initial page load and after each Astro View Transition
+  initAnimations();
+  document.addEventListener('astro:page-load', initAnimations);
 </script>
   </body>
 </html>

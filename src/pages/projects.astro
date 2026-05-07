@@ -29,18 +29,20 @@ const projectsByCategory = categories
       <CategoryHeader emoji={cat.emoji} name={cat.displayName} count={cat.projects.length}>
         <div class="projects-page__grid">
           {cat.projects.map((project) => (
-            <ProjectCard
-              title={project.data.title}
-              category={project.data.category}
-              categoryEmoji={project.data.categoryEmoji}
-              description={project.data.description.pl}
-              techStack={project.data.techStack}
-              githubUrl={project.data.githubUrl}
-              demoUrl={project.data.demoUrl}
-              screenshot={project.data.screenshot}
-              year={project.data.year}
-              featured={project.data.featured}
-            />
+        <ProjectCard
+          title={project.data.title}
+          categoryEmoji={project.data.categoryEmoji}
+          description={project.data.description.pl}
+          techStack={project.data.techStack}
+          githubUrl={project.data.githubUrl}
+          demoUrl={project.data.demoUrl}
+          screenshot={project.data.screenshot}
+          year={project.data.year}
+          featured={project.data.featured}
+          slug={project.id}
+          previewData={project.data.previewData}
+          lang="pl"
+        />
           ))}
         </div>
       </CategoryHeader>
@@ -71,7 +73,7 @@ const projectsByCategory = categories
 
   .projects-page__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
     gap: var(--space-6);
   }
 

@@ -11,3 +11,8 @@ dist/
 *.swo
 *~
 .turbo/
+
+# AI / Sisyphus
+.sisyphus/
+.sisyphus/**
+*~

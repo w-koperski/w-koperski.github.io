@@ -7,12 +7,37 @@
     "en": "A simple terminal text editor written in C++ with ncurses. Keyboard shortcuts Ctrl+S/Ctrl+Q, arrow key navigation."
   },
   "techStack": [
-    "C++17",
+    "C++",
     "ncurses",
     "CMake"
   ],
   "githubUrl": "https://github.com/w-koperski/terminal-notepad",
   "year": 2024,
   "featured": false,
-  "screenshot": "/mockups/terminal-notepad.svg"
+  "screenshot": "/mockups/terminal-notepad.svg",
+  "previewData": {
+    "type": "terminal",
+    "commands": {
+      "pl": [
+        {
+          "command": "terminal-notepad notes.txt",
+          "output": "Otwarto: notes.txt | 3 linie | Tryb: vim"
+        },
+        {
+          "command": ":w",
+          "output": "Zapisano 3 linie → notes.txt"
+        }
+      ],
+      "en": [
+        {
+          "command": "terminal-notepad notes.txt",
+          "output": "Opened: notes.txt | 3 lines | Mode: vim"
+        },
+        {
+          "command": ":w",
+          "output": "Written 3 lines → notes.txt"
+        }
+      ]
+    }
+  }
 }

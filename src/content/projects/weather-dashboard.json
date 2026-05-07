@@ -7,13 +7,16 @@
     "en": "A weather dashboard with temperature charts. Uses wttr.in API with no API key required."
   },
   "techStack": [
-    "React",
-    "Vite",
+    "Vue 3",
     "Chart.js",
-    "react-chartjs-2"
+    "Vite"
   ],
   "githubUrl": "https://github.com/w-koperski/weather-dashboard",
   "year": 2024,
   "featured": false,
-  "screenshot": "/mockups/weather-dashboard.svg"
+  "screenshot": "/mockups/weather-dashboard.svg",
+  "previewData": {
+    "type": "browser",
+    "screenshots": ["/mockups/weather-dashboard.svg"]
+  }
 }

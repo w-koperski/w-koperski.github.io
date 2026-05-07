@@ -13,5 +13,9 @@
   "githubUrl": "https://github.com/w-koperski/ecommerce-frontend",
   "year": 2024,
   "featured": false,
-  "screenshot": "/mockups/e-commerce-frontend.svg"
+  "screenshot": "/mockups/e-commerce-frontend.svg",
+  "previewData": {
+    "type": "browser",
+    "screenshots": ["/mockups/e-commerce-frontend.svg"]
+  }
 }

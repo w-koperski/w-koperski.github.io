@@ -10,10 +10,63 @@
     "Python",
     "TensorFlow",
     "NumPy",
-    "matplotlib"
+    "Matplotlib"
   ],
   "githubUrl": "https://github.com/w-koperski/image-classifier",
   "year": 2024,
   "featured": false,
-  "screenshot": "/mockups/image-classifier-cnn.svg"
+  "screenshot": "/mockups/image-classifier-cnn.svg",
+  "previewData": {
+    "type": "metrics",
+    "epochs": 15,
+    "accuracyData": [
+      0.42,
+      0.58,
+      0.69,
+      0.77,
+      0.83,
+      0.87,
+      0.9,
+      0.92,
+      0.93,
+      0.935,
+      0.94,
+      0.942,
+      0.944,
+      0.945,
+      0.946
+    ],
+    "lossData": [
+      1.45,
+      1.1,
+      0.85,
+      0.65,
+      0.5,
+      0.38,
+      0.28,
+      0.21,
+      0.17,
+      0.14,
+      0.12,
+      0.11,
+      0.1,
+      0.095,
+      0.09
+    ],
+    "finalAccuracy": "94.6%",
+    "samplePredictions": [
+      {
+        "input": "cat.jpg",
+        "output": "cat (97.2%)"
+      },
+      {
+        "input": "car.jpg",
+        "output": "automobile (92.8%)"
+      },
+      {
+        "input": "dog.jpg",
+        "output": "dog (89.1%)"
+      }
+    ]
+  }
 }
