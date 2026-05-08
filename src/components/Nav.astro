@@ -83,17 +83,47 @@ const langSwitchHref = lang === 'pl' ? `/en${currentPath}` : currentPath.replace
   </div>
 </nav>
 
-<script>
-  const hamburger = document.getElementById('nav-hamburger');
-  const mobileMenu = document.getElementById('nav-mobile-menu');
+<script is:inline>
+  (function() {
+    let inited = false;
+    function init() {
+      if (inited) return;
+      inited = true;
 
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', () => {
-      const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
-      hamburger.setAttribute('aria-expanded', String(!isOpen));
-      mobileMenu.setAttribute('aria-hidden', String(isOpen));
+      document.addEventListener('click', (e) => {
+        const hamburger = e.target.closest('#nav-hamburger');
+        const mobileMenu = document.getElementById('nav-mobile-menu');
+        if (!hamburger || !mobileMenu) return;
+
+        const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', String(!isOpen));
+        mobileMenu.setAttribute('aria-hidden', String(isOpen));
+      }, { passive: false });
+
+      // Close when any link inside the mobile menu is clicked
+      document.addEventListener('click', (e) => {
+        const link = e.target.closest('.navbar__mobile-menu a');
+        const mobileMenu = document.getElementById('nav-mobile-menu');
+        const hamburger = document.getElementById('nav-hamburger');
+        if (link && mobileMenu && hamburger) {
+          hamburger.setAttribute('aria-expanded', 'false');
+          mobileMenu.setAttribute('aria-hidden', 'true');
+        }
+      });
+    }
+    init();
+
+    // Re-initialize after Astro View Transitions
+    document.addEventListener('astro:page-load', () => {
+      inited = false;
+      init();
+      // Also ensure menu is closed after navigation
+      const mobileMenu = document.getElementById('nav-mobile-menu');
+      const hamburger = document.getElementById('nav-hamburger');
+      if (mobileMenu) mobileMenu.setAttribute('aria-hidden', 'true');
+      if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
     });
-  }
+  })();
 </script>
 
 <style>
