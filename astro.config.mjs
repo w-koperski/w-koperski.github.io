@@ -18,6 +18,9 @@ export default defineConfig({
     },
   },
   vite: {
+    server: {
+      allowedHosts: ['personal.koperski.tech'],
+    },
     ssr: {
       external: ['three'],
     },
