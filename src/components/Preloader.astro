@@ -19,11 +19,21 @@ const skipLabel = t('preloader.skip', lang);
   </button>
 </div>
 
+<script is:inline>
+  if (typeof sessionStorage !== 'undefined' && sessionStorage.getItem('preloader_shown')) {
+    const el = document.getElementById('preloader');
+    if (el) {
+      el.style.display = 'none';
+      el.style.pointerEvents = 'none';
+    }
+  }
+</script>
+
 <script>
   import { initPreloader } from '../scripts/preloader';
 
-  // Run on initial page load and after each Astro View Transition
-  initPreloader();
+  // Initialize on every page visit (initial load + ViewTransitions).
+  // astro:page-load fires for both.
   document.addEventListener('astro:page-load', () => {
     initPreloader();
   });

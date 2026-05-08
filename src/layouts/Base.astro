@@ -43,6 +43,7 @@ const { title, description = '', lang = 'pl' } = Astro.props;
     <!-- Canonical + Favicon -->
     <link rel="canonical" href={Astro.url.href} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';" />
     <ViewTransitions />
   </head>
   <body class="bg-[var(--color-bg)] text-[var(--color-text)] font-sans antialiased">
