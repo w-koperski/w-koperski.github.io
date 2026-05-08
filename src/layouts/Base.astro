@@ -49,7 +49,7 @@ const { title, description = '', lang = 'pl' } = Astro.props;
   <body class="bg-[var(--color-bg)] text-[var(--color-text)] font-sans antialiased">
     <a href="#main-content" class="skip-link">Skip to content</a>
     <Nav lang={lang} currentPath={Astro.url.pathname} />
-    <main id="main-content">
+    <main id="main-content" style="padding-top: 4rem;">
       <slot />
     </main>
     <Footer lang={lang} />
