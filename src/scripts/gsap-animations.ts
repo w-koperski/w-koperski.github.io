@@ -13,14 +13,7 @@ export function initAnimations() {
 
   const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
-  // ── Hero section: fade in text elements ──
   const heroTimeline = gsap.timeline({ delay: 0.5 });
-  heroTimeline
-    .from('.hero__prompt', { opacity: 0, y: 20, duration: 0.6 })
-    .from('.hero__name', { opacity: 0, y: 30, duration: 0.8 }, '-=0.3')
-    .from('.hero__cursor', { opacity: 0, duration: 0.4 }, '-=0.2');
-
-  // ── Intro section: text + CTA scroll-triggered (mobile-aware) ──
   heroTimeline
     .from('.intro__text', {
       opacity: 0,
@@ -159,50 +152,9 @@ export function initAnimations() {
     });
   }
 
-  // ── Home page: parallax on 3D canvas (desktop only) ──
-  if (!isMobile) {
-    gsap.to('.hero__canvas', {
-      y: () => window.scrollY * 0.15,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.hero',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: 0.5,
-      },
-    });
-  }
-
   // ── Mouse-following parallax (desktop only, respects reduced-motion) ──
   if (!isMobile && !REDUCED_MOTION) {
-    let mouseX = 0;
-    let mouseY = 0;
-    let targetX = 0;
-    let targetY = 0;
-
-    const heroCanvas = document.querySelector('.hero__canvas') as HTMLElement | null;
     const introCta = document.querySelector('.intro__cta') as HTMLElement | null;
-
-    if (heroCanvas) {
-      const canvas = heroCanvas;
-      document.addEventListener('mousemove', (e) => {
-        mouseX = (e.clientX / window.innerWidth - 0.5);
-        mouseY = (e.clientY / window.innerHeight - 0.5);
-      });
-
-      function animateMouseFollow() {
-        targetX += (mouseX - targetX) * 0.05;
-        targetY += (mouseY - targetY) * 0.05;
-
-        const rotX = targetY * -10;
-        const rotY = targetX * 10;
-
-        canvas.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
-
-        requestAnimationFrame(animateMouseFollow);
-      }
-      animateMouseFollow();
-    }
 
     if (introCta) {
       introCta.addEventListener('mousemove', (e) => {

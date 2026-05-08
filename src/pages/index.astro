@@ -1,8 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Preloader from '../components/Preloader.astro';
-import PixelAvatarScene from '../components/3d/PixelAvatarScene.jsx';
-import StaticTerminal from '../components/StaticTerminal.astro';
+import MatrixRain from '../components/MatrixRain';
 import { t, useTranslatedPath } from '../i18n/utils';
 
 const lang = 'pl';
@@ -18,16 +17,11 @@ const translatePath = useTranslatedPath(lang);
 
   <!-- Hero Section -->
   <section class="hero">
-    <div id="hero-3d" class="hero__canvas">
-    <PixelAvatarScene client:idle />
-  </div>
+    <MatrixRain client:only="react" />
     <div class="hero__overlay">
       <p class="hero__prompt terminal-text">{t('home.hero.greeting', lang)}</p>
       <h1 class="hero__name terminal-text terminal-glow">{t('home.hero.name', lang)}</h1>
       <span class="hero__cursor cursor-blink terminal-text">_</span>
-    </div>
-    <div class="hero__static-terminal">
-      <StaticTerminal prompt={t('home.hero.greeting', lang)} name={t('home.hero.name', lang)} />
     </div>
   </section>
 
@@ -41,7 +35,6 @@ const translatePath = useTranslatedPath(lang);
 </Base>
 
 <style>
-  /* Hero Section */
   .hero {
     position: relative;
     min-height: 100vh;
@@ -49,34 +42,8 @@ const translatePath = useTranslatedPath(lang);
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    width: 100%;
   }
-
-.hero__canvas {
-  position: absolute;
-  inset: 0;
-  z-index: var(--z-3d-canvas);
-  will-change: transform;
-  transform-style: preserve-3d;
-}
-
-@media (max-width: 768px) {
-  .hero__canvas {
-    display: none;
-  }
-}
-
-.hero__static-terminal {
-  display: none; /* Hidden by default (desktop) */
-}
-
-@media (max-width: 768px) {
-  .hero__static-terminal {
-    display: block;
-    position: relative;
-    z-index: calc(var(--z-3d-canvas) + 1);
-    margin-bottom: var(--space-6);
-  }
-}
 
   .hero__overlay {
     position: relative;
@@ -121,7 +88,6 @@ const translatePath = useTranslatedPath(lang);
     }
   }
 
-  /* Intro Section */
   .intro {
     display: flex;
     flex-direction: column;
