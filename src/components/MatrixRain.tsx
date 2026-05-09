@@ -3,6 +3,10 @@ import { useReducedMotion } from '../hooks/useReducedMotion';
 
 const CHARS = '~`!@#$%^&*()-_=+[]{}|;:,.<>?/0123456789ABCDEFabcdef'.split('');
 const FONT = "'JetBrains Mono', monospace";
+
+function randomChar(): string {
+  return CHARS[Math.floor(Math.random() * CHARS.length)];
+}
 const FONT_SIZE = 14;
 const TRAIL = 0.1;
 const SPAWN_RATE = 0.4;
