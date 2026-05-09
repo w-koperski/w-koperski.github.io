@@ -1,4 +1,4 @@
-import { Canvas, useFrame } from '@react-three/fiber';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Suspense, useRef, useEffect, useState } from 'react';
 import CodeParticles from './CodeParticles';
 
@@ -54,21 +54,19 @@ function TerminalMonitor() {
 }
 
 function CameraRig() {
-  const camera = useRef(null);
+  const { camera } = useThree();
 
   useEffect(() => {
     const handleMouseMove = (e) => {
       const x = (e.clientX / window.innerWidth - 0.5) * 0.3;
       const y = (e.clientY / window.innerHeight - 0.5) * -0.2;
-      if (camera.current) {
-        camera.current.position.x = x;
-        camera.current.position.y = y;
-      }
+      camera.position.x = x;
+      camera.position.y = y;
     };
 
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+  }, [camera]);
 
   return null;
 }

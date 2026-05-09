@@ -3,13 +3,16 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
 export function initAnimations() {
-  if (REDUCED_MOTION) return;
+  if (typeof window === 'undefined') return;
+  const REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  
 
   // Kill all existing ScrollTriggers to prevent duplicates on revisit
   ScrollTrigger.getAll().forEach((st) => st.kill());
+
+  // Respect reduced motion: skip all animations but still dispatch preloader:complete listener
+  if (REDUCED_MOTION) return;
 
   const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
