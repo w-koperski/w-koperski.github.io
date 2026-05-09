@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { useReducedMotion } from '../../hooks/useReducedMotion';
 
 const METHOD_COLORS = {
@@ -39,11 +39,20 @@ export default function ApiMockPanel({ endpoints, lang = 'pl' }) {
   const [selectedIdx, setSelectedIdx] = useState(0);
   const [sending, setSending] = useState(false);
   const [showResponse, setShowResponse] = useState(true);
+  const sendTimerRef = useRef(null);
 
   useEffect(() => {
     setSelectedIdx(0);
     setShowResponse(true);
   }, [endpoints]);
+
+  useEffect(() => {
+    return () => {
+      if (sendTimerRef.current !== null) {
+        clearTimeout(sendTimerRef.current);
+      }
+    };
+  }, []);
 
   const selected = endpoints?.[selectedIdx];
   const methodColor = selected ? METHOD_COLORS[selected.method] ?? METHOD_COLORS.GET : METHOD_COLORS.GET;
@@ -61,7 +70,7 @@ export default function ApiMockPanel({ endpoints, lang = 'pl' }) {
     setSending(true);
     setShowResponse(false);
     const delay = prefersReducedMotion ? 0 : 500;
-    setTimeout(() => {
+    sendTimerRef.current = setTimeout(() => {
       setSending(false);
       setShowResponse(true);
     }, delay);

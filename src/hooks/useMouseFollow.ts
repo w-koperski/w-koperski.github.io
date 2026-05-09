@@ -20,13 +20,17 @@ export function useMouseFollow(
   useEffect(() => {
     if (typeof window === 'undefined' || prefersReducedMotion) return;
 
-    let animationFrameId: number;
+    let animationFrameId: number | null = null;
 
     const handleMouseMove = (e: MouseEvent) => {
+      if (animationFrameId !== null) {
+        cancelAnimationFrame(animationFrameId);
+      }
       animationFrameId = requestAnimationFrame(() => {
         const x = (e.clientX / window.innerWidth - 0.5) * sensitivity;
         const y = (e.clientY / window.innerHeight - 0.5) * sensitivity;
         setPosition({ x, y });
+        animationFrameId = null;
       });
     };
 
@@ -34,7 +38,9 @@ export function useMouseFollow(
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
-      cancelAnimationFrame(animationFrameId);
+      if (animationFrameId !== null) {
+        cancelAnimationFrame(animationFrameId);
+      }
     };
   }, [sensitivity, prefersReducedMotion]);
 
