@@ -2,7 +2,6 @@
  * Preloader - Terminal Boot Sequence Animation
  *
  * Full-screen overlay with typewriter boot sequence.
- * Always shows on page load (not cached by sessionStorage).
  */
 
 export interface PreloaderConfig {
@@ -60,9 +59,14 @@ class PreloaderController {
       return;
     }
 
-    // Reset state
-    this.preloaderEl.style.display = '';
-    this.preloaderEl.style.opacity = '1';
+  // Set by is:inline script in Preloader.astro when sessionStorage has preloader_shown
+  if (this.preloaderEl.style.display === 'none' || this.preloaderEl.dataset.skip === 'true') {
+    this.complete();
+    return;
+  }
+
+  this.preloaderEl.style.display = '';
+  this.preloaderEl.style.opacity = '1';
     this.linesContainer.innerHTML = '';
 
     // Bind skip button
@@ -169,8 +173,12 @@ class PreloaderController {
       }
     }
 
-    // Dispatch custom event
-    document.dispatchEvent(new CustomEvent(CUSTOM_EVENT));
+  // Dispatch custom event
+  document.dispatchEvent(new CustomEvent(CUSTOM_EVENT));
+
+  if (typeof sessionStorage !== 'undefined') {
+    sessionStorage.setItem('preloader_shown', 'true');
+  }
   }
 
   /** Hide instantly without animation */
@@ -178,7 +186,6 @@ class PreloaderController {
     if (this.preloaderEl) {
       this.preloaderEl.style.display = 'none';
     }
-    document.dispatchEvent(new CustomEvent(CUSTOM_EVENT));
   }
 
   /** Promise-based delay */
