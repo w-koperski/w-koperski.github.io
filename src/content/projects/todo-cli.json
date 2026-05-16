@@ -6,14 +6,9 @@
     "pl": "Prosty menedżer zadań w terminalu. Dodawanie, oznaczanie jako ukończone i usuwanie zadań.",
     "en": "A simple terminal task manager. Add, mark as done, and remove tasks from the command line."
   },
-  "techStack": [
-    "Rust",
-    "Clap",
-    "Serde",
-    "Colored"
-  ],
+  "techStack": ["Rust", "Clap", "Serde", "Colored"],
   "githubUrl": "https://github.com/w-koperski/todo-cli",
-  "year": 2024,
+  "year": 2023,
   "featured": false,
   "screenshot": "/mockups/todo-cli.svg",
   "previewData": {

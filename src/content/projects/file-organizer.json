@@ -6,13 +6,9 @@
     "pl": "Automatyczne porządkowanie plików w katalogu według rozszerzenia. Przenosi pliki do podkatalogów (Images, Documents, Videos, Music, Archives, Code).",
     "en": "Automatically organizes files in a directory by extension. Moves files into subdirectories (Images, Documents, Videos, Music, Archives, Code)."
   },
-  "techStack": [
-    "Rust",
-    "Clap",
-    "Walkdir"
-  ],
+  "techStack": ["Rust", "Clap", "Walkdir"],
   "githubUrl": "https://github.com/w-koperski/file-organizer",
-  "year": 2024,
+  "year": 2023,
   "featured": false,
   "screenshot": "/mockups/file-organizer.svg",
   "previewData": {

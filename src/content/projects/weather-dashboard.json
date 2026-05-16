@@ -6,13 +6,9 @@
     "pl": "Panel pogodowy z wykresami temperatury. Używa API wttr.in bez klucza API.",
     "en": "A weather dashboard with temperature charts. Uses wttr.in API with no API key required."
   },
-  "techStack": [
-    "Vue 3",
-    "Chart.js",
-    "Vite"
-  ],
+  "techStack": ["Vue 3", "Chart.js", "Vite"],
   "githubUrl": "https://github.com/w-koperski/weather-dashboard",
-  "year": 2024,
+  "year": 2023,
   "featured": false,
   "screenshot": "/mockups/weather-dashboard.svg",
   "previewData": {

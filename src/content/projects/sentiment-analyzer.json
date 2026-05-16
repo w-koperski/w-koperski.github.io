@@ -6,13 +6,9 @@
     "pl": "Analizator sentymentu tekstu. Model oparty na CountVectorizer + Naive Bayes, klasyfikuje tekst jako pozytywny lub negatywny.",
     "en": "A text sentiment analyzer. CountVectorizer + Naive Bayes model classifies text as positive or negative."
   },
-  "techStack": [
-    "Python",
-    "scikit-learn",
-    "NumPy"
-  ],
+  "techStack": ["Python", "scikit-learn", "NumPy"],
   "githubUrl": "https://github.com/w-koperski/sentiment-analyzer",
-  "year": 2024,
+  "year": 2023,
   "featured": false,
   "screenshot": "/mockups/sentiment-analyzer.svg",
   "previewData": {

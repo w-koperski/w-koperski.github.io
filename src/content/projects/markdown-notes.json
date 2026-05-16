@@ -6,19 +6,13 @@
     "pl": "Notatnik w formacie Markdown z podglądem na żywo. Edytor ze wsparciem Markdown, automatyczne zapisywanie w localStorage, zarządzanie notatkami.",
     "en": "A live-preview Markdown notebook. Editor with Markdown support, auto-save to localStorage, note management."
   },
-  "techStack": [
-    "React",
-    "Vite",
-    "Marked"
-  ],
+  "techStack": ["React", "Vite", "Marked"],
   "githubUrl": "https://github.com/w-koperski/markdown-notes",
-  "year": 2024,
+  "year": 2023,
   "featured": false,
   "screenshot": "/mockups/markdown-notes.svg",
   "previewData": {
     "type": "browser",
-    "screenshots": [
-      "/mockups/markdown-notes.svg"
-    ]
+    "screenshots": ["/mockups/markdown-notes.svg"]
   }
 }
