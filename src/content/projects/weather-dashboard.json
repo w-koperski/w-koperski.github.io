@@ -1,18 +1,23 @@
 {
   "title": "Weather Dashboard",
-  "category": "vue-spa",
-  "categoryEmoji": "💚",
+  "category": "react-spa",
+  "categoryEmoji": "⚛️",
   "description": {
     "pl": "Panel pogodowy z wykresami temperatury. Używa API wttr.in bez klucza API.",
     "en": "A weather dashboard with temperature charts. Uses wttr.in API with no API key required."
   },
-  "techStack": ["Vue 3", "Chart.js", "Vite"],
+  "techStack": ["React", "Chart.js", "Vite"],
   "githubUrl": "https://github.com/w-koperski/weather-dashboard",
+  "liveUrl": "https://w-koperski.github.io/weather-dashboard/",
   "year": 2023,
   "featured": false,
-  "screenshot": "/mockups/weather-dashboard.svg",
+  "screenshot": "/screenshots/weather-dashboard-1280.webp",
   "previewData": {
     "type": "browser",
-    "screenshots": ["/mockups/weather-dashboard.svg"]
+    "liveUrl": "https://w-koperski.github.io/weather-dashboard/",
+    "screenshots": [
+      "/screenshots/weather-dashboard-1280.webp",
+      "/screenshots/weather-dashboard-1920.webp"
+    ]
   }
 }
