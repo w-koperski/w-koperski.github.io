@@ -8,11 +8,16 @@
   },
   "techStack": ["React", "Vite", "Recharts"],
   "githubUrl": "https://github.com/w-koperski/github-stats",
+  "liveUrl": "https://w-koperski.github.io/github-stats/",
   "year": 2023,
   "featured": false,
-  "screenshot": "/mockups/github-stats-dashboard.svg",
+  "screenshot": "/screenshots/github-stats-1280.webp",
   "previewData": {
     "type": "browser",
-    "screenshots": ["/mockups/github-stats-dashboard.svg"]
+    "liveUrl": "https://w-koperski.github.io/github-stats/",
+    "screenshots": [
+      "/screenshots/github-stats-1280.webp",
+      "/screenshots/github-stats-1920.webp"
+    ]
   }
 }
