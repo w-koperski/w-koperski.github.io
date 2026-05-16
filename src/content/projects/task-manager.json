@@ -8,11 +8,16 @@
   },
   "techStack": ["Vue 3", "Vite"],
   "githubUrl": "https://github.com/w-koperski/task-manager",
+  "liveUrl": "https://w-koperski.github.io/task-manager/",
   "year": 2023,
   "featured": false,
-  "screenshot": "/mockups/task-manager.svg",
+  "screenshot": "/screenshots/task-manager-1280.webp",
   "previewData": {
     "type": "browser",
-    "screenshots": ["/mockups/task-manager.svg"]
+    "liveUrl": "https://w-koperski.github.io/task-manager/",
+    "screenshots": [
+      "/screenshots/task-manager-1280.webp",
+      "/screenshots/task-manager-1920.webp"
+    ]
   }
 }
