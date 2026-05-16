@@ -8,11 +8,16 @@
   },
   "techStack": ["React", "Vite", "Marked"],
   "githubUrl": "https://github.com/w-koperski/markdown-notes",
+  "liveUrl": "https://w-koperski.github.io/markdown-notes/",
   "year": 2023,
   "featured": false,
-  "screenshot": "/mockups/markdown-notes.svg",
+  "screenshot": "/screenshots/markdown-notes-1280.webp",
   "previewData": {
     "type": "browser",
-    "screenshots": ["/mockups/markdown-notes.svg"]
+    "liveUrl": "https://w-koperski.github.io/markdown-notes/",
+    "screenshots": [
+      "/screenshots/markdown-notes-1280.webp",
+      "/screenshots/markdown-notes-1920.webp"
+    ]
   }
 }
