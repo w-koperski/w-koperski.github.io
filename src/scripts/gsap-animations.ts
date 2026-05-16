@@ -39,10 +39,53 @@ export function initAnimations() {
       },
     }, '-=0.2');
 
+  // ── Projects page: project cards stagger reveal ──
+  const projectCards = gsap.utils.toArray<HTMLElement>('.project-card');
+  if (projectCards.length > 0) {
+    projectCards.forEach((card) => {
+      gsap.fromTo(card, 
+        { y: 40, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+            once: true,
+          },
+        }
+      );
+    });
+  }
+
+  // ── Projects page: category headers slide from left ──
+  const categoryHeaders = gsap.utils.toArray<HTMLElement>('.category-header');
+  if (categoryHeaders.length > 0) {
+    categoryHeaders.forEach((header) => {
+      gsap.fromTo(header, 
+        { x: -40, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 0.7,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: header,
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+            once: true,
+          },
+        }
+      );
+    });
+  }
+
   // ── About page: neofetch card slides in ──
   if (document.querySelector('.neofetch__card')) {
     gsap.from('.neofetch__card', {
-      opacity: 0,
       y: 40,
       duration: 0.8,
       scrollTrigger: {
@@ -55,40 +98,11 @@ export function initAnimations() {
   // ── About page: bio text fade ──
   if (document.querySelector('.neofetch__bio')) {
     gsap.from('.neofetch__bio', {
-      opacity: 0,
       y: 20,
       duration: 0.6,
       scrollTrigger: {
         trigger: '.neofetch__bio',
         start: 'top 85%',
-      },
-    });
-  }
-
-  // ── Projects page: project cards stagger reveal ──
-  if (document.querySelector('.project-card')) {
-    gsap.from('.project-card', {
-      opacity: 0,
-      y: 30,
-      stagger: 0.1,
-      duration: 0.5,
-      scrollTrigger: {
-        trigger: '.projects-page__grid',
-        start: 'top 80%',
-      },
-    });
-  }
-
-  // ── Projects page: category headers slide from left ──
-  if (document.querySelector('.category-header')) {
-    gsap.from('.category-header', {
-      opacity: 0,
-      x: -30,
-      stagger: 0.2,
-      duration: 0.6,
-      scrollTrigger: {
-        trigger: '.projects-page',
-        start: 'top 70%',
       },
     });
   }
@@ -114,7 +128,6 @@ export function initAnimations() {
   // ── Skills page: card fade-in ──
   if (document.querySelector('.skills-tree__card')) {
     gsap.from('.skills-tree__card', {
-      opacity: 0,
       y: 30,
       duration: 0.6,
       scrollTrigger: {
@@ -127,7 +140,6 @@ export function initAnimations() {
   // ── Contact page: terminal card fade-in ──
   if (document.querySelector('.contact__card')) {
     gsap.from('.contact__card', {
-      opacity: 0,
       y: 20,
       duration: 0.6,
       scrollTrigger: {
@@ -144,7 +156,6 @@ export function initAnimations() {
   if (sectionTitles.length > 0) {
     sectionTitles.forEach((title) => {
       gsap.from(title, {
-        opacity: 0,
         y: 20,
         duration: 0.6,
         scrollTrigger: {
