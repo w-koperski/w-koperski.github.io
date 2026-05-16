@@ -3,22 +3,21 @@
   "category": "vue-spa",
   "categoryEmoji": "💚",
   "description": {
-    "pl": "Prosty i minimalistyczny timer Pomodoro. Cykle 25 min pracy i 5 min przerwy, wizualny wskaźnik postępu i powiadomienia dźwiękowe.",
-    "en": "A clean and minimal Pomodoro timer. 25-minute work and 5-minute break cycles, visual progress indicator, and audio notifications."
+    "pl": "Minimalistyczny timer Pomodoro. Cykle 25 min pracy i 5 min przerwy, wizualny wskaźnik postępu, powiadomienia dźwiękowe, licznik sesji.",
+    "en": "A minimalist Pomodoro timer. 25-minute work and 5-minute break cycles, visual progress indicator, audio notifications, session counter."
   },
-  "techStack": [
-    "Vue 3",
-    "Vite",
-    "CSS"
-  ],
+  "techStack": ["Vue 3", "Vite"],
   "githubUrl": "https://github.com/w-koperski/pomodoro-timer",
+  "liveUrl": "https://w-koperski.github.io/pomodoro-timer/",
   "year": 2024,
   "featured": false,
-  "screenshot": "/mockups/pomodoro-timer.svg",
+  "screenshot": "/screenshots/pomodoro-timer-1280.webp",
   "previewData": {
     "type": "browser",
+    "liveUrl": "https://w-koperski.github.io/pomodoro-timer/",
     "screenshots": [
-      "/mockups/pomodoro-timer.svg"
+      "/screenshots/pomodoro-timer-1280.webp",
+      "/screenshots/pomodoro-timer-1920.webp"
     ]
   }
 }
