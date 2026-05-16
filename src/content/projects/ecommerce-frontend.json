@@ -8,12 +8,13 @@
   },
   "techStack": ["Vue 3", "Vite"],
   "githubUrl": "https://github.com/w-koperski/ecommerce-frontend",
+  "liveUrl": "https://koperski.is-a.dev/ecommerce-frontend/",
   "year": 2024,
   "featured": false,
   "screenshot": "/screenshots/ecommerce-frontend-1280.webp",
   "previewData": {
     "type": "browser",
-    "liveUrl": "http://localhost:5173",
+    "liveUrl": "https://koperski.is-a.dev/ecommerce-frontend/",
     "screenshots": [
       "/screenshots/ecommerce-frontend-1280.webp",
       "/screenshots/ecommerce-frontend-1920.webp"
