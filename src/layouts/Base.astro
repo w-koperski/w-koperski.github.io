@@ -43,6 +43,22 @@ const { title, description = '', lang = 'pl' } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://personal.koperski.tech; connect-src 'self' https://personal.koperski.tech;" />
     <ViewTransitions />
+    <script is:inline>
+      (function() {
+        try {
+          if (!sessionStorage.getItem('lang_redirected')) {
+            sessionStorage.setItem('lang_redirected', 'true');
+            const userLang = navigator.language || navigator.userLanguage;
+            const currentPath = window.location.pathname;
+            if (userLang && userLang.toLowerCase().startsWith('en') && !currentPath.startsWith('/en')) {
+              window.location.replace('/en' + currentPath);
+            }
+          }
+        } catch (e) {
+          // ignore
+        }
+      })();
+    </script>
   </head>
   <body class="bg-background text-on-background font-body-md text-body-md grid-bg min-h-screen flex flex-col antialiased">
     <a href="#main-content" class="skip-link">Skip to content</a>
