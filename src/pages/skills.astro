@@ -1,250 +1,220 @@
 ---
 import Base from '../layouts/Base.astro';
-import { t } from '../i18n/utils';
+import { t, useTranslatedPath } from '../i18n/utils';
 
 const lang = 'pl';
 const pageTitle = t('skills.title', lang);
-
-const skills = {
-  languages: {
-    label: 'Języki',
-    items: [
-      { name: 'TypeScript', pct: 85 },
-      { name: 'Python', pct: 75 },
-      { name: 'Rust', pct: 65 },
-      { name: 'C++', pct: 55 },
-      { name: 'C#', pct: 60 },
-    ],
-  },
-  frameworks: {
-    label: 'Frameworki',
-    items: [
-      { name: 'Vue 3', pct: 80 },
-      { name: 'React', pct: 75 },
-      { name: 'Laravel', pct: 60 },
-    ],
-  },
-  tools: {
-    label: 'Narzędzia',
-    items: [
-      { name: 'Docker', pct: 70 },
-      { name: 'Git', pct: 85 },
-      { name: 'Linux', pct: 75 },
-    ],
-  },
-  domains: {
-    label: 'Dziedziny',
-    items: [
-      { name: 'CLI tools', pct: 85 },
-      { name: 'REST APIs', pct: 70 },
-      { name: 'ML', pct: 55 },
-    ],
-  },
-};
-
-const categories = Object.entries(skills);
-const lastCategoryIdx = categories.length - 1;
 ---
 
 <Base title={pageTitle} lang={lang} description="Umiejętności — Wojciech Koperski, przegląd kompetencji technicznych.">
-  <section class="skills-tree" aria-label="Umiejętności">
-    <div class="skills-tree__card terminal-border terminal-glow-element">
-      <p class="skills-tree__prompt terminal-text terminal-glow">{pageTitle}</p>
+  <section class="flex-grow pt-32 pb-section-gap px-gutter max-w-container-max mx-auto w-full">
+    <!-- Header -->
+    <header class="mb-20">
+      <div class="flex items-center space-x-4 mb-4">
+        <span class="text-primary font-code-sm text-code-sm">~/skills</span>
+        <div class="h-px bg-outline-variant flex-grow"></div>
+      </div>
+      <h1 class="font-headline-xl text-headline-xl text-on-surface mb-6">Analiza Kompetencji</h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+        Ocena efektywności systemów, architektury i narzędzi w cyklu życia oprogramowania.
+      </p>
+    </header>
 
-      <pre class="skills-tree__output" aria-hidden="true"><code>{categories.map(([key, cat], ci) => {
-        const prefix = ci === lastCategoryIdx ? '└──' : '├──';
-        const pipe = ci === lastCategoryIdx ? '    ' : '│   ';
-        const lastItemIdx = cat.items.length - 1;
+    <!-- Key Metrics (Cards) -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-section-gap">
+      <div class="bg-surface-elevated border border-surface-variant rounded-lg p-6 hover:shadow-glow-emerald transition-shadow duration-300 relative overflow-hidden group">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <div class="flex justify-between items-start mb-4 relative z-10">
+          <span class="material-symbols-outlined text-primary text-[32px]">code_blocks</span>
+          <span class="font-code-sm text-code-sm text-primary bg-primary/10 px-2 py-1 rounded">Aktywne</span>
+        </div>
+        <h3 class="font-headline-md text-headline-md text-on-surface mb-1 relative z-10">1.2M+</h3>
+        <p class="font-label-caps text-label-caps text-on-surface-variant uppercase relative z-10">Linii kodu</p>
+      </div>
 
-        const headerLine = `${prefix} ${cat.label}/`;
-        const itemLines = cat.items.map((item, ii) => {
-          const itemPrefix = ii === lastItemIdx ? '└──' : '├──';
-          const filled = '█'.repeat(Math.round(item.pct / 5));
-          const empty = '░'.repeat(20 - filled.length);
-          return `${pipe}${itemPrefix} ${item.name} ${filled}${empty} ${item.pct}%`;
-        });
+      <div class="bg-surface-elevated border border-surface-variant rounded-lg p-6 hover:shadow-glow-emerald transition-shadow duration-300 relative overflow-hidden group">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <div class="flex justify-between items-start mb-4 relative z-10">
+          <span class="material-symbols-outlined text-primary text-[32px]">memory</span>
+          <span class="font-code-sm text-code-sm text-primary bg-primary/10 px-2 py-1 rounded">Optymalizacja</span>
+        </div>
+        <h3 class="font-headline-md text-headline-md text-on-surface mb-1 relative z-10">99.99%</h3>
+        <p class="font-label-caps text-label-caps text-on-surface-variant uppercase relative z-10">Uptime systemów</p>
+      </div>
 
-        return [headerLine, ...itemLines].join('\n');
-      }).join('\n')}</code></pre>
+      <div class="bg-surface-elevated border border-surface-variant rounded-lg p-6 hover:shadow-glow-emerald transition-shadow duration-300 relative overflow-hidden group">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <div class="flex justify-between items-start mb-4 relative z-10">
+          <span class="material-symbols-outlined text-primary text-[32px]">hub</span>
+          <span class="font-code-sm text-code-sm text-primary bg-primary/10 px-2 py-1 rounded">Zintegrowane</span>
+        </div>
+        <h3 class="font-headline-md text-headline-md text-on-surface mb-1 relative z-10">45+</h3>
+        <p class="font-label-caps text-label-caps text-on-surface-variant uppercase relative z-10">API i mikroserwisów</p>
+      </div>
+    </div>
 
-      <div class="skills-tree__visual" role="list" aria-label="Drzewo umiejętności">
-        {categories.map(([key, cat], ci) => {
-          const isLastCat = ci === lastCategoryIdx;
-          const lastItemIdx = cat.items.length - 1;
-
-          return (
-            <div class="skills-tree__category" role="listitem">
-              <div class="skills-tree__cat-row">
-                <span class="skills-tree__pipe" aria-hidden="true">
-                  {isLastCat ? '└──' : '├──'}
-                </span>
-                <span class="skills-tree__cat-label terminal-text">{cat.label}/</span>
-              </div>
-
-              {cat.items.map((item, ii) => {
-                const isLastItem = ii === lastItemIdx;
-                return (
-                  <div class="skills-tree__item" role="listitem">
-                    <span class="skills-tree__pipe skills-tree__pipe--vertical" aria-hidden="true">
-                      {isLastCat ? '    ' : '│   '}
-                    </span>
-                    <span class="skills-tree__pipe" aria-hidden="true">
-                      {isLastItem ? '└──' : '├──'}
-                    </span>
-                    <span class="skills-tree__item-name">{item.name}</span>
-                    <div
-                      class="skills-tree__bar"
-                      role="progressbar"
-                      aria-valuenow={item.pct}
-                      aria-valuemin="0"
-                      aria-valuemax="100"
-                      aria-label={`${item.name}: ${item.pct}%`}
-                    >
-                      <div
-                        class="skills-tree__bar-fill"
-                        style={`width: ${item.pct}%`}
-                      />
-                    </div>
-                    <span class="skills-tree__pct">{item.pct}%</span>
-                  </div>
-                );
-              })}
+    <!-- Core Proficiencies (Terminal Cards & Progress Bars) -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-section-gap">
+      <!-- Languages Terminal -->
+      <div class="flex flex-col rounded-lg overflow-hidden border border-surface-variant shadow-lg bg-surface-container-lowest">
+        <!-- Terminal Header -->
+        <div class="bg-terminal-header px-4 py-3 flex items-center border-b border-surface-variant">
+          <div class="flex gap-2 mr-4">
+            <div class="w-3 h-3 rounded-full bg-error/70"></div>
+            <div class="w-3 h-3 rounded-full bg-tertiary-container/70"></div>
+            <div class="w-3 h-3 rounded-full bg-primary/70"></div>
+          </div>
+          <span class="font-code-sm text-code-sm text-on-surface-variant flex-grow text-center">languages.config.json</span>
+        </div>
+        <!-- Terminal Body -->
+        <div class="p-6 bg-surface-container-low flex-grow flex flex-col gap-6">
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="font-code-sm text-code-sm text-on-surface">TypeScript</span>
+              <span class="font-code-sm text-code-sm text-primary">95%</span>
             </div>
-          );
-        })}
+            <div class="w-full bg-surface-variant h-1 rounded-full overflow-hidden">
+              <div class="bg-primary h-full rounded-full w-[95%]"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="font-code-sm text-code-sm text-on-surface">Python</span>
+              <span class="font-code-sm text-code-sm text-primary">90%</span>
+            </div>
+            <div class="w-full bg-surface-variant h-1 rounded-full overflow-hidden">
+              <div class="bg-primary h-full rounded-full w-[90%]"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="font-code-sm text-code-sm text-on-surface">Rust</span>
+              <span class="font-code-sm text-code-sm text-primary">75%</span>
+            </div>
+            <div class="w-full bg-surface-variant h-1 rounded-full overflow-hidden">
+              <div class="bg-primary h-full rounded-full w-[75%]"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="font-code-sm text-code-sm text-on-surface">C++</span>
+              <span class="font-code-sm text-code-sm text-primary">60%</span>
+            </div>
+            <div class="w-full bg-surface-variant h-1 rounded-full overflow-hidden">
+              <div class="bg-primary h-full rounded-full w-[60%]"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tools Terminal -->
+      <div class="flex flex-col rounded-lg overflow-hidden border border-surface-variant shadow-lg bg-surface-container-lowest">
+        <!-- Terminal Header -->
+        <div class="bg-terminal-header px-4 py-3 flex items-center border-b border-surface-variant">
+          <div class="flex gap-2 mr-4">
+            <div class="w-3 h-3 rounded-full bg-error/70"></div>
+            <div class="w-3 h-3 rounded-full bg-tertiary-container/70"></div>
+            <div class="w-3 h-3 rounded-full bg-primary/70"></div>
+          </div>
+          <span class="font-code-sm text-code-sm text-on-surface-variant flex-grow text-center">infrastructure.yml</span>
+        </div>
+        <!-- Terminal Body -->
+        <div class="p-6 bg-surface-container-low flex-grow flex flex-col gap-6">
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="font-code-sm text-code-sm text-on-surface">Docker / Containerization</span>
+              <span class="font-code-sm text-code-sm text-primary">92%</span>
+            </div>
+            <div class="w-full bg-surface-variant h-1 rounded-full overflow-hidden">
+              <div class="bg-primary h-full rounded-full w-[92%]"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="font-code-sm text-code-sm text-on-surface">Git / CI-CD</span>
+              <span class="font-code-sm text-code-sm text-primary">98%</span>
+            </div>
+            <div class="w-full bg-surface-variant h-1 rounded-full overflow-hidden">
+              <div class="bg-primary h-full rounded-full w-[98%]"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="font-code-sm text-code-sm text-on-surface">Linux Systems</span>
+              <span class="font-code-sm text-code-sm text-primary">88%</span>
+            </div>
+            <div class="w-full bg-surface-variant h-1 rounded-full overflow-hidden">
+              <div class="bg-primary h-full rounded-full w-[88%]"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="font-code-sm text-code-sm text-on-surface">Kubernetes</span>
+              <span class="font-code-sm text-code-sm text-primary">70%</span>
+            </div>
+            <div class="w-full bg-surface-variant h-1 rounded-full overflow-hidden">
+              <div class="bg-primary h-full rounded-full w-[70%]"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hierarchy Visualization -->
+    <div>
+      <h2 class="font-headline-lg text-headline-lg mb-8 text-on-surface">Architektura &amp; Domeny</h2>
+      <div class="bg-surface-elevated rounded-lg border border-surface-variant p-8 overflow-x-auto">
+        <div class="min-w-[800px] flex flex-col gap-6">
+          <!-- Root -->
+          <div class="flex items-center gap-4">
+            <div class="bg-primary text-on-primary font-code-sm text-code-sm px-4 py-2 rounded font-bold shadow-[0_0_15px_rgba(16,185,129,0.3)]">
+              SYSTEM_ARCHITECT
+            </div>
+          </div>
+          <!-- Level 1 & 2 -->
+          <div class="flex ml-8 relative">
+            <div class="absolute left-[-24px] top-[-24px] bottom-6 w-px bg-surface-variant"></div>
+            <div class="flex flex-col gap-8 w-full">
+              <!-- Branch 1 -->
+              <div class="relative flex items-start gap-8">
+                <div class="absolute left-[-24px] top-4 w-6 h-px bg-surface-variant"></div>
+                <div class="bg-surface-container-high border border-outline-variant font-label-caps text-label-caps px-4 py-2 rounded text-on-surface min-w-[150px]">
+                  Frontend Core
+                </div>
+                <div class="flex flex-wrap gap-2">
+                  <span class="border border-primary text-primary font-code-sm text-code-sm px-3 py-1 rounded-full bg-primary/5">React.js</span>
+                  <span class="border border-primary text-primary font-code-sm text-code-sm px-3 py-1 rounded-full bg-primary/5">Vue 3</span>
+                  <span class="border border-primary text-primary font-code-sm text-code-sm px-3 py-1 rounded-full bg-primary/5">Tailwind CSS</span>
+                </div>
+              </div>
+              <!-- Branch 2 -->
+              <div class="relative flex items-start gap-8">
+                <div class="absolute left-[-24px] top-4 w-6 h-px bg-surface-variant"></div>
+                <div class="bg-surface-container-high border border-outline-variant font-label-caps text-label-caps px-4 py-2 rounded text-on-surface min-w-[150px]">
+                  Backend Services
+                </div>
+                <div class="flex flex-wrap gap-2">
+                  <span class="border border-tertiary-container text-tertiary-container font-code-sm text-code-sm px-3 py-1 rounded-full bg-tertiary-container/5">Node.js</span>
+                  <span class="border border-tertiary-container text-tertiary-container font-code-sm text-code-sm px-3 py-1 rounded-full bg-tertiary-container/5">Python/FastAPI</span>
+                  <span class="border border-tertiary-container text-tertiary-container font-code-sm text-code-sm px-3 py-1 rounded-full bg-tertiary-container/5">PostgreSQL</span>
+                </div>
+              </div>
+              <!-- Branch 3 -->
+              <div class="relative flex items-start gap-8">
+                <div class="absolute left-[-24px] top-4 w-6 h-px bg-surface-variant"></div>
+                <div class="bg-surface-container-high border border-outline-variant font-label-caps text-label-caps px-4 py-2 rounded text-on-surface min-w-[150px]">
+                  DevOps
+                </div>
+                <div class="flex flex-wrap gap-2">
+                  <span class="border border-secondary text-secondary font-code-sm text-code-sm px-3 py-1 rounded-full bg-secondary/5">Docker</span>
+                  <span class="border border-secondary text-secondary font-code-sm text-code-sm px-3 py-1 rounded-full bg-secondary/5">Linux</span>
+                  <span class="border border-secondary text-secondary font-code-sm text-code-sm px-3 py-1 rounded-full bg-secondary/5">CI/CD</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 </Base>
-
-<style>
-  .skills-tree {
-    max-width: 48rem;
-    margin: 0 auto;
-    padding: var(--space-16) var(--space-6) var(--space-12);
-  }
-
-  .skills-tree__card {
-    background: var(--color-bg-card);
-    border-radius: var(--radius-md);
-    padding: var(--space-8);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .skills-tree__prompt {
-    font-family: var(--font-mono);
-    font-size: var(--text-xl);
-    font-weight: 600;
-    margin-bottom: var(--space-6);
-  }
-
-  .skills-tree__output {
-    display: none;
-    font-family: var(--font-mono);
-    font-size: var(--text-sm);
-    line-height: var(--leading-normal);
-    color: var(--color-text);
-    margin: 0;
-    white-space: pre;
-    overflow-x: auto;
-  }
-
-  .skills-tree__visual {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .skills-tree__category {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .skills-tree__cat-row {
-    display: flex;
-    align-items: baseline;
-    gap: var(--space-2);
-  }
-
-  .skills-tree__pipe {
-    font-family: var(--font-mono);
-    font-size: var(--text-sm);
-    color: var(--color-accent-dim);
-    white-space: pre;
-    user-select: none;
-    flex-shrink: 0;
-  }
-
-  .skills-tree__pipe--vertical {
-    /* This is the vertical continuation pipe from the parent category */
-  }
-
-  .skills-tree__cat-label {
-    font-family: var(--font-mono);
-    font-size: var(--text-sm);
-    font-weight: 600;
-  }
-
-  .skills-tree__item {
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-    padding: var(--space-1) 0;
-  }
-
-  .skills-tree__item-name {
-    font-family: var(--font-mono);
-    font-size: var(--text-sm);
-    color: var(--color-text);
-    min-width: 7rem;
-    white-space: nowrap;
-  }
-
-  .skills-tree__bar {
-    flex: 1;
-    height: var(--space-3);
-    background: var(--color-border);
-    border-radius: var(--radius-sm);
-    overflow: hidden;
-    min-width: 8rem;
-    max-width: 14rem;
-  }
-
-  .skills-tree__bar-fill {
-    height: 100%;
-    background: var(--color-terminal-green);
-    border-radius: var(--radius-sm);
-    transition: width 0.6s ease-out;
-  }
-
-  .skills-tree__pct {
-    font-family: var(--font-mono);
-    font-size: var(--text-xs);
-    color: var(--color-accent-dim);
-    min-width: 2.5rem;
-    text-align: right;
-  }
-
-  @media (max-width: 768px) {
-    .skills-tree {
-      padding: var(--space-10) var(--space-4) var(--space-8);
-    }
-
-    .skills-tree__card {
-      padding: var(--space-5);
-    }
-
-    .skills-tree__visual {
-      display: none;
-    }
-
-    .skills-tree__output {
-      display: block;
-    }
-
-    .skills-tree__prompt {
-      font-size: var(--text-base);
-    }
-  }
-</style>
