@@ -52,6 +52,9 @@ const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, '') : 'https:/
     <meta property="og:locale" content={lang === 'pl' ? 'pl_PL' : 'en_US'} />
     <meta property="og:locale:alternate" content={lang === 'pl' ? 'en_US' : 'pl_PL'} />
 
+    <!-- Google Site Verification (only on main page) -->
+    {(Astro.url.pathname === '/' || Astro.url.pathname === '/en' || Astro.url.pathname === '/en/') && <meta name="google-site-verification" content="nnkaC3ABL8eIvd0b6rT7L5DWihC28vwyFO9npuSoDrM" />}
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
