@@ -11,9 +11,18 @@ interface Props {
   title: string;
   description?: string;
   lang?: 'pl' | 'en';
+  image?: string;
+  article?: boolean;
 }
 
-const { title, description = '', lang = 'pl' } = Astro.props;
+const { title, description = '', lang = 'pl', image = '/screenshots/github-stats-1280.webp', article = false } = Astro.props;
+
+// Generate hreflang paths
+const pathname = Astro.url.pathname;
+const defaultPath = pathname.replace(/^\/en/, '') || '/';
+const plPath = defaultPath;
+const enPath = defaultPath === '/' ? '/en' : `/en${defaultPath}`;
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, '') : 'https://w-koperski.github.io';
 ---
 
 <!DOCTYPE html>
@@ -27,22 +36,45 @@ const { title, description = '', lang = 'pl' } = Astro.props;
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
+
+    <!-- i18n hreflang tags -->
+    <link rel="alternate" hreflang="pl" href={`${siteUrl}${plPath}`} />
+    <link rel="alternate" hreflang="en" href={`${siteUrl}${enPath}`} />
+    <link rel="alternate" hreflang="x-default" href={`${siteUrl}${plPath}`} />
+
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={article ? 'article' : 'website'} />
     <meta property="og:site_name" content="Wojciech Koperski — Portfolio" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description || 'Developer pasjonujący się tworzeniem oprogramowania'} />
     <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:image" content={new URL(image, Astro.url)} />
     <meta property="og:locale" content={lang === 'pl' ? 'pl_PL' : 'en_US'} />
+    <meta property="og:locale:alternate" content={lang === 'pl' ? 'en_US' : 'pl_PL'} />
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description || 'Portfolio Wojciecha Koperskiego'} />
+    <meta name="twitter:image" content={new URL(image, Astro.url)} />
+
     <!-- Canonical + Favicon -->
     <link rel="canonical" href={Astro.url.href} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://personal.koperski.tech; connect-src 'self' https://personal.koperski.tech;" />
     <ViewTransitions />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Wojciech Koperski",
+      "jobTitle": "Software Engineer",
+      "url": siteUrl,
+      "sameAs": [
+        "https://github.com/w-koperski"
+      ]
+    })} />
   </head>
   <body class="bg-background text-on-background font-body-md text-body-md grid-bg min-h-screen flex flex-col antialiased">
     <a href="#main-content" class="skip-link">Skip to content</a>
