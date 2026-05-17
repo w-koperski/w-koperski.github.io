@@ -19,10 +19,13 @@ const navLinks = [
 
 function isActive(linkHref: string): boolean {
   const resolved = translatePath(linkHref);
-  return currentPath === resolved || (resolved !== '/' && currentPath.startsWith(resolved));
+  if (resolved === '/' || resolved === '/en' || resolved === '/en/') {
+    return currentPath === resolved || currentPath === resolved + '/';
+  }
+  return currentPath === resolved || currentPath.startsWith(resolved + '/');
 }
 
-const langSwitchLabel = t('lang.switch', lang) === 'EN' ? 'language' : 'language'; // using icon
+const langSwitchLabel = t('lang.switch', lang); // using icon
 const langSwitchHref = lang === 'pl' ? `/en${currentPath}` : currentPath.replace(/^\/en/, '') || '/';
 ---
 

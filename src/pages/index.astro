@@ -90,13 +90,13 @@ const featuredProjects = allProjects.filter(p => featuredSlugs.includes(p.id.rep
 
             {isLarge && (
               <div class="relative z-10 mt-auto flex gap-4 pt-4">
-                <a href={translatePath(`/projects/${project.slug}`)} class="text-primary font-label-caps text-label-caps hover:underline flex items-center gap-1">
+                <a href={translatePath(`/projects/${project.id}`)} class="text-primary font-label-caps text-label-caps hover:underline flex items-center gap-1">
                   <span class="material-symbols-outlined text-sm">code</span> View Details
                 </a>
               </div>
             )}
             {!isLarge && (
-                <a href={translatePath(`/projects/${project.slug}`)} class="absolute inset-0 z-20">
+                <a href={translatePath(`/projects/${project.id}`)} class="absolute inset-0 z-20">
                     <span class="sr-only">View {project.data.title}</span>
                 </a>
             )}
