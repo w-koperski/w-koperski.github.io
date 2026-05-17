@@ -19,52 +19,13 @@ html {
 }
 
 body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  font-family: var(--font-sans);
-  font-size: var(--text-base);
-  line-height: var(--leading-normal);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-  background-color: var(--color-terminal-green);
-  color: var(--color-bg);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 600;
-  line-height: var(--leading-tight);
-}
-
-p {
-  margin-bottom: var(--space-4);
-}
-
-a {
-  color: var(--color-accent);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-a:hover {
-  color: var(--color-terminal-green);
-}
-
-button {
-  font-family: inherit;
-  cursor: pointer;
-}
-
-code,
-pre {
-  font-family: var(--font-mono);
+  background-color: #4edea3;
+  color: #0c1324;
 }
 
 img {
@@ -73,26 +34,29 @@ img {
   display: block;
 }
 
-/* Skip link */
-.skip-link {
-  position: absolute;
-  top: -100%;
-  left: var(--space-4);
-  background: var(--color-terminal-green);
-  color: var(--color-bg);
-  padding: var(--space-2) var(--space-4);
-  z-index: 9999;
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
+/* Grid Background */
+.grid-bg {
+    background-image:
+        linear-gradient(to right, rgba(60, 74, 66, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(60, 74, 66, 0.1) 1px, transparent 1px);
+    background-size: 32px 32px;
 }
 
-.skip-link:focus {
-  top: var(--space-4);
+/* Blinking cursor for typing effects */
+.blinking-cursor::after {
+    content: '█';
+    animation: blink 1s step-end infinite;
+    color: #4edea3;
+    margin-left: 4px;
+}
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 /* Focus styles */
 :focus-visible {
-  outline: 2px solid var(--color-terminal-green);
+  outline: 2px solid #4edea3;
   outline-offset: 2px;
 }
 
@@ -108,4 +72,21 @@ img {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: #4edea3;
+  color: #0c1324;
+  padding: 0.5rem 1rem;
+  z-index: 9999;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+}
+
+.skip-link:focus {
+  top: 1rem;
 }

@@ -1,125 +1,108 @@
 ---
 import Base from '../../layouts/Base.astro';
-import Preloader from '../../components/Preloader.astro';
-import MatrixRain from '../../components/MatrixRain';
+import { getCollection } from 'astro:content';
 import { t, useTranslatedPath } from '../../i18n/utils';
 
 const lang = 'en';
 const translatePath = useTranslatedPath(lang);
+
+const allProjects = await getCollection('projects');
+const featuredSlugs = ['ecommerce-backend', 'blog-api', 'task-manager'];
+const featuredProjects = allProjects.filter(p => featuredSlugs.includes(p.id.replace("\.json", "")));
 ---
 
 <Base
   title="Wojciech Koperski — Portfolio"
-  description="A developer passionate about building software — from CLI tools, through web apps, to ML models."
+  description="Software Developer Portfolio"
   lang={lang}
 >
-  <Preloader lang={lang} />
+  <!-- Hero Terminal Section -->
+  <section class="py-section-gap px-gutter w-full max-w-container-max mx-auto flex flex-col items-start justify-center min-h-[80vh]">
+    <div class="w-full max-w-3xl border border-surface-elevated bg-surface-container-low rounded-DEFAULT overflow-hidden shadow-[0_0_30px_rgba(16,185,129,0.05)] relative group">
+      <!-- Terminal Header -->
+      <div class="bg-terminal-header border-b border-surface-elevated px-4 py-2 flex items-center gap-2">
+        <div class="w-3 h-3 rounded-full bg-error-container"></div>
+        <div class="w-3 h-3 rounded-full bg-surface-bright"></div>
+        <div class="w-3 h-3 rounded-full bg-surface-tint"></div>
+        <span class="ml-4 font-code-sm text-code-sm text-on-surface-variant">bash - wk@dev-machine:~</span>
+      </div>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <MatrixRain client:only="react" />
-    <div class="hero__overlay">
-      <p class="hero__prompt terminal-text">{t('home.hero.greeting', lang)}</p>
-      <h1 class="hero__name terminal-text terminal-glow">{t('home.hero.name', lang)}</h1>
-      <span class="hero__cursor cursor-blink terminal-text">_</span>
+      <!-- Terminal Content -->
+      <div class="p-8 font-code-sm text-code-sm text-primary">
+        <p class="mb-2 text-on-surface-variant">&gt; whoami</p>
+        <h1 class="font-headline-xl text-headline-xl text-on-background mb-4 blinking-cursor">Wojciech Koperski</h1>
+
+        <p class="mb-4 text-on-surface-variant">&gt; get-title</p>
+        <p class="text-secondary mb-6">&gt; Software Engineer</p>
+
+        <div class="flex flex-wrap gap-4 mt-8">
+          <a href={translatePath('/projects')} class="bg-primary text-on-primary font-label-caps text-label-caps px-6 py-3 rounded-DEFAULT hover:shadow-[0_0_15px_rgba(16,185,129,0.3)] transition-all">
+            EXECUTE ./view_projects.sh
+          </a>
+          <a href={translatePath('/contact')} class="border border-primary text-primary font-label-caps text-label-caps px-6 py-3 rounded-DEFAULT hover:bg-glow-emerald transition-all">
+            PING contact
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Intro Section -->
-  <section class="intro">
-    <p class="intro__text">{t('home.intro', lang)}</p>
-    <a href={translatePath('/projects')} class="intro__cta terminal-border terminal-text">
-      {t('home.cta', lang)}
-    </a>
+  <!-- Bento Grid Projects Section -->
+  <section class="py-section-gap px-gutter w-full max-w-container-max mx-auto" id="projects">
+    <h2 class="font-headline-lg text-headline-lg text-on-background mb-12 border-b border-surface-elevated pb-4 inline-block">
+      <span class="text-primary mr-2 font-code-sm text-code-sm">01.</span>Featured Builds
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[250px]">
+      {featuredProjects.map((project, index) => {
+        const isLarge = index === 0;
+        return (
+          <div class={`border border-surface-elevated bg-surface-container-low rounded-DEFAULT hover:border-primary/50 transition-colors group relative overflow-hidden flex flex-col justify-between ${isLarge ? 'md:col-span-8 md:row-span-2 p-8' : 'md:col-span-4 md:row-span-1 p-6'}`}>
+            <div class="absolute inset-0 bg-glow-emerald opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-0"></div>
+
+            <div class="relative z-10 flex-grow flex flex-col">
+              {isLarge ? (
+                <>
+                  <div class="flex justify-between items-start mb-4">
+                    <span class="material-symbols-outlined text-4xl text-primary">cloud_done</span>
+                    <div class="flex gap-2 flex-wrap justify-end">
+                      {project.data.techStack.slice(0, 3).map(tech => (
+                        <span class="border border-outline font-label-caps text-label-caps text-on-surface-variant px-2 py-1 rounded-DEFAULT">{tech}</span>
+                      ))}
+                    </div>
+                  </div>
+                  <h3 class="font-headline-md text-headline-md text-on-background mb-4">{project.data.title}</h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant max-w-xl">{project.data.description.en}</p>
+                </>
+              ) : (
+                <>
+                   <span class="material-symbols-outlined text-3xl text-primary mb-3 block">schema</span>
+                   <h3 class="font-headline-md text-headline-md text-on-background mb-2">{project.data.title}</h3>
+                   <p class="font-body-md text-body-md text-on-surface-variant mb-4 line-clamp-2">{project.data.description.en}</p>
+                   <div class="flex gap-2 flex-wrap mt-auto">
+                      {project.data.techStack.slice(0, 2).map(tech => (
+                        <span class="border border-outline font-label-caps text-label-caps text-on-surface-variant px-2 py-1 rounded-DEFAULT">{tech}</span>
+                      ))}
+                   </div>
+                </>
+              )}
+            </div>
+
+            {isLarge && (
+              <div class="relative z-10 mt-auto flex gap-4 pt-4">
+                <a href={translatePath(`/projects/${project.slug}`)} class="text-primary font-label-caps text-label-caps hover:underline flex items-center gap-1">
+                  <span class="material-symbols-outlined text-sm">code</span> View Details
+                </a>
+              </div>
+            )}
+             {!isLarge && (
+                <a href={translatePath(`/projects/${project.slug}`)} class="absolute inset-0 z-20">
+                    <span class="sr-only">View {project.data.title}</span>
+                </a>
+            )}
+          </div>
+        );
+      })}
+    </div>
   </section>
 </Base>
-
-<style>
-  .hero {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    width: 100%;
-  }
-
-  .hero__overlay {
-    position: relative;
-    z-index: calc(var(--z-3d-canvas) + 1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-2);
-    text-align: center;
-    padding: var(--space-4);
-  }
-
-  .hero__prompt {
-    font-size: var(--text-sm);
-    opacity: 0.7;
-  }
-
-  .hero__name {
-    font-size: var(--text-4xl);
-    line-height: var(--leading-tight);
-    letter-spacing: -0.02em;
-  }
-
-  .hero__cursor {
-    font-size: var(--text-2xl);
-    line-height: 1;
-  }
-
-  @media (min-width: 768px) {
-    .hero__name {
-      font-size: var(--text-4xl);
-    }
-
-    .hero__prompt {
-      font-size: var(--text-base);
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .hero__name {
-      font-size: 4rem;
-    }
-  }
-
-  .intro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-8);
-    padding: var(--space-16) var(--space-4) var(--space-24);
-    max-width: 40rem;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .intro__text {
-    font-family: var(--font-mono);
-    font-size: var(--text-sm);
-    color: var(--color-text-muted);
-    line-height: var(--leading-relaxed);
-  }
-
-  .intro__cta {
-    display: inline-block;
-    padding: var(--space-3) var(--space-6);
-    font-size: var(--text-sm);
-    transition: box-shadow 0.3s ease, background-color 0.3s ease;
-  }
-
-  .intro__cta:hover {
-    box-shadow: var(--shadow-glow);
-    background-color: rgba(74, 246, 38, 0.05);
-  }
-
-  .intro__cta:focus-visible {
-    outline: 2px solid var(--color-terminal-green);
-    outline-offset: 2px;
-  }
-</style>

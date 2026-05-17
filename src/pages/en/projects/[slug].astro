@@ -1,17 +1,7 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
-import DetailHero from '../../../components/detail/DetailHero.astro';
-import PreviewSection from '../../../components/detail/PreviewSection.astro';
-import TechStackSection from '../../../components/detail/TechStackSection.astro';
-import DescriptionSection from '../../../components/detail/DescriptionSection.astro';
-import CodeSnippetsSection from '../../../components/detail/CodeSnippetsSection.astro';
-import HighlightsSection from '../../../components/detail/HighlightsSection.astro';
-import LinksSection from '../../../components/detail/LinksSection.astro';
-import TerminalTyping from '../../../components/previews/TerminalTyping.jsx';
-import BrowserScreenshot from '../../../components/previews/BrowserScreenshot.jsx';
-import ApiMockPanel from '../../../components/previews/ApiMockPanel.jsx';
-import MetricsDashboard from '../../../components/previews/MetricsDashboard.jsx';
+import { t } from '../../../i18n/utils';
 
 export async function getStaticPaths() {
   const allProjects = await getCollection('projects');
@@ -24,7 +14,6 @@ export async function getStaticPaths() {
 const { project, allProjects } = Astro.props;
 const lang = 'en';
 
-// Previous/next navigation within same category
 const categoryProjects = allProjects
   .filter((p: { data: { category: string } }) => p.data.category === project.data.category)
   .sort((a: { data: { title: string } }, b: { data: { title: string } }) =>
@@ -39,138 +28,124 @@ const nextProject =
 ---
 
 <Base title={`${project.data.title} — Portfolio`} lang={lang} description={project.data.description.en}>
-  <article class="detail">
-    <DetailHero
-      title={project.data.title}
-      category={project.data.category}
-      categoryEmoji={project.data.categoryEmoji}
-      year={project.data.year}
-      description={project.data.description.en}
-      lang={lang}
-    />
+  <main class="flex-grow pt-32 pb-section-gap px-gutter w-full">
+    <!-- Header Section -->
+    <header class="max-w-container-max mx-auto mb-16 relative">
+      <a href="/en/projects" class="inline-flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps mb-8 group">
+        <span class="material-symbols-outlined text-[16px] group-hover:-translate-x-1 transition-transform">arrow_back</span>
+        Back to Directory
+      </a>
 
-    <PreviewSection label="Preview">
-      {project.data.previewData?.type === 'terminal' && (
-        <TerminalTyping
-          commands={project.data.previewData.commands}
-          lang={lang}
-          client:visible
-          autoplay={true}
-        />
-      )}
-      {project.data.previewData?.type === 'browser' && (
-        <BrowserScreenshot
-          screenshots={(project.data.previewData as any).screenshots}
-          liveUrl={(project.data.previewData as any).liveUrl}
-          title={project.data.title}
-          client:visible
-        />
-      )}
-      {project.data.previewData?.type === 'api' && (
-        <ApiMockPanel
-          endpoints={project.data.previewData.endpoints}
-          lang={lang}
-          client:visible
-        />
-      )}
-      {project.data.previewData?.type === 'metrics' && (
-        <MetricsDashboard
-          epochs={project.data.previewData.epochs}
-          accuracyData={project.data.previewData.accuracyData}
-          lossData={project.data.previewData.lossData}
-          finalAccuracy={project.data.previewData.finalAccuracy}
-          samplePredictions={project.data.previewData.samplePredictions}
-          client:visible
-        />
-      )}
-      {!project.data.previewData && project.data.screenshot && (
-        <img
-          src={project.data.screenshot}
-          alt={`${project.data.title} preview`}
-          loading="lazy"
-          style="max-width: 100%; height: auto;"
-        />
-      )}
-    </PreviewSection>
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-outline-variant/30 pb-8 relative z-10">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">{project.data.categoryEmoji}</span>
+            <span class="font-label-caps text-label-caps border border-outline-variant px-3 py-1 rounded text-on-surface-variant">{project.data.category}</span>
+          </div>
+          <h1 class="font-headline-xl text-headline-xl text-on-surface mb-4">{project.data.title}</h1>
+          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">{project.data.description.en}</p>
+        </div>
 
-    <TechStackSection techStack={project.data.techStack} lang={lang} />
-
-    <DescriptionSection
-      longDescription={project.data.longDescription}
-      shortDescription={project.data.description.en}
-      lang={lang}
-    />
-
-    <CodeSnippetsSection snippets={project.data.codeSnippets} lang={lang} />
-
-    <HighlightsSection highlights={project.data.highlights} lang={lang} />
-
-    <LinksSection
-      githubUrl={project.data.githubUrl}
-      demoUrl={project.data.demoUrl}
-      lang={lang}
-    />
-
-    <!-- Prev/Next navigation -->
-    {(prevProject || nextProject) && (
-      <nav class="detail-nav">
-        {prevProject && (
-          <a href={`/en/projects/${prevProject.id}`} class="detail-nav__link detail-nav__link--prev">
-            ← {prevProject.data.title}
+        <div class="flex flex-wrap gap-4">
+          <a href={project.data.githubUrl} target="_blank" rel="noopener noreferrer" class="bg-surface-elevated border border-outline-variant text-on-surface px-6 py-3 rounded hover:bg-surface-container-high transition-colors font-label-caps text-label-caps flex items-center gap-2">
+            <span class="material-symbols-outlined text-[18px]">code</span>
+            View Source
           </a>
-        )}
+          {project.data.demoUrl && (
+            <a href={project.data.demoUrl} target="_blank" rel="noopener noreferrer" class="bg-primary text-on-primary px-6 py-3 rounded font-label-caps text-label-caps flex items-center gap-2 hover:bg-primary-fixed hover:shadow-[0_0_15px_rgba(16,185,129,0.3)] transition-all">
+              <span class="material-symbols-outlined text-[18px]">play_arrow</span>
+              Live Demo
+            </a>
+          )}
+        </div>
+      </div>
+    </header>
+
+    <!-- Content Sections -->
+    <div class="max-w-container-max mx-auto space-y-24">
+      <!-- Full Description -->
+      <section class="max-w-3xl">
+        <h2 class="font-headline-md text-headline-md text-on-surface mb-6 border-b border-outline-variant/20 pb-2">Overview</h2>
+        <div class="font-body-md text-body-md text-on-surface-variant space-y-4">
+          {project.data.longDescription ? (
+             <p>{project.data.longDescription.en}</p>
+          ) : (
+             <p>{project.data.description.en}</p>
+          )}
+        </div>
+      </section>
+
+      <!-- Tech Stack -->
+      <section>
+        <h2 class="font-headline-md text-headline-md text-on-surface mb-6 border-b border-outline-variant/20 pb-2">Tech Stack</h2>
+        <div class="flex flex-wrap gap-3">
+          {project.data.techStack.map((tech) => (
+            <span class="bg-surface-container border border-outline-variant px-4 py-2 rounded text-primary font-code-sm text-code-sm">
+              {tech}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      <!-- Highlights -->
+      {project.data.highlights && project.data.highlights.en && project.data.highlights.en.length > 0 && (
+        <section class="max-w-4xl">
+          <h2 class="font-headline-md text-headline-md text-on-surface mb-6 border-b border-outline-variant/20 pb-2">Key Highlights</h2>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {project.data.highlights.en.map((highlight) => (
+              <li class="flex items-start gap-3 bg-surface-container-low p-4 rounded border border-outline-variant/20">
+                <span class="material-symbols-outlined text-primary text-[20px] mt-0.5">check_circle</span>
+                <span class="font-body-md text-body-md text-on-surface-variant">{highlight}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      <!-- Code Snippets -->
+      {project.data.codeSnippets && project.data.codeSnippets.length > 0 && (
+        <section class="max-w-5xl">
+          <h2 class="font-headline-md text-headline-md text-on-surface mb-6 border-b border-outline-variant/20 pb-2">Architecture / Code</h2>
+          <div class="grid grid-cols-1 gap-8">
+            {project.data.codeSnippets.map((snippet) => (
+              <div class="bg-surface-elevated border border-outline-variant rounded-xl overflow-hidden">
+                <div class="bg-terminal-header px-4 py-3 border-b border-outline-variant/50 flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <div class="w-3 h-3 rounded-full bg-error/50"></div>
+                    <div class="w-3 h-3 rounded-full bg-tertiary-fixed-dim/50"></div>
+                    <div class="w-3 h-3 rounded-full bg-primary/50"></div>
+                  </div>
+                  <span class="font-code-sm text-code-sm text-on-surface-variant">{snippet.title} ({snippet.language})</span>
+                </div>
+                <div class="p-6 overflow-x-auto bg-[#0a0f18]">
+                  <pre class="font-code-sm text-code-sm text-primary-fixed leading-relaxed"><code>{snippet.code}</code></pre>
+                </div>
+                {snippet.description && (
+                  <div class="bg-surface-container-low p-4 border-t border-outline-variant/20">
+                     <p class="font-body-md text-sm text-on-surface-variant">{snippet.description.en}</p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+    </div>
+
+    <!-- Pagination -->
+    {(prevProject || nextProject) && (
+      <nav class="max-w-container-max mx-auto mt-32 pt-8 border-t border-outline-variant/30 flex justify-between">
+        {prevProject ? (
+          <a href={`/en/projects/${prevProject.id}`} class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors font-label-caps">
+            <span class="material-symbols-outlined">chevron_left</span> Previous: {prevProject.data.title}
+          </a>
+        ) : <div></div>}
         {nextProject && (
-          <a href={`/en/projects/${nextProject.id}`} class="detail-nav__link detail-nav__link--next">
-            {nextProject.data.title} →
+          <a href={`/en/projects/${nextProject.id}`} class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors font-label-caps">
+            Next: {nextProject.data.title} <span class="material-symbols-outlined">chevron_right</span>
           </a>
         )}
       </nav>
     )}
-  </article>
+  </main>
 </Base>
-
-<style>
-  .detail {
-  max-width: 56rem;
-  margin: 0 auto;
-  padding: var(--space-8) var(--space-6);
-  overflow-x: hidden;
-  }
-
-  .detail-nav {
-  display: flex;
-  justify-content: space-between;
-  padding: var(--space-8) 0;
-  border-top: 1px solid var(--color-border);
-  margin-top: var(--space-8);
-  }
-
-  .detail-nav__link {
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  color: var(--color-terminal-green);
-  text-decoration: none;
-  opacity: 0.7;
-  transition: opacity 0.2s;
-  word-break: break-word;
-  }
-
-  .detail-nav__link:hover {
-  opacity: 1;
-  }
-
-  .detail-nav__link--next {
-  margin-left: auto;
-  }
-
-  @media (max-width: 768px) {
-  .detail {
-    padding: var(--space-6) var(--space-4);
-  }
-
-  .detail img {
-    max-width: 100%;
-    height: auto;
-  }
-  }
-</style>

@@ -1,210 +1,122 @@
 ---
 import Base from '../layouts/Base.astro';
-import { t } from '../i18n/utils';
+import { t, useTranslatedPath } from '../i18n/utils';
 
 const lang = 'pl';
 const pageTitle = t('about.title', lang);
 ---
 
 <Base title={pageTitle} lang={lang} description="O mnie — Wojciech Koperski, developer pasjonujący się tworzeniem oprogramowania.">
-  <section class="neofetch">
-    <div class="neofetch__card terminal-border terminal-glow-element">
-      <div class="neofetch__layout">
-        <pre class="neofetch__ascii terminal-text terminal-glow" aria-hidden="true">  ██  ██
- ██  ██
-██  ██
-██  ██
- ██  ██
-  ██  ██</pre>
+  <section class="max-w-container-max mx-auto px-gutter pt-32 pb-section-gap">
+    <!-- Header Section -->
+    <header class="mb-20">
+      <div class="flex items-center space-x-4 mb-4">
+        <span class="text-primary font-code-sm text-code-sm">~/about</span>
+        <div class="h-px bg-outline-variant flex-grow"></div>
+      </div>
+      <h1 class="font-headline-xl text-headline-xl text-inverse-surface mb-6">System Identity</h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+        Inicjowanie profilu biograficznego... Rozpakowywanie informacji o Wojciechu.
+      </p>
+    </header>
 
-        <div class="neofetch__info">
-          <p class="neofetch__user terminal-text terminal-glow">wk@portfolio</p>
-          <p class="neofetch__separator">───────────────────</p>
-          <dl class="neofetch__fields">
-            <div class="neofetch__row">
-              <dt class="neofetch__key terminal-text">OS:</dt>
-              <dd class="neofetch__value">Developer</dd>
+    <!-- Bento Grid Layout -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+      <!-- Bio Column (Left) -->
+      <div class="md:col-span-8 flex flex-col gap-8">
+
+        <!-- Whoami Terminal Card -->
+        <div class="bg-surface-elevated border border-outline-variant rounded-lg overflow-hidden relative shadow-lg">
+          <!-- Terminal Header -->
+          <div class="bg-terminal-header px-4 py-2 flex items-center border-b border-outline-variant">
+            <div class="flex space-x-2">
+              <div class="w-3 h-3 rounded-full bg-error"></div>
+              <div class="w-3 h-3 rounded-full bg-tertiary"></div>
+              <div class="w-3 h-3 rounded-full bg-primary"></div>
             </div>
-            <div class="neofetch__row">
-              <dt class="neofetch__key terminal-text">Shell:</dt>
-              <dd class="neofetch__value">TypeScript/Rust/Python</dd>
+            <span class="ml-4 font-code-sm text-code-sm text-on-surface-variant">wojciech@dev-core: ~</span>
+          </div>
+
+          <!-- Terminal Content -->
+          <div class="p-6 font-code-sm text-code-sm text-inverse-surface">
+            <div class="mb-4">
+              <span class="text-primary">$</span> <span class="text-secondary">whoami</span>
             </div>
-            <div class="neofetch__row">
-              <dt class="neofetch__key terminal-text">WM:</dt>
-              <dd class="neofetch__value">Vue 3 / React</dd>
+            <div class="text-on-surface-variant space-y-4 font-body-md text-body-md">
+              <p class="text-primary font-bold">Wojciech Koperski</p>
+              <p>Cześć, jestem developerem, który koduje od ponad trzech lat. Tworzę wszystko od narzędzi CLI, przez aplikacje webowe, aż po modele ML.</p>
+              <p>Uwielbiam terminal, czyste architektury i pić kawę podczas debugowania Rusta o 2 w nocy. Zawsze szukam optymalnych rozwiązań, skupiając się na wydajności i niezawodności.</p>
             </div>
-            <div class="neofetch__row">
-              <dt class="neofetch__key terminal-text">Terminal:</dt>
-              <dd class="neofetch__value">ncurses / CLI</dd>
+            <div class="mt-4 flex items-center">
+              <span class="text-primary">$</span> <span class="w-2 h-4 bg-primary ml-2 animate-pulse"></span>
             </div>
-            <div class="neofetch__row">
-              <dt class="neofetch__key terminal-text">Editor:</dt>
-              <dd class="neofetch__value">VS Code + Neovim</dd>
+          </div>
+        </div>
+
+        <!-- Expertise Section -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div class="border border-outline-variant bg-surface-elevated rounded-lg p-6 hover:border-primary/50 transition-colors group">
+            <div class="absolute inset-0 bg-glow-emerald opacity-0 group-hover:opacity-10 transition-opacity pointer-events-none rounded-lg"></div>
+            <div class="relative z-10">
+              <div class="flex items-center space-x-3 mb-4">
+                <span class="material-symbols-outlined text-primary text-3xl">architecture</span>
+                <h3 class="font-headline-md text-headline-md text-inverse-surface">Architektura</h3>
+              </div>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Projektowanie skalowalnych systemów, skupiając się na czystym kodzie i wydajnych wzorcach projektowych.
+              </p>
             </div>
-            <div class="neofetch__row">
-              <dt class="neofetch__key terminal-text">Uptime:</dt>
-              <dd class="neofetch__value">3+ lata kodowania</dd>
+          </div>
+          <div class="border border-outline-variant bg-surface-elevated rounded-lg p-6 hover:border-primary/50 transition-colors group">
+             <div class="absolute inset-0 bg-glow-emerald opacity-0 group-hover:opacity-10 transition-opacity pointer-events-none rounded-lg"></div>
+             <div class="relative z-10">
+                <div class="flex items-center space-x-3 mb-4">
+                  <span class="material-symbols-outlined text-primary text-3xl">code_blocks</span>
+                  <h3 class="font-headline-md text-headline-md text-inverse-surface">Full Stack</h3>
+                </div>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Głęboka wiedza w zakresie tworzenia nowoczesnych interfejsów (React) oraz stabilnych backendów (Rust, Node, Python).
+                </p>
             </div>
-            <div class="neofetch__row">
-              <dt class="neofetch__key terminal-text">Packages:</dt>
-              <dd class="neofetch__value">28 projektów</dd>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Profile Sidebar (Right) -->
+      <div class="md:col-span-4 flex flex-col gap-8">
+        <!-- Profile Image Card -->
+        <div class="border border-outline-variant bg-surface-elevated rounded-lg overflow-hidden">
+          <div class="h-64 bg-surface-container relative">
+            <img alt="Wojciech Koperski - Profile Visual" class="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAElGMX-3RrdRXd86RG5AwLdEhw8g8AWtb9xoZp9YQ7T1pu2hPhH6aLpfffuHTJwNxg9-92hfba4GTomsw1qkUrXA3-cAWO123GOYfMYVh1D8ny8r9ZSm4bI4udIqVk65d2zS4tmWF7AA7YQF290JEmb-mnXJbPkJ-SmMpjDgNlJysZWnKdoxryztmHily7zluDaXdGvMSbhUYGWGpG8unAfbMr5hSN5wdbxB6KjMgbs8du64MtKsnYCXH-nvQJdEWnFXQcWrwtPtMz" />
+            <div class="absolute inset-0 bg-gradient-to-t from-surface-elevated to-transparent"></div>
+          </div>
+          <div class="p-6 border-t border-outline-variant relative">
+            <!-- CLI Style Input decorative -->
+            <div class="absolute -top-3 left-6 bg-surface-elevated px-2 font-code-sm text-code-sm text-primary border border-outline-variant rounded">
+              sys.info()
             </div>
-            <div class="neofetch__row">
-              <dt class="neofetch__key terminal-text">CPU:</dt>
-              <dd class="neofetch__value">C++, Rust, Python, JS, C#</dd>
-            </div>
-          </dl>
+            <ul class="space-y-3 font-code-sm text-code-sm mt-4">
+              <li class="flex justify-between border-b border-outline-variant/30 pb-2">
+                <span class="text-on-surface-variant">OS</span>
+                <span class="text-inverse-surface">Linux / Arch</span>
+              </li>
+              <li class="flex justify-between border-b border-outline-variant/30 pb-2">
+                <span class="text-on-surface-variant">Shell</span>
+                <span class="text-inverse-surface">ZSH + tmux</span>
+              </li>
+              <li class="flex justify-between border-b border-outline-variant/30 pb-2">
+                <span class="text-on-surface-variant">Editor</span>
+                <span class="text-inverse-surface">Neovim</span>
+              </li>
+              <li class="flex justify-between pb-2">
+                <span class="text-on-surface-variant">Status</span>
+                <span class="text-primary">Online</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-
-      <div class="neofetch__palette" aria-label="Kolor palety">
-        <span class="neofetch__color" style="background: #4AF626;"></span>
-        <span class="neofetch__color" style="background: #2A8D15;"></span>
-        <span class="neofetch__color" style="background: #E5E7EB;"></span>
-        <span class="neofetch__color" style="background: #9CA3AF;"></span>
-        <span class="neofetch__color" style="background: #F59E0B;"></span>
-        <span class="neofetch__color" style="background: #EF4444;"></span>
-        <span class="neofetch__color" style="background: #111111;"></span>
-        <span class="neofetch__color" style="background: #0A0A0A;"></span>
-      </div>
     </div>
-
-    <p class="neofetch__bio">
-      Cześć, jestem <span class="terminal-text">Wojciech</span> — developer, który koduje od ponad trzech lat.
-      Tworzę wszystko od narzędzi CLI, przez aplikacje webowe, aż po modele ML.
-      Uwielbiam terminal, czyste architektury i pić kawę podczas debugowania Rusta o 2 w nocy.
-    </p>
   </section>
 </Base>
-
-<style>
-  .neofetch {
-    max-width: 48rem;
-    margin: 0 auto;
-    padding: var(--space-16) var(--space-6) var(--space-12);
-  }
-
-  .neofetch__card {
-    background: var(--color-bg-card);
-    border-radius: var(--radius-md);
-    padding: var(--space-8);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .neofetch__layout {
-    display: flex;
-    gap: var(--space-8);
-    align-items: flex-start;
-  }
-
-  .neofetch__ascii {
-    font-family: var(--font-mono);
-    font-size: var(--text-lg);
-    line-height: var(--leading-tight);
-    flex-shrink: 0;
-    user-select: none;
-    letter-spacing: 0.05em;
-  }
-
-  .neofetch__info {
-    flex: 1;
-    min-width: 0;
-  }
-
-  .neofetch__user {
-    font-family: var(--font-mono);
-    font-size: var(--text-xl);
-    font-weight: 600;
-    margin-bottom: var(--space-1);
-  }
-
-  .neofetch__separator {
-    font-family: var(--font-mono);
-    font-size: var(--text-sm);
-    color: var(--color-accent-dim);
-    margin-bottom: var(--space-4);
-    letter-spacing: -0.02em;
-  }
-
-  .neofetch__fields {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-  }
-
-  .neofetch__row {
-    display: flex;
-    gap: var(--space-2);
-    align-items: baseline;
-  }
-
-  .neofetch__key {
-    font-family: var(--font-mono);
-    font-size: var(--text-sm);
-    font-weight: 600;
-    white-space: nowrap;
-    min-width: 6rem;
-  }
-
-  .neofetch__value {
-    font-family: var(--font-mono);
-    font-size: var(--text-sm);
-    color: var(--color-text);
-    margin: 0;
-  }
-
-  .neofetch__palette {
-    display: flex;
-    gap: var(--space-2);
-    margin-top: var(--space-6);
-    padding-top: var(--space-4);
-    border-top: 1px solid var(--color-border);
-  }
-
-  .neofetch__color {
-    width: var(--space-6);
-    height: var(--space-6);
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--color-border);
-    display: inline-block;
-  }
-
-  .neofetch__bio {
-    font-family: var(--font-sans);
-    font-size: var(--text-base);
-    color: var(--color-text-muted);
-    line-height: var(--leading-relaxed);
-    margin-top: var(--space-8);
-    max-width: 42rem;
-  }
-
-  @media (max-width: 768px) {
-    .neofetch {
-      padding: var(--space-10) var(--space-4) var(--space-8);
-    }
-
-    .neofetch__card {
-      padding: var(--space-5);
-    }
-
-    .neofetch__layout {
-      flex-direction: column;
-      gap: var(--space-5);
-    }
-
-    .neofetch__ascii {
-      font-size: var(--text-base);
-      text-align: center;
-    }
-
-    .neofetch__key {
-      min-width: 5.5rem;
-    }
-
-    .neofetch__color {
-      width: var(--space-5);
-      height: var(--space-5);
-    }
-  }
-</style>
