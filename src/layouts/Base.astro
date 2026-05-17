@@ -75,6 +75,22 @@ const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, '') : 'https:/
         "https://github.com/w-koperski"
       ]
     })} />
+    <script is:inline>
+      (function() {
+        try {
+          if (!sessionStorage.getItem('lang_redirected')) {
+            sessionStorage.setItem('lang_redirected', 'true');
+            const userLang = navigator.language || navigator.userLanguage;
+            const currentPath = window.location.pathname;
+            if (userLang && userLang.toLowerCase().startsWith('en') && !currentPath.startsWith('/en')) {
+              window.location.replace('/en' + currentPath);
+            }
+          }
+        } catch (e) {
+          // ignore
+        }
+      })();
+    </script>
   </head>
   <body class="bg-background text-on-background font-body-md text-body-md grid-bg min-h-screen flex flex-col antialiased">
     <a href="#main-content" class="skip-link">Skip to content</a>
