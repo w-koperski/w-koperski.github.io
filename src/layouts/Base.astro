@@ -22,7 +22,7 @@ const pathname = Astro.url.pathname;
 const defaultPath = pathname.replace(/^\/en/, '') || '/';
 const plPath = defaultPath;
 const enPath = defaultPath === '/' ? '/en' : `/en${defaultPath}`;
-const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, '') : 'https://w-koperski.github.io';
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, '') : 'https://koperski.is-a.dev';
 ---
 
 <!DOCTYPE html>

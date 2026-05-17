@@ -8,13 +8,13 @@
   },
   "techStack": ["React", "Chart.js", "Vite"],
   "githubUrl": "https://github.com/w-koperski/weather-dashboard",
-  "liveUrl": "https://w-koperski.github.io/weather-dashboard/",
+  "liveUrl": "https://koperski.is-a.dev/weather-dashboard/",
   "year": 2023,
   "featured": false,
   "screenshot": "/screenshots/weather-dashboard-1280.webp",
   "previewData": {
     "type": "browser",
-    "liveUrl": "https://w-koperski.github.io/weather-dashboard/",
+    "liveUrl": "https://koperski.is-a.dev/weather-dashboard/",
     "screenshots": [
       "/screenshots/weather-dashboard-1280.webp",
       "/screenshots/weather-dashboard-1920.webp"

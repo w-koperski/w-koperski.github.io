@@ -4,7 +4,7 @@ import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://w-koperski.github.io',
+  site: 'https://koperski.is-a.dev',
   integrations: [
     react(),
     tailwind(),

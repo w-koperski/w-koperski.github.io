@@ -8,13 +8,13 @@
   },
   "techStack": ["Vue 3", "Vite"],
   "githubUrl": "https://github.com/w-koperski/pomodoro-timer",
-  "liveUrl": "https://w-koperski.github.io/pomodoro-timer/",
+  "liveUrl": "https://koperski.is-a.dev/pomodoro-timer/",
   "year": 2024,
   "featured": false,
   "screenshot": "/screenshots/pomodoro-timer-1280.webp",
   "previewData": {
     "type": "browser",
-    "liveUrl": "https://w-koperski.github.io/pomodoro-timer/",
+    "liveUrl": "https://koperski.is-a.dev/pomodoro-timer/",
     "screenshots": [
       "/screenshots/pomodoro-timer-1280.webp",
       "/screenshots/pomodoro-timer-1920.webp"

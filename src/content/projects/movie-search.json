@@ -8,13 +8,13 @@
   },
   "techStack": ["Vue 3", "Vite", "TMDB API"],
   "githubUrl": "https://github.com/w-koperski/movie-search",
-  "liveUrl": "https://w-koperski.github.io/movie-search/",
+  "liveUrl": "https://koperski.is-a.dev/movie-search/",
   "year": 2024,
   "featured": false,
   "screenshot": "/screenshots/movie-search-1280.webp",
   "previewData": {
     "type": "browser",
-    "liveUrl": "https://w-koperski.github.io/movie-search/",
+    "liveUrl": "https://koperski.is-a.dev/movie-search/",
     "screenshots": [
       "/screenshots/movie-search-1280.webp",
       "/screenshots/movie-search-1920.webp"

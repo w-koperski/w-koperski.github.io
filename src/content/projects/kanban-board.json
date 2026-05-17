@@ -8,13 +8,13 @@
   },
   "techStack": ["React", "Vite"],
   "githubUrl": "https://github.com/w-koperski/kanban-board",
-  "liveUrl": "https://w-koperski.github.io/kanban-board/",
+  "liveUrl": "https://koperski.is-a.dev/kanban-board/",
   "year": 2024,
   "featured": false,
   "screenshot": "/screenshots/kanban-board-1280.webp",
   "previewData": {
     "type": "browser",
-    "liveUrl": "https://w-koperski.github.io/kanban-board/",
+    "liveUrl": "https://koperski.is-a.dev/kanban-board/",
     "screenshots": [
       "/screenshots/kanban-board-1280.webp",
       "/screenshots/kanban-board-1920.webp"
