@@ -8,13 +8,13 @@
   },
   "techStack": ["Vue 3", "Vite", "CSS"],
   "githubUrl": "https://github.com/w-koperski/quiz-app",
-  "liveUrl": "https://w-koperski.github.io/quiz-app/",
+  "liveUrl": "https://koperski.is-a.dev/quiz-app/",
   "year": 2022,
   "featured": false,
   "screenshot": "/screenshots/quiz-app-1280.webp",
   "previewData": {
     "type": "browser",
-    "liveUrl": "https://w-koperski.github.io/quiz-app/",
+    "liveUrl": "https://koperski.is-a.dev/quiz-app/",
     "screenshots": [
       "/screenshots/quiz-app-1280.webp",
       "/screenshots/quiz-app-1920.webp"
