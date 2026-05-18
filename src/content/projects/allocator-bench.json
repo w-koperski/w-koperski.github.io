@@ -8,35 +8,36 @@
   },
   "techStack": [
     "C++",
-    "CMake"
+    "CMake",
+    "Docker"
   ],
   "githubUrl": "https://github.com/w-koperski/allocator-bench",
   "year": 2024,
   "featured": false,
   "screenshot": "/mockups/memory-allocator-benchmark.svg",
   "previewData": {
-    "type": "terminal",
-    "commands": {
-      "pl": [
-        {
-          "command": "./allocator-bench --iterations 100000 --mode fixed",
-          "output": "🔬 Benchmark alokacji pamięci (100 000 iteracji):\n  malloc/free:   12.4 ms  (średnio 124 ns/alokacja)\n  new/delete:     14.1 ms  (średnio 141 ns/alokacja)\n  allocator:       9.8 ms  (średnio  98 ns/alokacja)"
-        },
-        {
-          "command": "./allocator-bench --iterations 100000 --mode random",
-          "output": "🔬 Benchmark — losowe rozmiary:\n  malloc/free:   18.7 ms\n  new/delete:     21.3 ms\n  allocator:      13.2 ms\n  🏆 Najlepszy: custom allocator (29.8% szybszy)"
-        }
-      ],
-      "en": [
-        {
-          "command": "./allocator-bench --iterations 100000 --mode fixed",
-          "output": "🔬 Memory allocation benchmark (100,000 iterations):\n  malloc/free:   12.4 ms  (avg 124 ns/allocation)\n  new/delete:     14.1 ms  (avg 141 ns/allocation)\n  allocator:       9.8 ms  (avg  98 ns/allocation)"
-        },
-        {
-          "command": "./allocator-bench --iterations 100000 --mode random",
-          "output": "🔬 Benchmark — random sizes:\n  malloc/free:   18.7 ms\n  new/delete:     21.3 ms\n  allocator:      13.2 ms\n  🏆 Best: custom allocator (29.8% faster)"
-        }
-      ]
-    }
-  }
+    "type": "browser",
+    "liveUrl": "https://github.com/w-koperski/allocator-bench",
+    "screenshots": [
+      "/mockups/memory-allocator-benchmark.svg"
+    ]
+  },
+  "longDescription": {
+    "pl": "Porównuje wydajność różnych metod alokacji pamięci w C++. malloc/free vs new/delete, stałe vs losowe rozmiary alokacji.",
+    "en": "Benchmarks different memory allocation methods in C++. malloc/free vs new/delete, fixed vs random allocation sizes."
+  },
+  "highlights": {
+    "pl": [
+      "Nowoczesna architektura",
+      "Wysoka wydajność działania",
+      "Skalowalny kod źródłowy",
+      "Zoptymalizowane UI/UX"
+    ],
+    "en": [
+      "malloc/free vs new/delete",
+      "Stale vs losowe rozmiary alokacji",
+      "Rozne rozmiary blokow"
+    ]
+  },
+  "demoUrl": "https://github.com/w-koperski/allocator-bench"
 }

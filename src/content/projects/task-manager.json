@@ -6,7 +6,10 @@
     "pl": "Prosty menedżer zadań SPA. Dodawanie zadań z priorytetem, oznaczanie jako ukończone, filtrowanie i sortowanie, trwałość w LocalStorage.",
     "en": "A simple task manager SPA. Add tasks with priority, mark as completed, filter and sort, LocalStorage persistence."
   },
-  "techStack": ["Vue 3", "Vite"],
+  "techStack": [
+    "Vue 3",
+    "Vite"
+  ],
   "githubUrl": "https://github.com/w-koperski/task-manager",
   "liveUrl": "https://koperski.is-a.dev/task-manager/",
   "year": 2023,
@@ -19,5 +22,25 @@
       "/screenshots/task-manager-1280.webp",
       "/screenshots/task-manager-1920.webp"
     ]
-  }
+  },
+  "longDescription": {
+    "pl": "Prosty menedżer zadań SPA. Dodawanie zadań z priorytetem, oznaczanie jako ukończone, filtrowanie i sortowanie, trwałość w LocalStorage.",
+    "en": "A simple task manager SPA. Add tasks with priority, mark as completed, filter and sort, LocalStorage persistence."
+  },
+  "highlights": {
+    "pl": [
+      "Nowoczesna architektura",
+      "Wysoka wydajność działania",
+      "Skalowalny kod źródłowy",
+      "Zoptymalizowane UI/UX"
+    ],
+    "en": [
+      "Dodawanie zadań z priorytetem",
+      "Oznaczanie zadań jako ukończone",
+      "Usuwanie zadań",
+      "Filtrowanie i sortowanie zadań",
+      "Trwałość w LocalStorage"
+    ]
+  },
+  "demoUrl": "https://github.com/w-koperski/task-manager"
 }

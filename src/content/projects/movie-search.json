@@ -6,7 +6,12 @@
     "pl": "Wyszukiwarka filmów oparta na TMDB API. Wyszukiwanie po tytule, popularne filmy na stronie głównej, debounce na wejściu.",
     "en": "A movie search app based on TMDB API. Search by title, popular movies on homepage, debounced search input."
   },
-  "techStack": ["Vue 3", "Vite", "TMDB API"],
+  "techStack": [
+    "Vue 3",
+    "Vite",
+    "TMDB API",
+    "Docker"
+  ],
   "githubUrl": "https://github.com/w-koperski/movie-search",
   "liveUrl": "https://koperski.is-a.dev/movie-search/",
   "year": 2024,
@@ -19,5 +24,25 @@
       "/screenshots/movie-search-1280.webp",
       "/screenshots/movie-search-1920.webp"
     ]
-  }
+  },
+  "longDescription": {
+    "pl": "Wyszukiwarka filmów oparta na TMDB API. Wyszukiwanie po tytule, popularne filmy na stronie głównej, debounce na wejściu.",
+    "en": "A movie search app based on TMDB API. Search by title, popular movies on homepage, debounced search input."
+  },
+  "highlights": {
+    "pl": [
+      "Nowoczesna architektura",
+      "Wysoka wydajność działania",
+      "Skalowalny kod źródłowy",
+      "Zoptymalizowane UI/UX"
+    ],
+    "en": [
+      "🔍 Wyszukiwanie filmów po tytule (Search movies by title)",
+      "📈 Popularne filmy na stronie głównej (Popular movies on the homepage)",
+      "⏱️ Debounce na wejściu (Debounced search input)",
+      "📱 Responsywny układ siatki (Responsive grid layout)",
+      "⚠️ Obsługa błędów API (API error handling)"
+    ]
+  },
+  "demoUrl": "https://github.com/w-koperski/movie-search"
 }

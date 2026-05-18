@@ -10,35 +10,37 @@
     "Rust",
     "Clap",
     "Pillow",
-    "Indicatif"
+    "Indicatif",
+    "Docker"
   ],
   "githubUrl": "https://github.com/w-koperski/image-resizer",
   "year": 2024,
   "featured": false,
   "screenshot": "/mockups/batch-image-resizer.svg",
   "previewData": {
-    "type": "terminal",
-    "commands": {
-      "pl": [
-        {
-          "command": "image-resizer --input ./photos --size 800x600 --format webp",
-          "output": "🖼️ Przetwarzanie obrazów:\n  [██████████████████████████████] 24/24 (100%)\n  Zmieniono rozmiar: 24 plików\n  Format wyjściowy: WebP"
-        },
-        {
-          "command": "image-resizer --input ./photos --size 1920x --keep-aspect",
-          "output": "📐 Zachowanie proporcji:\n  IMG_001.jpg → 1920x1280 (skala 0.5x)\n  IMG_002.png → 1920x1440 (skala 0.4x)\n  ✅ Zapisano 2 plików w ./output/"
-        }
-      ],
-      "en": [
-        {
-          "command": "image-resizer --input ./photos --size 800x600 --format webp",
-          "output": "🖼️ Processing images:\n  [██████████████████████████████] 24/24 (100%)\n  Resized: 24 files\n  Output format: WebP"
-        },
-        {
-          "command": "image-resizer --input ./photos --size 1920x --keep-aspect",
-          "output": "📐 Preserving aspect ratio:\n  IMG_001.jpg → 1920x1280 (scale 0.5x)\n  IMG_002.png → 1920x1440 (scale 0.4x)\n  ✅ Saved 2 files to ./output/"
-        }
-      ]
-    }
-  }
+    "type": "browser",
+    "liveUrl": "https://github.com/w-koperski/image-resizer",
+    "screenshots": [
+      "/mockups/batch-image-resizer.svg"
+    ]
+  },
+  "longDescription": {
+    "pl": "Narzędzie do masowej zmiany rozmiaru zdjęć. Obsługuje zmianę wymiarów, formatu i zachowuje proporcje.",
+    "en": "A batch image resizing tool. Supports dimension changes, format conversion, and aspect ratio preservation."
+  },
+  "highlights": {
+    "pl": [
+      "Nowoczesna architektura",
+      "Wysoka wydajność działania",
+      "Skalowalny kod źródłowy",
+      "Zoptymalizowane UI/UX"
+    ],
+    "en": [
+      "--input ./zdjecia --output ./resized --width 800",
+      "--input ./zdjecia --output ./resized --width 800 --height 600",
+      "--input ./zdjecia --output ./resized --width 200 --format png",
+      "--input ./photos --output ./resized --width 800"
+    ]
+  },
+  "demoUrl": "https://github.com/w-koperski/image-resizer"
 }

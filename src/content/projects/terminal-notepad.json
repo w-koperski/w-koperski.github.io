@@ -9,35 +9,38 @@
   "techStack": [
     "C++",
     "ncurses",
-    "CMake"
+    "CMake",
+    "Docker"
   ],
   "githubUrl": "https://github.com/w-koperski/terminal-notepad",
   "year": 2024,
   "featured": false,
   "screenshot": "/mockups/terminal-notepad.svg",
   "previewData": {
-    "type": "terminal",
-    "commands": {
-      "pl": [
-        {
-          "command": "terminal-notepad notes.txt",
-          "output": "Otwarto: notes.txt | 3 linie | Tryb: vim"
-        },
-        {
-          "command": ":w",
-          "output": "Zapisano 3 linie → notes.txt"
-        }
-      ],
-      "en": [
-        {
-          "command": "terminal-notepad notes.txt",
-          "output": "Opened: notes.txt | 3 lines | Mode: vim"
-        },
-        {
-          "command": ":w",
-          "output": "Written 3 lines → notes.txt"
-        }
-      ]
-    }
-  }
+    "type": "browser",
+    "liveUrl": "https://github.com/w-koperski/terminal-notepad",
+    "screenshots": [
+      "/mockups/terminal-notepad.svg"
+    ]
+  },
+  "longDescription": {
+    "pl": "Prosty edytor tekstu w terminalu napisany w C++ z ncurses. Skróty klawiszowe Ctrl+S/Ctrl+Q, nawigacja strzałkami.",
+    "en": "A simple terminal text editor written in C++ with ncurses. Keyboard shortcuts Ctrl+S/Ctrl+Q, arrow key navigation."
+  },
+  "highlights": {
+    "pl": [
+      "Nowoczesna architektura",
+      "Wysoka wydajność działania",
+      "Skalowalny kod źródłowy",
+      "Zoptymalizowane UI/UX"
+    ],
+    "en": [
+      "zapisz plik",
+      "wyjscie",
+      "nawigacja",
+      "usun znak",
+      "nowa linia"
+    ]
+  },
+  "demoUrl": "https://github.com/w-koperski/terminal-notepad"
 }

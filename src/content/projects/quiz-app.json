@@ -6,7 +6,12 @@
     "pl": "Aplikacja quizowa o programowaniu. 10 pytań, natychmiastowe podświetlanie odpowiedzi, pasek postępu i ekran końcowy z wynikiem.",
     "en": "A programming quiz app. 10 questions, instant answer highlighting, progress bar, and final score screen."
   },
-  "techStack": ["Vue 3", "Vite", "CSS"],
+  "techStack": [
+    "Vue 3",
+    "Vite",
+    "CSS",
+    "Docker"
+  ],
   "githubUrl": "https://github.com/w-koperski/quiz-app",
   "liveUrl": "https://koperski.is-a.dev/quiz-app/",
   "year": 2022,
@@ -19,5 +24,25 @@
       "/screenshots/quiz-app-1280.webp",
       "/screenshots/quiz-app-1920.webp"
     ]
-  }
+  },
+  "longDescription": {
+    "pl": "Aplikacja quizowa o programowaniu. 10 pytań, natychmiastowe podświetlanie odpowiedzi, pasek postępu i ekran końcowy z wynikiem.",
+    "en": "A programming quiz app. 10 questions, instant answer highlighting, progress bar, and final score screen."
+  },
+  "highlights": {
+    "pl": [
+      "Nowoczesna architektura",
+      "Wysoka wydajność działania",
+      "Skalowalny kod źródłowy",
+      "Zoptymalizowane UI/UX"
+    ],
+    "en": [
+      "10 pytań z wiedzy o programowaniu",
+      "Natychmiastowa odpowiedź (podświetlanie poprawnej i błędnej odpowiedzi)",
+      "Pasek postępu",
+      "Ekran końcowy z wynikiem procentowym",
+      "Vue 3.2"
+    ]
+  },
+  "demoUrl": "https://github.com/w-koperski/quiz-app"
 }

@@ -8,29 +8,38 @@
   },
   "techStack": [
     "Laravel",
-    "PHP"
+    "PHP",
+    "Docker"
   ],
   "githubUrl": "https://github.com/w-koperski/url-shortener",
   "year": 2024,
   "featured": false,
   "screenshot": "/mockups/url-shortener.svg",
   "previewData": {
-    "type": "api",
-    "endpoints": [
-      {
-        "method": "POST",
-        "path": "/api/shorten",
-        "description": { "pl": "Skróć URL", "en": "Shorten URL" },
-        "requestExample": "{\"url\":\"https://example.com/very/long/path\"}",
-        "responseExample": "{\"short_url\":\"https://shr.tc/abc123\",\"expires_at\":\"2025-01-15\"}"
-      },
-      {
-        "method": "GET",
-        "path": "/api/stats/{code}",
-        "description": { "pl": "Statystyki linku", "en": "Link statistics" },
-        "requestExample": "{}",
-        "responseExample": "{\"clicks\":142,\"unique_visitors\":89,\"top_country\":\"PL\"}"
-      }
+    "type": "browser",
+    "liveUrl": "https://github.com/w-koperski/url-shortener",
+    "screenshots": [
+      "/mockups/url-shortener.svg"
     ]
-  }
+  },
+  "longDescription": {
+    "pl": "API do skracania linków. Skracanie URL, lista skróconych linków, przekierowanie po kodzie.",
+    "en": "A URL shortening API. Shorten URLs, list shortened links, redirect by code."
+  },
+  "highlights": {
+    "pl": [
+      "Nowoczesna architektura",
+      "Wysoka wydajność działania",
+      "Skalowalny kod źródłowy",
+      "Zoptymalizowane UI/UX"
+    ],
+    "en": [
+      "{\"url\": \"https://google.com\"}",
+      "lista skroconych URL",
+      "przekierowanie",
+      "{\"url\": \"https://google.com\"}",
+      "redirect"
+    ]
+  },
+  "demoUrl": "https://github.com/w-koperski/url-shortener"
 }

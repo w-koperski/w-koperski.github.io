@@ -6,20 +6,39 @@
     "pl": "Analizator sentymentu tekstu. Model oparty na CountVectorizer + Naive Bayes, klasyfikuje tekst jako pozytywny lub negatywny.",
     "en": "A text sentiment analyzer. CountVectorizer + Naive Bayes model classifies text as positive or negative."
   },
-  "techStack": ["Python", "scikit-learn", "NumPy"],
+  "techStack": [
+    "Python",
+    "scikit-learn",
+    "NumPy",
+    "Docker"
+  ],
   "githubUrl": "https://github.com/w-koperski/sentiment-analyzer",
   "year": 2023,
   "featured": false,
   "screenshot": "/mockups/sentiment-analyzer.svg",
   "previewData": {
-    "type": "metrics",
-    "epochs": 5,
-    "accuracyData": [0.72, 0.82, 0.87, 0.895, 0.91],
-    "lossData": [0.75, 0.52, 0.38, 0.29, 0.23],
-    "finalAccuracy": "91.0%",
-    "samplePredictions": [
-      { "input": "Great product, happy!", "output": "POSITIVE (96.2%)" },
-      { "input": "Terrible service, never again", "output": "NEGATIVE (97.8%)" }
+    "type": "browser",
+    "liveUrl": "https://github.com/w-koperski/sentiment-analyzer",
+    "screenshots": [
+      "/mockups/sentiment-analyzer.svg"
     ]
-  }
+  },
+  "longDescription": {
+    "pl": "/ Description\n\nModel analizy sentymentu oparty na CountVectorizer + Naive Bayes.\nKlasyfikuje tekst jako pozytywny lub negatywny. Trenowany na zbiorze polskich i angielskich zdań.\n\nA text sentiment analysis model using CountVectorizer + Naive Bayes pipeline from scikit-learn....",
+    "en": "A text sentiment analyzer. CountVectorizer + Naive Bayes model classifies text as positive or negative."
+  },
+  "highlights": {
+    "pl": [
+      "Nowoczesna architektura",
+      "Wysoka wydajność działania",
+      "Skalowalny kod źródłowy",
+      "Zoptymalizowane UI/UX"
+    ],
+    "en": [
+      "Python 3.11+",
+      "scikit-learn 1.3.0",
+      "numpy 1.26.0"
+    ]
+  },
+  "demoUrl": "https://github.com/w-koperski/sentiment-analyzer"
 }

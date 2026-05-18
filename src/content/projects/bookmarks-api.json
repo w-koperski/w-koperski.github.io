@@ -6,34 +6,40 @@
     "pl": "API menedżera zakładek w .NET 8 Minimal API. CRUD dla zakładek, wyszukiwanie po tytule lub URL, Swagger UI.",
     "en": "A bookmarks manager API in .NET 8 Minimal API. CRUD for bookmarks, search by title or URL, Swagger UI."
   },
-  "techStack": ["C#", ".NET", "Swashbuckle"],
+  "techStack": [
+    "C#",
+    ".NET",
+    "Swashbuckle",
+    "Docker"
+  ],
   "githubUrl": "https://github.com/w-koperski/bookmarks-api",
   "year": 2022,
   "featured": false,
   "screenshot": "/mockups/bookmarks-api.svg",
   "previewData": {
-    "type": "api",
-    "endpoints": [
-      {
-        "method": "GET",
-        "path": "/api/bookmarks",
-        "description": {
-          "pl": "Zakładki użytkownika",
-          "en": "User bookmarks"
-        },
-        "requestExample": "{\"tag\":\"programming\",\"limit\":20}",
-        "responseExample": "{\"items\":[{\"id\":1,\"url\":\"https://docs.microsoft.com\",\"title\":\"MS Docs\",\"tags\":[\"programming\",\"dotnet\"]}]}"
-      },
-      {
-        "method": "POST",
-        "path": "/api/bookmarks",
-        "description": {
-          "pl": "Dodaj zakładkę",
-          "en": "Add bookmark"
-        },
-        "requestExample": "{\"url\":\"https://github.com\",\"title\":\"GitHub\",\"tags\":[\"dev\"]}",
-        "responseExample": "{\"id\":42,\"url\":\"https://github.com\",\"created_at\":\"2024-01-15T10:30:00Z\"}"
-      }
+    "type": "browser",
+    "liveUrl": "https://github.com/w-koperski/bookmarks-api",
+    "screenshots": [
+      "/mockups/bookmarks-api.svg"
     ]
-  }
+  },
+  "longDescription": {
+    "pl": "API menedżera zakładek w .NET 8 Minimal API. CRUD dla zakładek, wyszukiwanie po tytule lub URL, Swagger UI.",
+    "en": "A bookmarks manager API in .NET 8 Minimal API. CRUD for bookmarks, search by title or URL, Swagger UI."
+  },
+  "highlights": {
+    "pl": [
+      "Nowoczesna architektura",
+      "Wysoka wydajność działania",
+      "Skalowalny kod źródłowy",
+      "Zoptymalizowane UI/UX"
+    ],
+    "en": [
+      "GET /bookmarks — lista wszystkich zakładek",
+      "POST /bookmarks — utwórz zakładkę",
+      "DELETE /bookmarks/{id} — usuń zakładkę",
+      "GET /bookmarks/search?query=xxx — szukaj po tytule lub URL"
+    ]
+  },
+  "demoUrl": "https://github.com/w-koperski/bookmarks-api"
 }

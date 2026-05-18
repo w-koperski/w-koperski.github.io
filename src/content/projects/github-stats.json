@@ -6,7 +6,12 @@
     "pl": "Wyświetla statystyki użytkownika GitHub: repozytoria, języki, obserwujących.",
     "en": "Displays GitHub user statistics: repositories, languages, followers."
   },
-  "techStack": ["React", "Vite", "Recharts"],
+  "techStack": [
+    "React",
+    "Vite",
+    "Recharts",
+    "Docker"
+  ],
   "githubUrl": "https://github.com/w-koperski/github-stats",
   "liveUrl": "https://koperski.is-a.dev/github-stats/",
   "year": 2023,
@@ -19,5 +24,24 @@
       "/screenshots/github-stats-1280.webp",
       "/screenshots/github-stats-1920.webp"
     ]
-  }
+  },
+  "longDescription": {
+    "pl": "Wyświetla statystyki użytkownika GitHub: repozytoria, języki, obserwujących.",
+    "en": "Displays GitHub user statistics: repositories, languages, followers."
+  },
+  "highlights": {
+    "pl": [
+      "Nowoczesna architektura",
+      "Wysoka wydajność działania",
+      "Skalowalny kod źródłowy",
+      "Zoptymalizowane UI/UX"
+    ],
+    "en": [
+      "Modern architecture",
+      "High performance execution",
+      "Scalable source code",
+      "Optimized UI/UX"
+    ]
+  },
+  "demoUrl": "https://github.com/w-koperski/github-stats"
 }

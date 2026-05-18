@@ -39,47 +39,10 @@ const projectSchema = z.object({
   }).optional(),
   previewData: z.discriminatedUnion('type', [
     z.object({
-      type: z.literal('terminal'),
-      commands: z.object({
-        pl: z.array(z.object({
-          command: z.string(),
-          output: z.string(),
-        })),
-        en: z.array(z.object({
-          command: z.string(),
-          output: z.string(),
-        })),
-      }),
-    }),
-    z.object({
       type: z.literal('browser'),
       liveUrl: z.string().url().optional(),
       screenshots: z.array(z.string()),
-    }),
-    z.object({
-      type: z.literal('api'),
-      endpoints: z.array(z.object({
-        method: z.string(),
-        path: z.string(),
-        description: z.object({
-          pl: z.string(),
-          en: z.string(),
-        }),
-        requestExample: z.string(),
-        responseExample: z.string(),
-      })),
-    }),
-    z.object({
-      type: z.literal('metrics'),
-      epochs: z.number(),
-      accuracyData: z.array(z.number()),
-      lossData: z.array(z.number()),
-      finalAccuracy: z.string(),
-      samplePredictions: z.array(z.object({
-        input: z.string(),
-        output: z.string(),
-      })).optional(),
-    }),
+    })
   ]).optional(),
 });
 
@@ -88,7 +51,7 @@ const projects = defineCollection({
   schema: projectSchema,
 });
 
-export type PreviewType = 'terminal' | 'browser' | 'api' | 'metrics';
+export type PreviewType = 'browser';
 export type ProjectPreviewData = z.infer<typeof projectSchema>['previewData'];
 export type ProjectDetailContent = {
   longDescription?: z.infer<typeof projectSchema>['longDescription'];

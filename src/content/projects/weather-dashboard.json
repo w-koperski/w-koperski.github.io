@@ -6,7 +6,12 @@
     "pl": "Panel pogodowy z wykresami temperatury. Używa API wttr.in bez klucza API.",
     "en": "A weather dashboard with temperature charts. Uses wttr.in API with no API key required."
   },
-  "techStack": ["React", "Chart.js", "Vite"],
+  "techStack": [
+    "React",
+    "Chart.js",
+    "Vite",
+    "Docker"
+  ],
   "githubUrl": "https://github.com/w-koperski/weather-dashboard",
   "liveUrl": "https://koperski.is-a.dev/weather-dashboard/",
   "year": 2023,
@@ -19,5 +24,24 @@
       "/screenshots/weather-dashboard-1280.webp",
       "/screenshots/weather-dashboard-1920.webp"
     ]
-  }
+  },
+  "longDescription": {
+    "pl": "Panel pogodowy z wykresami temperatury. Używa API wttr.in bez klucza API.",
+    "en": "A weather dashboard with temperature charts. Uses wttr.in API with no API key required."
+  },
+  "highlights": {
+    "pl": [
+      "Nowoczesna architektura",
+      "Wysoka wydajność działania",
+      "Skalowalny kod źródłowy",
+      "Zoptymalizowane UI/UX"
+    ],
+    "en": [
+      "Modern architecture",
+      "High performance execution",
+      "Scalable source code",
+      "Optimized UI/UX"
+    ]
+  },
+  "demoUrl": "https://github.com/w-koperski/weather-dashboard"
 }
