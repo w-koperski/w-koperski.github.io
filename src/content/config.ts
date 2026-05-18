@@ -37,13 +37,11 @@ const projectSchema = z.object({
     pl: z.array(z.string()),
     en: z.array(z.string()),
   }).optional(),
-  previewData: z.discriminatedUnion('type', [
-    z.object({
-      type: z.literal('browser'),
-      liveUrl: z.string().url().optional(),
-      screenshots: z.array(z.string()).min(1),
-    })
-  ]).optional(),
+    previewData: z.object({
+    type: z.enum(['browser', 'cli', 'api', 'ml']),
+    liveUrl: z.string().url().optional(),
+    screenshots: z.array(z.string()).min(1).optional(),
+  }).optional(),
 });
 
 const projects = defineCollection({
@@ -51,7 +49,7 @@ const projects = defineCollection({
   schema: projectSchema,
 });
 
-export type PreviewType = 'browser';
+export type PreviewType = 'browser' | 'cli' | 'api' | 'ml';
 export type ProjectPreviewData = z.infer<typeof projectSchema>['previewData'];
 export type ProjectDetailContent = {
   longDescription?: z.infer<typeof projectSchema>['longDescription'];

@@ -19,7 +19,7 @@
   "featured": true,
   "screenshot": "/mockups/price-watcher.svg",
   "previewData": {
-    "type": "browser",
+    "type": "cli",
     "liveUrl": "https://github.com/w-koperski/price-watcher",
     "screenshots": [
       "/mockups/price-watcher.svg"

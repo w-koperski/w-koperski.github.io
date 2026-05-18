@@ -19,7 +19,7 @@
   "featured": false,
   "screenshot": "/mockups/price-predictor.svg",
   "previewData": {
-    "type": "browser",
+    "type": "ml",
     "liveUrl": "https://github.com/w-koperski/price-predictor",
     "screenshots": [
       "/mockups/price-predictor.svg"

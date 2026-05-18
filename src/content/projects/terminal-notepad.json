@@ -17,7 +17,7 @@
   "featured": false,
   "screenshot": "/mockups/terminal-notepad.svg",
   "previewData": {
-    "type": "browser",
+    "type": "cli",
     "liveUrl": "https://github.com/w-koperski/terminal-notepad",
     "screenshots": [
       "/mockups/terminal-notepad.svg"

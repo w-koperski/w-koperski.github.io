@@ -16,7 +16,7 @@
   "featured": false,
   "screenshot": "/mockups/e-commerce-backend.svg",
   "previewData": {
-    "type": "browser",
+    "type": "api",
     "liveUrl": "https://github.com/w-koperski/ecommerce-backend",
     "screenshots": [
       "/mockups/e-commerce-backend.svg"

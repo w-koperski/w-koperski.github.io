@@ -16,7 +16,7 @@
   "featured": false,
   "screenshot": "/mockups/blog-api.svg",
   "previewData": {
-    "type": "browser",
+    "type": "api",
     "liveUrl": "https://github.com/w-koperski/blog-api",
     "screenshots": [
       "/mockups/blog-api.svg"

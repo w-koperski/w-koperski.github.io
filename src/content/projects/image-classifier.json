@@ -18,7 +18,7 @@
   "featured": false,
   "screenshot": "/mockups/image-classifier-cnn.svg",
   "previewData": {
-    "type": "browser",
+    "type": "ml",
     "liveUrl": "https://github.com/w-koperski/image-classifier",
     "screenshots": [
       "/mockups/image-classifier-cnn.svg"

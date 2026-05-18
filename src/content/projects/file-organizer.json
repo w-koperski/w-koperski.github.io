@@ -17,7 +17,7 @@
   "featured": false,
   "screenshot": "/mockups/file-organizer.svg",
   "previewData": {
-    "type": "browser",
+    "type": "cli",
     "liveUrl": "https://github.com/w-koperski/file-organizer",
     "screenshots": [
       "/mockups/file-organizer.svg"

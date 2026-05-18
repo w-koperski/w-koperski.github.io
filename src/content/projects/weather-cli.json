@@ -17,7 +17,7 @@
   "featured": false,
   "screenshot": "/mockups/weather-cli.svg",
   "previewData": {
-    "type": "browser",
+    "type": "cli",
     "liveUrl": "https://github.com/w-koperski/weather-cli",
     "screenshots": [
       "/mockups/weather-cli.svg"

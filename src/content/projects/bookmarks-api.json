@@ -17,7 +17,7 @@
   "featured": false,
   "screenshot": "/mockups/bookmarks-api.svg",
   "previewData": {
-    "type": "browser",
+    "type": "api",
     "liveUrl": "https://github.com/w-koperski/bookmarks-api",
     "screenshots": [
       "/mockups/bookmarks-api.svg"

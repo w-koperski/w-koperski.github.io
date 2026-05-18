@@ -18,7 +18,7 @@
   "featured": false,
   "screenshot": "/mockups/batch-image-resizer.svg",
   "previewData": {
-    "type": "browser",
+    "type": "cli",
     "liveUrl": "https://github.com/w-koperski/image-resizer",
     "screenshots": [
       "/mockups/batch-image-resizer.svg"

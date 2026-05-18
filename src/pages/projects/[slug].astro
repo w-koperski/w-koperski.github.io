@@ -46,8 +46,7 @@ const pd = project.data.previewData;
             <span class="font-label-caps text-label-caps border border-outline-variant px-3 py-1 rounded text-on-surface-variant">{project.data.category}</span>
           </div>
           <h1 class="font-headline-xl text-headline-xl text-on-surface mb-4">{project.data.title}</h1>
-          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">{project.data.description.pl}</p>
-        </div>
+                  </div>
 
         <div class="flex flex-wrap gap-4">
           <a href={project.data.githubUrl} target="_blank" rel="noopener noreferrer" class="bg-surface-elevated border border-outline-variant text-on-surface px-6 py-3 rounded hover:bg-surface-container-high transition-colors font-label-caps text-label-caps flex items-center gap-2">
@@ -68,7 +67,7 @@ const pd = project.data.previewData;
     <div class="max-w-container-max mx-auto space-y-24">
 
       <!-- Visual Preview -->
-      {project.data.screenshot && (
+      {project.data.screenshot && project.data.previewData?.type === 'browser' && (
         <section class="max-w-5xl mb-16">
           <BrowserScreenshot screenshots={(project.data.previewData?.screenshots ?? []) as any} liveUrl={project.data.previewData?.liveUrl} client:visible />
         </section>
