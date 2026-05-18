@@ -41,7 +41,7 @@ const projectSchema = z.object({
     z.object({
       type: z.literal('browser'),
       liveUrl: z.string().url().optional(),
-      screenshots: z.array(z.string()),
+      screenshots: z.array(z.string()).min(1),
     })
   ]).optional(),
 });

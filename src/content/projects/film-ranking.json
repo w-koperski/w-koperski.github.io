@@ -35,11 +35,11 @@
       "Zoptymalizowane UI/UX"
     ],
     "en": [
-      "CRUD dla filmów",
-      "System ocen (1-10)",
-      "Automatyczne obliczanie średniej oceny",
-      "Ranking filmów posortowany po średniej ocenie",
-      "Walidacja danych"
+      "CRUD for movies",
+      "Rating system (1-10)",
+      "Automatic average rating calculation",
+      "Movie ranking sorted by average rating",
+      "Data validation"
     ]
   },
   "demoUrl": "https://github.com/w-koperski/film-ranking"

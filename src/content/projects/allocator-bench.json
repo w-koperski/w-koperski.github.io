@@ -35,8 +35,9 @@
     ],
     "en": [
       "malloc/free vs new/delete",
-      "Stale vs losowe rozmiary alokacji",
-      "Rozne rozmiary blokow"
+      "constant vs random allocation sizes",
+      "varied block sizes",
+      "high-performance allocator benchmarks"
     ]
   },
   "demoUrl": "https://github.com/w-koperski/allocator-bench"

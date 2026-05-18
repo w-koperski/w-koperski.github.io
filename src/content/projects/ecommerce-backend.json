@@ -34,11 +34,11 @@
       "Zoptymalizowane UI/UX"
     ],
     "en": [
-      "CRUD dla produktów",
-      "CRUD dla zamówień",
-      "Zarządzanie stanem zamówień",
-      "Walidacja danych",
-      "Obsługa błędów"
+      "Product CRUD",
+      "Order CRUD",
+      "Order status management",
+      "Data validation",
+      "Error handling"
     ]
   },
   "demoUrl": "https://github.com/w-koperski/ecommerce-backend"

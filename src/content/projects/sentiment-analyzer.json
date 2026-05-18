@@ -24,7 +24,7 @@
     ]
   },
   "longDescription": {
-    "pl": "/ Description\n\nModel analizy sentymentu oparty na CountVectorizer + Naive Bayes.\nKlasyfikuje tekst jako pozytywny lub negatywny. Trenowany na zbiorze polskich i angielskich zdań.\n\nA text sentiment analysis model using CountVectorizer + Naive Bayes pipeline from scikit-learn....",
+    "pl": "Klasyfikator analizy sentymentu (pozytywny/negatywny) oparty na pipeline'ie CountVectorizer i Naive Bayes. Model został wytrenowany na dwujęzycznym korpusie tekstów (zdania w języku polskim oraz angielskim), dzięki czemu potrafi skutecznie ocenić wydźwięk emocjonalny opinii niezależnie od języka.",
     "en": "A text sentiment analyzer. CountVectorizer + Naive Bayes model classifies text as positive or negative."
   },
   "highlights": {

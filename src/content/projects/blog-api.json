@@ -34,11 +34,11 @@
       "Zoptymalizowane UI/UX"
     ],
     "en": [
-      "CRUD dla postów",
-      "CRUD dla komentarzy",
-      "Powiązania między postami a komentarzami",
-      "Walidacja danych",
-      "Obsługa błędów"
+      "CRUD for posts",
+      "CRUD for comments",
+      "Relations between posts and comments",
+      "Data validation",
+      "Error handling"
     ]
   },
   "demoUrl": "https://github.com/w-koperski/blog-api"

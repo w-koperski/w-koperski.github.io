@@ -35,12 +35,12 @@
       "Zoptymalizowane UI/UX"
     ],
     "en": [
-      "Wyświetlanie listy produktów w responsywnej siatce",
-      "Filtrowanie po kategoriach (Elektronika, Odzież, Książki)",
-      "Wyszukiwanie produktów po nazwie",
-      "Koszyk zakupowy (dodawanie/usuwanie, zmiana ilości)",
-      "Zapisywanie stanu koszyka w `localStorage`"
+      "Display product list in a responsive grid",
+      "Filter by categories (Electronics, Clothing, Books)",
+      "Search products by name",
+      "Shopping cart (add/remove, change quantity)",
+      "Persist cart state in localStorage"
     ]
   },
-  "demoUrl": "https://github.com/w-koperski/ecommerce-frontend"
+  "demoUrl": "https://koperski.is-a.dev/ecommerce-frontend/"
 }

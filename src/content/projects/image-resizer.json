@@ -36,10 +36,10 @@
       "Zoptymalizowane UI/UX"
     ],
     "en": [
-      "--input ./zdjecia --output ./resized --width 800",
-      "--input ./zdjecia --output ./resized --width 800 --height 600",
-      "--input ./zdjecia --output ./resized --width 200 --format png",
-      "--input ./photos --output ./resized --width 800"
+      "Batch image resizing",
+      "Configurable width/height",
+      "Format conversion",
+      "Directory input/output support"
     ]
   },
   "demoUrl": "https://github.com/w-koperski/image-resizer"

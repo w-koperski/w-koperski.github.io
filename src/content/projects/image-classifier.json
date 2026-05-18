@@ -25,7 +25,7 @@
     ]
   },
   "longDescription": {
-    "pl": "/ Description\n\nProsta sieć konwolucyjna (CNN) trenowana na zbiorze CIFAR-10.\nArchitektura: Conv2D(32) → Conv2D(64) → Flatten → Dense(64) → Dense(10).\nKlasyfikuje obrazy do 10 kategorii.\n\nA simple Convolutional Neural Network trained on the CIFAR-10 dataset.\nClassifies images into 10 categories: airp...",
+    "pl": "Prosta sieć konwolucyjna (CNN) trenowana na zbiorze CIFAR-10, która klasyfikuje obrazy do 10 różnych kategorii. Architektura składa się z warstw: Conv2D(32) → Conv2D(64) → Flatten → Dense(64) → Dense(10). Model demonstruje podstawy rozpoznawania obrazów i uczenia głębokiego przy użyciu nowoczesnych frameworków uczenia maszynowego.",
     "en": "A CNN image classifier in TensorFlow. Simple convolutional network trained on CIFAR-10, classifies images into 10 categories."
   },
   "highlights": {

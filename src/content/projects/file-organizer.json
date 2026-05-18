@@ -35,11 +35,11 @@
       "Zoptymalizowane UI/UX"
     ],
     "en": [
-      "--dir ~/Pobrane",
-      "--dir ~/Pobrane --dry-run",
-      "--types",
-      "--dir ~/Downloads",
-      "--dir ~/Downloads --dry-run"
+      "Organizes files into folders by type",
+      "Supports dry-run mode to preview changes",
+      "Configurable target directories like ~/Downloads",
+      "Auto-detects common file types and extensions",
+      "Preserves original files when requested"
     ]
   },
   "demoUrl": "https://github.com/w-koperski/file-organizer"

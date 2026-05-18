@@ -36,12 +36,12 @@
       "Zoptymalizowane UI/UX"
     ],
     "en": [
-      "Trzy kolumny: Do zrobienia / W trakcie / Gotowe",
-      "Dodawanie nowych kart",
-      "Usuwanie kart",
-      "Przeciąganie i upuszczanie kart między kolumnami",
-      "Trwałość danych w LocalStorage"
+      "Three columns: To Do / In Progress / Done",
+      "Add new cards",
+      "Delete cards",
+      "Drag and drop cards between columns",
+      "Persist data in LocalStorage"
     ]
   },
-  "demoUrl": "https://github.com/w-koperski/kanban-board"
+  "demoUrl": "https://koperski.is-a.dev/kanban-board/"
 }

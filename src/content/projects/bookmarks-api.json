@@ -35,10 +35,10 @@
       "Zoptymalizowane UI/UX"
     ],
     "en": [
-      "GET /bookmarks — lista wszystkich zakładek",
-      "POST /bookmarks — utwórz zakładkę",
-      "DELETE /bookmarks/{id} — usuń zakładkę",
-      "GET /bookmarks/search?query=xxx — szukaj po tytule lub URL"
+      "GET /bookmarks — list all bookmarks",
+      "POST /bookmarks — create a bookmark",
+      "DELETE /bookmarks/{id} — delete a bookmark",
+      "GET /bookmarks/search?query=xxx — search by title or URL"
     ]
   },
   "demoUrl": "https://github.com/w-koperski/bookmarks-api"

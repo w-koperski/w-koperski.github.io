@@ -34,11 +34,9 @@
       "Zoptymalizowane UI/UX"
     ],
     "en": [
-      "{\"url\": \"https://google.com\"}",
-      "lista skroconych URL",
-      "przekierowanie",
-      "{\"url\": \"https://google.com\"}",
-      "redirect"
+      "Shortened URL list",
+      "Redirect",
+      "Shorten URL"
     ]
   },
   "demoUrl": "https://github.com/w-koperski/url-shortener"

@@ -37,12 +37,12 @@
       "Zoptymalizowane UI/UX"
     ],
     "en": [
-      "📝 Edytor tekstu ze wsparciem Markdown",
-      "👀 Podgląd wygenerowanego HTML na żywo",
-      "💾 Automatyczne zapisywanie w localStorage",
-      "📋 Zarządzanie notatkami (dodawanie, usuwanie)",
-      "🎨 Schludny interfejs podzielony na panele (Split pane layout)"
+      "📝 Text editor with Markdown support",
+      "👀 Live HTML preview",
+      "💾 Auto-save to localStorage",
+      "📋 Note management (add, delete)",
+      "🎨 Clean split-pane interface (split pane layout)"
     ]
   },
-  "demoUrl": "https://github.com/w-koperski/markdown-notes"
+  "demoUrl": "https://koperski.is-a.dev/markdown-notes/"
 }

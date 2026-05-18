@@ -35,11 +35,11 @@
       "Zoptymalizowane UI/UX"
     ],
     "en": [
-      "GET /api/tasks — lista wszystkich zadań",
-      "GET /api/tasks/{id} — pobierz zadanie",
-      "POST /api/tasks — utwórz zadanie",
-      "PUT /api/tasks/{id} — zaktualizuj zadanie",
-      "DELETE /api/tasks/{id} — usuń zadanie"
+      "GET /api/tasks — list all tasks",
+      "GET /api/tasks/{id} — get a task",
+      "POST /api/tasks — create a task",
+      "PUT /api/tasks/{id} — update a task",
+      "DELETE /api/tasks/{id} — delete a task"
     ]
   },
   "demoUrl": "https://github.com/w-koperski/task-scheduler-api"

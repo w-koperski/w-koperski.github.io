@@ -35,11 +35,11 @@
       "Zoptymalizowane UI/UX"
     ],
     "en": [
-      "Dodawanie zadań z priorytetem",
-      "Oznaczanie zadań jako ukończone",
-      "Usuwanie zadań",
-      "Filtrowanie i sortowanie zadań",
-      "Trwałość w LocalStorage"
+      "Add tasks with priority",
+      "Mark tasks as completed",
+      "Delete tasks",
+      "Filter and sort tasks",
+      "Persist to LocalStorage"
     ]
   },
   "demoUrl": "https://github.com/w-koperski/task-manager"

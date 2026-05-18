@@ -39,7 +39,7 @@
     ],
     "en": [
       "Python 3.12+",
-      "libxml2-dev, libxslt1-dev (dla lxml)"
+      "libxml2-dev, libxslt1-dev (for lxml library)"
     ]
   },
   "demoUrl": "https://github.com/w-koperski/price-watcher"

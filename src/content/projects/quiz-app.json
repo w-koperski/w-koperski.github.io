@@ -37,10 +37,10 @@
       "Zoptymalizowane UI/UX"
     ],
     "en": [
-      "10 pytań z wiedzy o programowaniu",
-      "Natychmiastowa odpowiedź (podświetlanie poprawnej i błędnej odpowiedzi)",
-      "Pasek postępu",
-      "Ekran końcowy z wynikiem procentowym",
+      "10 programming knowledge questions",
+      "Instant feedback (highlighting correct and incorrect answers)",
+      "Progress bar",
+      "Final screen with percentage score",
       "Vue 3.2"
     ]
   },

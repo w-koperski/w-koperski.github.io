@@ -25,7 +25,7 @@
     ]
   },
   "longDescription": {
-    "pl": "/ Description\n\nProsta sieć neuronowa feedforward (784→128→64→10) trenowana na zbiorze MNIST.\nOsiąga ~97% dokładności na zbiorze testowym po 3 epokach treningu.\n\nA simple feedforward neural network trained on the MNIST dataset for handwritten digit classification....",
+    "pl": "Prosta sieć neuronowa feedforward (architektura: 784→128→64→10) trenowana na klasycznym zbiorze MNIST. Model potrafi rozpoznawać odręcznie pisane cyfry i osiąga dokładność na poziomie około 97% już po 3 epokach treningu, demonstrując skuteczność podstawowych metod uczenia maszynowego.",
     "en": "MNIST digit classifier in PyTorch. Simple feedforward network (784→128→64→10), achieves ~97% accuracy after 3 epochs."
   },
   "highlights": {

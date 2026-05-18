@@ -35,8 +35,8 @@
       "Zoptymalizowane UI/UX"
     ],
     "en": [
-      "`--forecast` — prognoza na 3 dni",
-      "`--json` — surowe dane z API (JSON)"
+      "--forecast — 3-day forecast",
+      "--json — raw API data (JSON)"
     ]
   },
   "demoUrl": "https://github.com/w-koperski/weather-cli"

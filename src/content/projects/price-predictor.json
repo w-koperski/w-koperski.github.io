@@ -26,7 +26,7 @@
     ]
   },
   "longDescription": {
-    "pl": "/ Description\n\nModel predykcji cen mieszkań oparty na RandomForestRegressor.\nTrenowany na syntetycznych danych z cechami: metraż, pokoje, piętro, dzielnica, rok budowy.\n\nA housing price prediction model using RandomForestRegressor from scikit-learn.\nTrained on synthetic data with features: area, roo...",
+    "pl": "Narzędzie przewidujące ceny nieruchomości oparte na modelu RandomForestRegressor. Algorytm jest trenowany z wykorzystaniem kluczowych cech takich jak: powierzchnia w metrach kwadratowych, liczba pokoi, piętro, dzielnica oraz rok budowy, co pozwala na dokładniejsze oszacowanie wartości rynkowej mieszkań.",
     "en": "A housing price predictor using RandomForestRegressor. Trained on data with features: area, rooms, floor, district, year built."
   },
   "highlights": {
