@@ -12,7 +12,7 @@ const skipLabel = t('preloader.skip', lang);
 <div id="preloader" class="preloader" role="status" aria-live="polite" aria-label="Loading">
   <div class="preloader__content">
     <div id="preloader-lines" class="preloader__lines"></div>
-    <div class="preloader__cursor terminal-text cursor-blink">_</div>
+    <div class="preloader__cursor terminal-text blinking-cursor"></div>
   </div>
   <button id="preloader-skip" class="preloader__skip terminal-text" aria-label="Skip loading animation">
     {skipLabel}

@@ -22,13 +22,3 @@
   box-shadow: var(--shadow-glow-strong);
 }
 
-.cursor-blink {
-  animation: cursor-blink 1s infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .cursor-blink {
-    animation: none;
-    opacity: 1;
-  }
-}

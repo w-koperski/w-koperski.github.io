@@ -25,7 +25,7 @@ const config = {
         </div>
       </div>
       <h1 class="font-headline-lg-mobile md:font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-background flex flex-wrap items-end gap-1">
-        {t('contact.headline', lang)}<span class="w-4 h-8 md:w-6 md:h-12 bg-primary inline-block opacity-80 animate-pulse ml-2"></span>
+        {t('contact.headline', lang)}<span class="blinking-cursor text-primary ml-1"></span>
       </h1>
       <p class="font-body-md md:font-body-lg text-body-md md:text-body-lg text-on-surface-variant mt-4 max-w-2xl">
         {t('contact.description', lang)}
@@ -71,7 +71,7 @@ const config = {
           </div>
           <div class="flex pt-4">
             <span class="text-tertiary mr-4 select-none">06</span>
-            <span class="text-on-surface whitespace-nowrap">&gt; <span class="w-2 h-4 bg-primary inline-block align-middle ml-1 blinking-cursor"></span></span>
+            <span class="text-on-surface whitespace-nowrap">&gt; <span class="blinking-cursor ml-1"></span></span>
           </div>
         </div>
       </div>
@@ -124,13 +124,4 @@ const config = {
   </div>
 </Base>
 
-<style>
-  /* Optional: Ensure specific blink styles if not already in base.css */
-  .blinking-cursor {
-    animation: cursor-blink 1s step-end infinite;
-  }
-  @keyframes cursor-blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-  }
-</style>
+

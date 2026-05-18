@@ -24,7 +24,7 @@ body {
 }
 
 ::selection {
-  background-color: #4edea3;
+  background-color: var(--color-terminal-green, #4edea3);
   color: #0c1324;
 }
 
@@ -46,7 +46,7 @@ img {
 .blinking-cursor::after {
     content: '█';
     animation: blink 1s step-end infinite;
-    color: #4edea3;
+    color: var(--color-terminal-green, #4edea3);
     margin-left: 4px;
 }
 @keyframes blink {
@@ -56,7 +56,7 @@ img {
 
 /* Focus styles */
 :focus-visible {
-  outline: 2px solid #4edea3;
+  outline: 2px solid var(--color-terminal-green, #4edea3);
   outline-offset: 2px;
 }
 
@@ -79,7 +79,7 @@ img {
   position: absolute;
   top: -100%;
   left: 1rem;
-  background: #4edea3;
+  background: var(--color-terminal-green, #4edea3);
   color: #0c1324;
   padding: 0.5rem 1rem;
   z-index: 9999;
