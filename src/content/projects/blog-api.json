@@ -6,44 +6,40 @@
     "pl": "REST API bloga napisane w Laravel 10. Pełna obsługa postów i komentarzy z walidacją danych.",
     "en": "REST API for a blog written in Laravel 10. Full support for posts and comments with data validation."
   },
-  "techStack": ["Laravel", "PHP"],
+  "techStack": [
+    "Laravel",
+    "PHP",
+    "Docker"
+  ],
   "githubUrl": "https://github.com/w-koperski/blog-api",
   "year": 2023,
   "featured": false,
   "screenshot": "/mockups/blog-api.svg",
   "previewData": {
-    "type": "api",
-    "endpoints": [
-      {
-        "method": "GET",
-        "path": "/api/posts",
-        "description": {
-          "pl": "Lista postów",
-          "en": "List posts"
-        },
-        "requestExample": "{}",
-        "responseExample": "{\"data\":[{\"id\":1,\"title\":\"Post title\",\"slug\":\"post-title\",\"body\":\"Content...\",\"author\":{\"name\":\"User\"}}]}"
-      },
-      {
-        "method": "POST",
-        "path": "/api/posts",
-        "description": {
-          "pl": "Nowy post",
-          "en": "Create post"
-        },
-        "requestExample": "{\"title\":\"My Post\",\"body\":\"Content here\",\"tags\":[\"php\",\"api\"]}",
-        "responseExample": "{\"id\":5,\"title\":\"My Post\",\"slug\":\"my-post\",\"created_at\":\"2024-01-15T10:30:00Z\"}"
-      },
-      {
-        "method": "DELETE",
-        "path": "/api/posts/{id}",
-        "description": {
-          "pl": "Usuń post",
-          "en": "Delete post"
-        },
-        "requestExample": "{}",
-        "responseExample": "{\"message\":\"Post deleted successfully\"}"
-      }
+    "type": "browser",
+    "liveUrl": "https://github.com/w-koperski/blog-api",
+    "screenshots": [
+      "/mockups/blog-api.svg"
     ]
-  }
+  },
+  "longDescription": {
+    "pl": "REST API bloga napisane w Laravel 10. Pełna obsługa postów i komentarzy z walidacją danych.",
+    "en": "REST API for a blog written in Laravel 10. Full support for posts and comments with data validation."
+  },
+  "highlights": {
+    "pl": [
+      "Nowoczesna architektura",
+      "Wysoka wydajność działania",
+      "Skalowalny kod źródłowy",
+      "Zoptymalizowane UI/UX"
+    ],
+    "en": [
+      "CRUD for posts",
+      "CRUD for comments",
+      "Relations between posts and comments",
+      "Data validation",
+      "Error handling"
+    ]
+  },
+  "demoUrl": "https://github.com/w-koperski/blog-api"
 }

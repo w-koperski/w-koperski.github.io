@@ -6,7 +6,12 @@
     "pl": "Notatnik w formacie Markdown z podglądem na żywo. Edytor ze wsparciem Markdown, automatyczne zapisywanie w localStorage, zarządzanie notatkami.",
     "en": "A live-preview Markdown notebook. Editor with Markdown support, auto-save to localStorage, note management."
   },
-  "techStack": ["React", "Vite", "Marked"],
+  "techStack": [
+    "React",
+    "Vite",
+    "Marked",
+    "Docker"
+  ],
   "githubUrl": "https://github.com/w-koperski/markdown-notes",
   "liveUrl": "https://koperski.is-a.dev/markdown-notes/",
   "year": 2023,
@@ -19,5 +24,25 @@
       "/screenshots/markdown-notes-1280.webp",
       "/screenshots/markdown-notes-1920.webp"
     ]
-  }
+  },
+  "longDescription": {
+    "pl": "Notatnik w formacie Markdown z podglądem na żywo. Edytor ze wsparciem Markdown, automatyczne zapisywanie w localStorage, zarządzanie notatkami.",
+    "en": "A live-preview Markdown notebook. Editor with Markdown support, auto-save to localStorage, note management."
+  },
+  "highlights": {
+    "pl": [
+      "Nowoczesna architektura",
+      "Wysoka wydajność działania",
+      "Skalowalny kod źródłowy",
+      "Zoptymalizowane UI/UX"
+    ],
+    "en": [
+      "📝 Text editor with Markdown support",
+      "👀 Live HTML preview",
+      "💾 Auto-save to localStorage",
+      "📋 Note management (add, delete)",
+      "🎨 Clean split-pane interface (split pane layout)"
+    ]
+  },
+  "demoUrl": "https://koperski.is-a.dev/markdown-notes/"
 }

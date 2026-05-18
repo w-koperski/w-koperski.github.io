@@ -6,7 +6,11 @@
     "pl": "Minimalistyczny timer Pomodoro. Cykle 25 min pracy i 5 min przerwy, wizualny wskaźnik postępu, powiadomienia dźwiękowe, licznik sesji.",
     "en": "A minimalist Pomodoro timer. 25-minute work and 5-minute break cycles, visual progress indicator, audio notifications, session counter."
   },
-  "techStack": ["Vue 3", "Vite"],
+  "techStack": [
+    "Vue 3",
+    "Vite",
+    "Docker"
+  ],
   "githubUrl": "https://github.com/w-koperski/pomodoro-timer",
   "liveUrl": "https://koperski.is-a.dev/pomodoro-timer/",
   "year": 2024,
@@ -19,5 +23,25 @@
       "/screenshots/pomodoro-timer-1280.webp",
       "/screenshots/pomodoro-timer-1920.webp"
     ]
-  }
+  },
+  "longDescription": {
+    "pl": "Minimalistyczny timer Pomodoro. Cykle 25 min pracy i 5 min przerwy, wizualny wskaźnik postępu, powiadomienia dźwiękowe, licznik sesji.",
+    "en": "A minimalist Pomodoro timer. 25-minute work and 5-minute break cycles, visual progress indicator, audio notifications, session counter."
+  },
+  "highlights": {
+    "pl": [
+      "Nowoczesna architektura",
+      "Wysoka wydajność działania",
+      "Skalowalny kod źródłowy",
+      "Zoptymalizowane UI/UX"
+    ],
+    "en": [
+      "25-minute work and 5-minute break cycles / Cykle 25 min pracy i 5 min przerwy",
+      "Visual progress indicator / Wizualny wskaźnik postępu",
+      "Audio notifications / Powiadomienia dźwiękowe",
+      "Clean CSS styling (no frameworks) / Czysty CSS (bez frameworków)",
+      "Session counter / Licznik ukończonych sesji"
+    ]
+  },
+  "demoUrl": "https://koperski.is-a.dev/pomodoro-timer/"
 }

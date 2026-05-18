@@ -6,42 +6,42 @@
     "pl": "Prosty menedżer zadań w terminalu. Dodawanie, oznaczanie jako ukończone i usuwanie zadań.",
     "en": "A simple terminal task manager. Add, mark as done, and remove tasks from the command line."
   },
-  "techStack": ["Rust", "Clap", "Serde", "Colored"],
+  "techStack": [
+    "Rust",
+    "Clap",
+    "Serde",
+    "Colored",
+    "Docker"
+  ],
   "githubUrl": "https://github.com/w-koperski/todo-cli",
   "year": 2023,
   "featured": false,
   "screenshot": "/mockups/todo-cli.svg",
   "previewData": {
-    "type": "terminal",
-    "commands": {
-      "pl": [
-        {
-          "command": "todo-cli add \"Naprawić błąd w auth\"",
-          "output": "✅ Dodano zadanie #1: Naprawić błąd w auth"
-        },
-        {
-          "command": "todo-cli list",
-          "output": "📋 Lista zadań:\n  [ ] #1 Naprawić błąd w auth\n  [ ] #2 Napisać testy jednostkowe\n  [✓] #3 Zaktualizować README"
-        },
-        {
-          "command": "todo-cli done 1",
-          "output": "✅ Zadanie #1 oznaczone jako ukończone"
-        }
-      ],
-      "en": [
-        {
-          "command": "todo-cli add \"Fix auth bug\"",
-          "output": "✅ Added task #1: Fix auth bug"
-        },
-        {
-          "command": "todo-cli list",
-          "output": "📋 Task list:\n  [ ] #1 Fix auth bug\n  [ ] #2 Write unit tests\n  [✓] #3 Update README"
-        },
-        {
-          "command": "todo-cli done 1",
-          "output": "✅ Task #1 marked as done"
-        }
-      ]
-    }
-  }
+    "type": "browser",
+    "liveUrl": "https://github.com/w-koperski/todo-cli",
+    "screenshots": [
+      "/mockups/todo-cli.svg"
+    ]
+  },
+  "longDescription": {
+    "pl": "Prosty menedżer zadań w terminalu. Dodawanie, oznaczanie jako ukończone i usuwanie zadań.",
+    "en": "A simple terminal task manager. Add, mark as done, and remove tasks from the command line."
+  },
+  "highlights": {
+    "pl": [
+      "Nowoczesna architektura",
+      "Wysoka wydajność działania",
+      "Skalowalny kod źródłowy",
+      "Zoptymalizowane UI/UX"
+    ],
+    "en": [
+      "add \"Buy milk\"",
+      "add \"Write report\"",
+      "list",
+      "done 1",
+      "remove 2"
+    ]
+  },
+  "demoUrl": "https://github.com/w-koperski/todo-cli"
 }

@@ -6,7 +6,10 @@
     "pl": "Makieta frontendu sklepu internetowego. Wyświetlanie produktów, filtrowanie po kategoriach, wyszukiwanie, koszyk z zapisem w localStorage.",
     "en": "An e-commerce frontend mockup. Product display, category filtering, search, shopping cart with localStorage persistence."
   },
-  "techStack": ["Vue 3", "Vite"],
+  "techStack": [
+    "Vue 3",
+    "Vite"
+  ],
   "githubUrl": "https://github.com/w-koperski/ecommerce-frontend",
   "liveUrl": "https://koperski.is-a.dev/ecommerce-frontend/",
   "year": 2024,
@@ -19,5 +22,25 @@
       "/screenshots/ecommerce-frontend-1280.webp",
       "/screenshots/ecommerce-frontend-1920.webp"
     ]
-  }
+  },
+  "longDescription": {
+    "pl": "🇵🇱\nMakieta frontendu sklepu internetowego stworzona jako projekt do portfolio. Aplikacja demonstruje umiejętność tworzenia interfejsów użytkownika z użyciem Vue 3 (Composition API) oraz zarządzania stanem bez użycia zewnętrznych bibliotek takich jak Vuex czy Pinia....",
+    "en": "the project 🇬🇧\nAn e-commerce frontend mockup created as a portfolio project. The application demonstrates the ability to create user interfaces using Vue 3 (Composition API) and manage state without external libraries like Vuex or Pinia...."
+  },
+  "highlights": {
+    "pl": [
+      "Nowoczesna architektura",
+      "Wysoka wydajność działania",
+      "Skalowalny kod źródłowy",
+      "Zoptymalizowane UI/UX"
+    ],
+    "en": [
+      "Display product list in a responsive grid",
+      "Filter by categories (Electronics, Clothing, Books)",
+      "Search products by name",
+      "Shopping cart (add/remove, change quantity)",
+      "Persist cart state in localStorage"
+    ]
+  },
+  "demoUrl": "https://koperski.is-a.dev/ecommerce-frontend/"
 }

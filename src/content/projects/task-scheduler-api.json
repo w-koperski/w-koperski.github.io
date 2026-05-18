@@ -9,35 +9,38 @@
   "techStack": [
     "C#",
     "ASP.NET Core",
-    "Swashbuckle"
+    "Swashbuckle",
+    "Docker"
   ],
   "githubUrl": "https://github.com/w-koperski/task-scheduler-api",
   "year": 2024,
   "featured": false,
   "screenshot": "/mockups/task-scheduler-api.svg",
   "previewData": {
-    "type": "api",
-    "endpoints": [
-      {
-        "method": "POST",
-        "path": "/api/tasks",
-        "description": {
-          "pl": "Zaplanuj zadanie",
-          "en": "Schedule task"
-        },
-        "requestExample": "{\"name\":\"Backup DB\",\"cron\":\"0 2 * * *\",\"command\":\"backup.sh\"}",
-        "responseExample": "{\"task_id\":\"t-001\",\"next_run\":\"2024-01-16T02:00:00Z\",\"status\":\"scheduled\"}"
-      },
-      {
-        "method": "GET",
-        "path": "/api/tasks/logs",
-        "description": {
-          "pl": "Logi zadań",
-          "en": "Task logs"
-        },
-        "requestExample": "{\"limit\":50}",
-        "responseExample": "{\"logs\":[{\"task\":\"Backup DB\",\"started\":\"2024-01-15T02:00:01Z\",\"status\":\"completed\",\"duration\":\"12s\"}]}"
-      }
+    "type": "browser",
+    "liveUrl": "https://github.com/w-koperski/task-scheduler-api",
+    "screenshots": [
+      "/mockups/task-scheduler-api.svg"
     ]
-  }
+  },
+  "longDescription": {
+    "pl": "API planera zadań w ASP.NET Core 8. Pełny CRUD dla zadań, Swagger UI.",
+    "en": "A task scheduler API in ASP.NET Core 8. Full CRUD for tasks, Swagger UI."
+  },
+  "highlights": {
+    "pl": [
+      "Nowoczesna architektura",
+      "Wysoka wydajność działania",
+      "Skalowalny kod źródłowy",
+      "Zoptymalizowane UI/UX"
+    ],
+    "en": [
+      "GET /api/tasks — list all tasks",
+      "GET /api/tasks/{id} — get a task",
+      "POST /api/tasks — create a task",
+      "PUT /api/tasks/{id} — update a task",
+      "DELETE /api/tasks/{id} — delete a task"
+    ]
+  },
+  "demoUrl": "https://github.com/w-koperski/task-scheduler-api"
 }

@@ -7,23 +7,37 @@
     "en": "A simple HTTP server written from scratch in Rust without external libraries. Serves static files from a directory."
   },
   "techStack": [
-    "Rust"
+    "Rust",
+    "Docker"
   ],
   "githubUrl": "https://github.com/w-koperski/http-server",
   "year": 2024,
   "featured": false,
   "screenshot": "/mockups/http-server.svg",
   "previewData": {
-    "type": "terminal",
-    "commands": {
-      "pl": [
-        {"command": "http-server ./public --port 8080", "output": "🚀 Serwer HTTP uruchomiony na http://localhost:8080\n   Serwowanie plików z: ./public"},
-        {"command": "curl http://localhost:8080/index.html", "output": "HTTP/1.1 200 OK\nContent-Type: text/html\nContent-Length: 1424\n\n<!DOCTYPE html>..."}
-      ],
-      "en": [
-        {"command": "http-server ./public --port 8080", "output": "🚀 HTTP server running on http://localhost:8080\n   Serving files from: ./public"},
-        {"command": "curl http://localhost:8080/index.html", "output": "HTTP/1.1 200 OK\nContent-Type: text/html\nContent-Length: 1424\n\n<!DOCTYPE html>..."}
-      ]
-    }
-  }
+    "type": "browser",
+    "liveUrl": "https://github.com/w-koperski/http-server",
+    "screenshots": [
+      "/mockups/http-server.svg"
+    ]
+  },
+  "longDescription": {
+    "pl": "Prosty serwer HTTP napisany od zera w Ruście bez zewnętrznych bibliotek. Serwuje pliki statyczne z katalogu.",
+    "en": "A simple HTTP server written from scratch in Rust without external libraries. Serves static files from a directory."
+  },
+  "highlights": {
+    "pl": [
+      "Nowoczesna architektura",
+      "Wysoka wydajność działania",
+      "Skalowalny kod źródłowy",
+      "Zoptymalizowane UI/UX"
+    ],
+    "en": [
+      "Modern architecture",
+      "High performance execution",
+      "Scalable source code",
+      "Optimized UI/UX"
+    ]
+  },
+  "demoUrl": "https://github.com/w-koperski/http-server"
 }

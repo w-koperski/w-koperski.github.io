@@ -3,10 +3,7 @@ import Base from '../../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 import { t } from '../../../i18n/utils';
 import PreviewSection from '../../../components/detail/PreviewSection.astro';
-import TerminalTyping from '../../../components/previews/TerminalTyping.jsx';
 import BrowserScreenshot from '../../../components/previews/BrowserScreenshot.jsx';
-import MetricsDashboard from '../../../components/previews/MetricsDashboard.jsx';
-import ApiMockPanel from '../../../components/previews/ApiMockPanel.jsx';
 
 export async function getStaticPaths() {
   const allProjects = await getCollection('projects');
@@ -69,6 +66,14 @@ const pd = project.data.previewData;
 
     <!-- Content Sections -->
     <div class="max-w-container-max mx-auto space-y-24">
+
+      <!-- Visual Preview -->
+      {project.data.screenshot && (
+        <section class="max-w-5xl mb-16">
+          <BrowserScreenshot screenshots={(project.data.previewData?.screenshots ?? []) as any} liveUrl={project.data.previewData?.liveUrl} client:visible />
+        </section>
+      )}
+
       <!-- Full Description -->
       <section class="max-w-3xl">
         <h2 class="font-headline-md text-headline-md text-on-surface mb-6 border-b border-outline-variant/20 pb-2">Overview</h2>

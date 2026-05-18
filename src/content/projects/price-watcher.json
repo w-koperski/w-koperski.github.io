@@ -1,54 +1,46 @@
 {
-    "title": "Price Watcher",
-    "category": "python-cli",
-    "categoryEmoji": "🐍",
-    "description": {
-        "pl": "Zaawansowany skrypt monitorujący ceny produktów ze stron internetowych. Zapisuje historię cen do CSV, pokazuje statystyki (min/max/średnia), wykrywa zmiany cen z procentami, obsługuje konfigurację wielu produktów i wysyła alerty progowe.",
-        "en": "Advanced product price monitoring script. Saves price history to CSV, shows statistics (min/max/average), detects price changes with percentages, supports multi-product configuration, and sends threshold alerts."
-    },
-    "techStack": [
-        "Python",
-        "Requests",
-        "BeautifulSoup",
-        "lxml",
-        "Termcolor",
-        "Docker"
+  "title": "Price Watcher",
+  "category": "python-cli",
+  "categoryEmoji": "🐍",
+  "description": {
+    "pl": "Zaawansowany skrypt monitorujący ceny produktów ze stron internetowych. Zapisuje historię cen do CSV, pokazuje statystyki (min/max/średnia), wykrywa zmiany cen z procentami, obsługuje konfigurację wielu produktów i wysyła alerty progowe.",
+    "en": "Advanced product price monitoring script. Saves price history to CSV, shows statistics (min/max/average), detects price changes with percentages, supports multi-product configuration, and sends threshold alerts."
+  },
+  "techStack": [
+    "Python",
+    "Requests",
+    "BeautifulSoup",
+    "lxml",
+    "Termcolor",
+    "Docker"
+  ],
+  "githubUrl": "https://github.com/w-koperski/price-watcher",
+  "year": 2024,
+  "featured": true,
+  "screenshot": "/mockups/price-watcher.svg",
+  "previewData": {
+    "type": "browser",
+    "liveUrl": "https://github.com/w-koperski/price-watcher",
+    "screenshots": [
+      "/mockups/price-watcher.svg"
+    ]
+  },
+  "longDescription": {
+    "pl": "Zaawansowany skrypt monitorujący ceny produktów ze stron internetowych. Zapisuje historię cen do CSV, pokazuje statystyki (min/max/średnia), wykrywa zmiany cen z procentami, obsługuje konfigurację wielu produktów i wysyła alerty progowe.",
+    "en": "Advanced product price monitoring script. Saves price history to CSV, shows statistics (min/max/average), detects price changes with percentages, supports multi-product configuration, and sends threshold alerts."
+  },
+  "highlights": {
+    "pl": [
+      "Monitorowanie cen z dowolnej strony (CSS selector)",
+      "Historia cen w formacie CSV",
+      "Wykrywanie zmian cen (wzrost/spadek z procentami)",
+      "Statystyki (min/max/średnia cena)",
+      "Alerty progowe"
     ],
-    "githubUrl": "https://github.com/w-koperski/price-watcher",
-    "year": 2024,
-    "featured": true,
-    "screenshot": "/mockups/price-watcher.svg",
-    "previewData": {
-        "type": "terminal",
-        "commands": {
-            "pl": [
-                {
-                    "command": "python watcher.py --demo",
-                    "output": "=== TRYB DEMO ===\nURL: https://books.toscrape.com/...\n\n[A Light in the Attic] Cena: 51.77\n  ↓ Spadek: -2.00 (-3.7%)\nZapisano do historii."
-                },
-                {
-                    "command": "python watcher.py --stats",
-                    "output": "STATYSTYKI CEN\n\nProdukt: A Light in the Attic\n  Liczba pomiarów: 5\n  Aktualna cena:   51.77\n  Najniższa cena:  51.77\n  Najwyższa cena:  53.77\n  Średnia cena:    52.54\n  ★ Najlepsza cena!"
-                },
-                {
-                    "command": "python watcher.py --all",
-                    "output": "Monitorowanie 3 produktów...\n\n[1/3] Laptop XYZ\n  Cena: 2999.00\n  ↓ -100.00 (-3.2%)\n  ★ ALERT: Cena poniżej 3000!\n\n[2/3] Słuchawki ABC\n  Cena: 299.00\n  = Bez zmian"
-                }
-            ],
-            "en": [
-                {
-                    "command": "python watcher.py --demo",
-                    "output": "=== DEMO MODE ===\nURL: https://books.toscrape.com/...\n\n[A Light in the Attic] Price: 51.77\n  ↓ Decrease: -2.00 (-3.7%)\nSaved to history."
-                },
-                {
-                    "command": "python watcher.py --stats",
-                    "output": "PRICE STATISTICS\n\nProduct: A Light in the Attic\n  Measurements: 5\n  Current price:  51.77\n  Lowest price:   51.77\n  Highest price:  53.77\n  Average price:  52.54\n  ★ Best price!"
-                },
-                {
-                    "command": "python watcher.py --all",
-                    "output": "Monitoring 3 products...\n\n[1/3] Laptop XYZ\n  Price: 2999.00\n  ↓ -100.00 (-3.2%)\n  ★ ALERT: Price below 3000!\n\n[2/3] Headphones ABC\n  Price: 299.00\n  = No change"
-                }
-            ]
-        }
-    }
+    "en": [
+      "Python 3.12+",
+      "libxml2-dev, libxslt1-dev (for lxml library)"
+    ]
+  },
+  "demoUrl": "https://github.com/w-koperski/price-watcher"
 }

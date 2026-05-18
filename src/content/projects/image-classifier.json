@@ -10,63 +10,37 @@
     "Python",
     "TensorFlow",
     "NumPy",
-    "Matplotlib"
+    "Matplotlib",
+    "Docker"
   ],
   "githubUrl": "https://github.com/w-koperski/image-classifier",
   "year": 2024,
   "featured": false,
   "screenshot": "/mockups/image-classifier-cnn.svg",
   "previewData": {
-    "type": "metrics",
-    "epochs": 15,
-    "accuracyData": [
-      0.42,
-      0.58,
-      0.69,
-      0.77,
-      0.83,
-      0.87,
-      0.9,
-      0.92,
-      0.93,
-      0.935,
-      0.94,
-      0.942,
-      0.944,
-      0.945,
-      0.946
-    ],
-    "lossData": [
-      1.45,
-      1.1,
-      0.85,
-      0.65,
-      0.5,
-      0.38,
-      0.28,
-      0.21,
-      0.17,
-      0.14,
-      0.12,
-      0.11,
-      0.1,
-      0.095,
-      0.09
-    ],
-    "finalAccuracy": "94.6%",
-    "samplePredictions": [
-      {
-        "input": "cat.jpg",
-        "output": "cat (97.2%)"
-      },
-      {
-        "input": "car.jpg",
-        "output": "automobile (92.8%)"
-      },
-      {
-        "input": "dog.jpg",
-        "output": "dog (89.1%)"
-      }
+    "type": "browser",
+    "liveUrl": "https://github.com/w-koperski/image-classifier",
+    "screenshots": [
+      "/mockups/image-classifier-cnn.svg"
     ]
-  }
+  },
+  "longDescription": {
+    "pl": "Prosta sieć konwolucyjna (CNN) trenowana na zbiorze CIFAR-10, która klasyfikuje obrazy do 10 różnych kategorii. Architektura składa się z warstw: Conv2D(32) → Conv2D(64) → Flatten → Dense(64) → Dense(10). Model demonstruje podstawy rozpoznawania obrazów i uczenia głębokiego przy użyciu nowoczesnych frameworków uczenia maszynowego.",
+    "en": "A CNN image classifier in TensorFlow. Simple convolutional network trained on CIFAR-10, classifies images into 10 categories."
+  },
+  "highlights": {
+    "pl": [
+      "Nowoczesna architektura",
+      "Wysoka wydajność działania",
+      "Skalowalny kod źródłowy",
+      "Zoptymalizowane UI/UX"
+    ],
+    "en": [
+      "Python 3.11+",
+      "TensorFlow 2.15.0",
+      "numpy 1.26.0",
+      "matplotlib 3.8.0"
+    ]
+  },
+  "demoUrl": "https://github.com/w-koperski/image-classifier"
 }

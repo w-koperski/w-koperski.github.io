@@ -9,35 +9,35 @@
   "techStack": [
     "Python",
     "Requests",
-    "Termcolor"
+    "Termcolor",
+    "Docker"
   ],
   "githubUrl": "https://github.com/w-koperski/weather-cli",
   "year": 2024,
   "featured": false,
   "screenshot": "/mockups/weather-cli.svg",
   "previewData": {
-    "type": "terminal",
-    "commands": {
-      "pl": [
-        {
-          "command": "weather-cli --city Warszawa",
-          "output": "🌤 Warszawa: 18°C, wilgotność 65%, wiatr 12km/h"
-        },
-        {
-          "command": "weather-cli --forecast 3",
-          "output": "Pon: 18°C ☀️  Wt: 21°C ⛅  Śr: 15°C 🌧"
-        }
-      ],
-      "en": [
-        {
-          "command": "weather-cli --city Warsaw",
-          "output": "🌤 Warsaw: 18°C, humidity 65%, wind 12km/h"
-        },
-        {
-          "command": "weather-cli --forecast 3",
-          "output": "Mon: 18°C ☀️  Tue: 21°C ⛅  Wed: 15°C 🌧"
-        }
-      ]
-    }
-  }
+    "type": "browser",
+    "liveUrl": "https://github.com/w-koperski/weather-cli",
+    "screenshots": [
+      "/mockups/weather-cli.svg"
+    ]
+  },
+  "longDescription": {
+    "pl": "Prosta apka pogodowa w terminalu. Pokazuje temperaturę, wilgotność, wiatr i prognozę na 3 dni.",
+    "en": "A simple weather app for the terminal. Shows temperature, humidity, wind, and a 3-day forecast."
+  },
+  "highlights": {
+    "pl": [
+      "Nowoczesna architektura",
+      "Wysoka wydajność działania",
+      "Skalowalny kod źródłowy",
+      "Zoptymalizowane UI/UX"
+    ],
+    "en": [
+      "--forecast — 3-day forecast",
+      "--json — raw API data (JSON)"
+    ]
+  },
+  "demoUrl": "https://github.com/w-koperski/weather-cli"
 }
