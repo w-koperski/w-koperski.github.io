@@ -43,7 +43,7 @@ const projectsByCategory = categories
               techStack={project.data.techStack}
               githubUrl={project.data.githubUrl}
               demoUrl={project.data.demoUrl}
-              screenshot={project.data.screenshot}
+              screenshot={project.data.previewData?.type === 'browser' ? project.data.screenshot : undefined}
               year={project.data.year}
               featured={project.data.featured}
               slug={project.id}

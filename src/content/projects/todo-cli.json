@@ -18,7 +18,7 @@
   "featured": false,
   "screenshot": "/mockups/todo-cli.svg",
   "previewData": {
-    "type": "browser",
+    "type": "cli",
     "liveUrl": "https://github.com/w-koperski/todo-cli",
     "screenshots": [
       "/mockups/todo-cli.svg"

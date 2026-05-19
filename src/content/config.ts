@@ -42,6 +42,11 @@ const projectSchema = z.object({
       type: z.literal('browser'),
       liveUrl: z.string().url().optional(),
       screenshots: z.array(z.string()).min(1),
+    }),
+    z.object({
+      type: z.enum(['cli', 'api', 'ml']),
+      liveUrl: z.string().url().optional(),
+      screenshots: z.array(z.string()).min(1).optional(),
     })
   ]).optional(),
 });
@@ -51,7 +56,7 @@ const projects = defineCollection({
   schema: projectSchema,
 });
 
-export type PreviewType = 'browser';
+export type PreviewType = 'browser' | 'cli' | 'api' | 'ml';
 export type ProjectPreviewData = z.infer<typeof projectSchema>['previewData'];
 export type ProjectDetailContent = {
   longDescription?: z.infer<typeof projectSchema>['longDescription'];

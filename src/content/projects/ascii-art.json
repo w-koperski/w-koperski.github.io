@@ -16,7 +16,7 @@
   "featured": false,
   "screenshot": "/mockups/ascii-art-generator.svg",
   "previewData": {
-    "type": "browser",
+    "type": "cli",
     "liveUrl": "https://github.com/w-koperski/ascii-art",
     "screenshots": [
       "/mockups/ascii-art-generator.svg"

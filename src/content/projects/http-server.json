@@ -15,7 +15,7 @@
   "featured": false,
   "screenshot": "/mockups/http-server.svg",
   "previewData": {
-    "type": "browser",
+    "type": "cli",
     "liveUrl": "https://github.com/w-koperski/http-server",
     "screenshots": [
       "/mockups/http-server.svg"

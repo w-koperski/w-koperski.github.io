@@ -16,7 +16,7 @@
   "featured": false,
   "screenshot": "/mockups/url-shortener.svg",
   "previewData": {
-    "type": "browser",
+    "type": "api",
     "liveUrl": "https://github.com/w-koperski/url-shortener",
     "screenshots": [
       "/mockups/url-shortener.svg"

@@ -17,7 +17,7 @@
   "featured": false,
   "screenshot": "/mockups/task-scheduler-api.svg",
   "previewData": {
-    "type": "browser",
+    "type": "api",
     "liveUrl": "https://github.com/w-koperski/task-scheduler-api",
     "screenshots": [
       "/mockups/task-scheduler-api.svg"

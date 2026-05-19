@@ -17,7 +17,7 @@
   "featured": false,
   "screenshot": "/mockups/sentiment-analyzer.svg",
   "previewData": {
-    "type": "browser",
+    "type": "ml",
     "liveUrl": "https://github.com/w-koperski/sentiment-analyzer",
     "screenshots": [
       "/mockups/sentiment-analyzer.svg"

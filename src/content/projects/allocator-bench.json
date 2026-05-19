@@ -16,7 +16,7 @@
   "featured": false,
   "screenshot": "/mockups/memory-allocator-benchmark.svg",
   "previewData": {
-    "type": "browser",
+    "type": "cli",
     "liveUrl": "https://github.com/w-koperski/allocator-bench",
     "screenshots": [
       "/mockups/memory-allocator-benchmark.svg"

@@ -18,7 +18,7 @@
   "featured": false,
   "screenshot": "/mockups/mnist-classifier.svg",
   "previewData": {
-    "type": "browser",
+    "type": "ml",
     "liveUrl": "https://github.com/w-koperski/mnist-classifier",
     "screenshots": [
       "/mockups/mnist-classifier.svg"
