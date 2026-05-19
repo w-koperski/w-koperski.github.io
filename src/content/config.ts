@@ -37,11 +37,18 @@ const projectSchema = z.object({
     pl: z.array(z.string()),
     en: z.array(z.string()),
   }).optional(),
-    previewData: z.object({
-    type: z.enum(['browser', 'cli', 'api', 'ml']),
-    liveUrl: z.string().url().optional(),
-    screenshots: z.array(z.string()).min(1).optional(),
-  }).optional(),
+  previewData: z.discriminatedUnion('type', [
+    z.object({
+      type: z.literal('browser'),
+      liveUrl: z.string().url().optional(),
+      screenshots: z.array(z.string()).min(1),
+    }),
+    z.object({
+      type: z.enum(['cli', 'api', 'ml']),
+      liveUrl: z.string().url().optional(),
+      screenshots: z.array(z.string()).min(1).optional(),
+    })
+  ]).optional(),
 });
 
 const projects = defineCollection({
